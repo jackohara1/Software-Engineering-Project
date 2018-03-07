@@ -57,11 +57,11 @@ namespace Hardware_Syst
 
             mySale.addSale();
 
-            Saleitem[] newSale = new Saleitem[100]; 
-            for (int x=1; x < grdCart.RowCount; x++)
+            Saleitem[] newSale = new Saleitem[grdCart.RowCount]; 
+            for (int x=1; x <= grdCart.RowCount; x++)
             {
-                int y = Saleitem.getNextSaleitem_id();
-                newSale[x].setSaleitem_id(y);
+                
+                newSale[x].setSaleitem_id(Saleitem.getNextSaleitem_id());
                 newSale[x].setQtysold(Convert.ToInt32(grdCart.Rows[x].Cells[2].Value));
                 newSale[x].setPrice(Convert.ToDecimal(grdCart.Rows[x].Cells[6].Value));
                 newSale[x].setSale_id(Convert.ToInt32(txtSaleID.Text));
@@ -97,20 +97,7 @@ namespace Hardware_Syst
 
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (txtQtySold.Text.Equals(""))
-            {
-                MessageBox.Show("Amount of Items was left blank");
-                txtQtySold.Focus();
-                return;
-            }
-            else
-            {
-                grpCart.Visible = true;
-                grdCart.Rows.Add(Convert.ToInt32(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt32(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[1].Value), Convert.ToInt32(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[2].Value),txtQtySold.Text);
-            }
-        }
+       
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -129,7 +116,7 @@ namespace Hardware_Syst
             btnRegesterSale.Visible = false;
         }
 
-        private void grdStock_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void grdStock_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             grpCart.Visible = true;
             grdCart.Rows.Add(Convert.ToString(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[0].Value),  Convert.ToString(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[1].Value), Convert.ToString(1),"+","-","remove", Convert.ToString(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[2].Value));
@@ -172,27 +159,26 @@ namespace Hardware_Syst
         {
             if (e.ColumnIndex == grdCart.Columns["Quantityadd"].Index && e.RowIndex >= 0)
             {
-                MessageBox.Show("Customer was left blank");
-                grdCart.Rows[grdStock.CurrentCell.RowIndex].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[grdStock.CurrentCell.RowIndex].Cells[2].Value) + 1).ToString());
-                txtSaleValue.Text =Convert.ToString(Convert.ToDecimal(grdCart.Rows[grdStock.CurrentCell.RowIndex].Cells[6].Value) + Convert.ToDecimal(txtSaleValue.Text));
+              
+                grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) + 1).ToString());
+                txtSaleValue.Text =Convert.ToString(Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[6].Value) + Convert.ToDecimal(txtSaleValue.Text));
 
             }
             else if (e.ColumnIndex == grdCart.Columns["Quantityminus"].Index && e.RowIndex >= 0)
             {
-                MessageBox.Show("Customer was left blank");
-                grdCart.Rows[grdStock.CurrentCell.RowIndex].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[grdStock.CurrentCell.RowIndex].Cells[2].Value) - 1).ToString());
-                txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(grdCart.Rows[grdStock.CurrentCell.RowIndex].Cells[6].Value) - Convert.ToDecimal(txtSaleValue.Text));
+              
+                grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) - 1).ToString());
+                txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(txtSaleValue.Text)-  Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[6].Value));
             }
             else if (e.ColumnIndex == grdCart.Columns["remove"].Index && e.RowIndex >= 0)
             {
-                MessageBox.Show("Customer was left blank");
-                grdCart.Rows.Remove(grdCart.Rows[grdStock.CurrentCell.RowIndex]);
-                txtSaleValue.Text = Convert.ToString(Convert.ToDecimal( txtSaleValue.Text) - (Convert.ToDecimal(grdCart.Rows[grdStock.CurrentCell.RowIndex].Cells[6].Value) * Convert.ToDecimal(grdCart.Rows[grdStock.CurrentCell.RowIndex].Cells[2].Value)));
-
+                 txtSaleValue.Text = Convert.ToString(Convert.ToDecimal( txtSaleValue.Text) - (Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[6].Value) * Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value)));
+                 grdCart.Rows.Remove(grdCart.Rows[grdCart.CurrentCell.RowIndex]);
+               
             }
         }
 
-        private void grdCust_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void grdCust_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Sale mySale = new Sale();
             mySale.setSale_id(Convert.ToInt32(txtSaleID.Text));

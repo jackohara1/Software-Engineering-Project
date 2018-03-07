@@ -65,17 +65,12 @@ namespace Hardware_Syst
                 txtSaleID.Focus();
                 return;
             }
-            else if (!txtSaleID.Text.Equals("111"))
-            {
-                MessageBox.Show("This Sale has not taken place on this system");
-                txtSaleID.Focus();
-                return;
-            }
+            
             else
             {
                 grpStock.Visible = true;
-                grdStock.Rows.Add("088", "Hammer", "20.00", "3");
-                grdStock.Rows.Add("076", "Screwdriver", "5.00", "2");
+                DataSet ds = new DataSet();
+                grdCart.DataSource =  Saleitem.getMatchingSaleItem(ds, Convert.ToInt32(txtSaleID.Text)).Tables["ss"];
             }
             
         }

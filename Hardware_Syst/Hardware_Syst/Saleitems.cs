@@ -17,6 +17,7 @@ namespace Hardware_Syst
         private decimal price;
         private int sale_id;
         private int stock_id;
+        private string status;
 
 
 
@@ -29,6 +30,7 @@ namespace Hardware_Syst
             price = 0;
             sale_id = 0;
             stock_id = 0;
+            status = "";
 
         }
         //Define setters
@@ -54,7 +56,10 @@ namespace Hardware_Syst
         {
             this.stock_id = Stock_id;
         }
-
+        public void setStatus(string Status)
+        {
+            this.status = Status;
+        }
 
 
 
@@ -86,7 +91,10 @@ namespace Hardware_Syst
         {
             return stock_id;
         }
-
+        public string getStatus()
+        {
+            return status;
+        }
 
         //define a static method to get all data from Stock table
         public static DataSet getAllSaleItem(DataSet DS, String OrderBy)
@@ -113,6 +121,29 @@ namespace Hardware_Syst
             return DS;
         }
 
+        public static DataSet getMatchingSaleItem(DataSet DS, int Sale_id)
+        {
+            //create an OracleConnection object using the connection string defined in static class DBConnect
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            //Define the SQL Query to retrieve the data
+            String strSQL = "SELECT stock_id, stock_name, qtysold, price FROM Saleitems WHERE sale_id = " + Sale_id;
+
+            //Create an OracleCommand object and instantiate it
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //Create an oracleAdapter to hold the result of the executed OracleCommand
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            //Fill the DataSet DS with the query result
+            da.Fill(DS, "ss");
+
+            //close the DB Connection
+            conn.Close();
+
+            //Return the Dataset with the required data to the windows form which executed this method
+            return DS;
+        }
 
 
         public static int getNextSaleitem_id()

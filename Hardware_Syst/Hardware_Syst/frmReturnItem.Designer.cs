@@ -31,12 +31,8 @@
             this.btnReturnItem = new System.Windows.Forms.Button();
             this.txtSaleID = new System.Windows.Forms.TextBox();
             this.lblSaleID = new System.Windows.Forms.Label();
-            this.lblHowCustomerPayed = new System.Windows.Forms.Label();
-            this.cboHowCustomerPayed = new System.Windows.Forms.ComboBox();
-            this.cboWillStockReturn = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblItemBack = new System.Windows.Forms.Label();
             this.grpCredit = new System.Windows.Forms.GroupBox();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
@@ -47,20 +43,23 @@
             this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblforename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpStock = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.grdStock = new System.Windows.Forms.DataGridView();
-            this.StockID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StockName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SaleP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblAmountOfItems = new System.Windows.Forms.Label();
-            this.txtQtySold = new System.Windows.Forms.TextBox();
             this.btnSrh = new System.Windows.Forms.Button();
+            this.txtQtySold = new System.Windows.Forms.TextBox();
+            this.lblAmountOfItems = new System.Windows.Forms.Label();
+            this.lblHowCustomerPayed = new System.Windows.Forms.Label();
+            this.cboHowCustomerPayed = new System.Windows.Forms.ComboBox();
+            this.lblItemBack = new System.Windows.Forms.Label();
+            this.cboWillStockReturn = new System.Windows.Forms.ComboBox();
+            this.grdCart = new System.Windows.Forms.DataGridView();
+            this.Stock_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sale_p = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.grpCredit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCust)).BeginInit();
             this.grpStock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCart)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReturnItem
@@ -90,50 +89,13 @@
             this.lblSaleID.TabIndex = 28;
             this.lblSaleID.Text = "Sale ID";
             // 
-            // lblHowCustomerPayed
-            // 
-            this.lblHowCustomerPayed.AutoSize = true;
-            this.lblHowCustomerPayed.Location = new System.Drawing.Point(12, 220);
-            this.lblHowCustomerPayed.Name = "lblHowCustomerPayed";
-            this.lblHowCustomerPayed.Size = new System.Drawing.Size(159, 13);
-            this.lblHowCustomerPayed.TabIndex = 34;
-            this.lblHowCustomerPayed.Text = "How will the Customer be Payed";
-            this.lblHowCustomerPayed.Visible = false;
-            this.lblHowCustomerPayed.Click += new System.EventHandler(this.lblHowCustomerPayed_Click);
-            // 
-            // cboHowCustomerPayed
-            // 
-            this.cboHowCustomerPayed.FormattingEnabled = true;
-            this.cboHowCustomerPayed.Items.AddRange(new object[] {
-            "Credit",
-            "Cash",
-            "Replace"});
-            this.cboHowCustomerPayed.Location = new System.Drawing.Point(216, 217);
-            this.cboHowCustomerPayed.Name = "cboHowCustomerPayed";
-            this.cboHowCustomerPayed.Size = new System.Drawing.Size(121, 21);
-            this.cboHowCustomerPayed.TabIndex = 33;
-            this.cboHowCustomerPayed.Visible = false;
-            this.cboHowCustomerPayed.SelectedIndexChanged += new System.EventHandler(this.cboHowCustomerPayed_SelectedIndexChanged);
-            // 
-            // cboWillStockReturn
-            // 
-            this.cboWillStockReturn.FormattingEnabled = true;
-            this.cboWillStockReturn.Items.AddRange(new object[] {
-            "N - No",
-            "Y - Yes"});
-            this.cboWillStockReturn.Location = new System.Drawing.Point(270, 190);
-            this.cboWillStockReturn.Name = "cboWillStockReturn";
-            this.cboWillStockReturn.Size = new System.Drawing.Size(67, 21);
-            this.cboWillStockReturn.TabIndex = 35;
-            this.cboWillStockReturn.Visible = false;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuBack});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(670, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(752, 24);
             this.menuStrip1.TabIndex = 41;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -144,16 +106,6 @@
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
-            // lblItemBack
-            // 
-            this.lblItemBack.AutoSize = true;
-            this.lblItemBack.Location = new System.Drawing.Point(9, 190);
-            this.lblItemBack.Name = "lblItemBack";
-            this.lblItemBack.Size = new System.Drawing.Size(162, 13);
-            this.lblItemBack.TabIndex = 42;
-            this.lblItemBack.Text = "Will item be added back to stock";
-            this.lblItemBack.Visible = false;
-            // 
             // grpCredit
             // 
             this.grpCredit.Controls.Add(this.btnAddCustomer);
@@ -161,7 +113,7 @@
             this.grpCredit.Controls.Add(this.lblCustomer);
             this.grpCredit.Controls.Add(this.txtCustomer);
             this.grpCredit.Controls.Add(this.grdCust);
-            this.grpCredit.Location = new System.Drawing.Point(12, 412);
+            this.grpCredit.Location = new System.Drawing.Point(12, 518);
             this.grpCredit.Name = "grpCredit";
             this.grpCredit.Size = new System.Drawing.Size(468, 166);
             this.grpCredit.TabIndex = 43;
@@ -236,8 +188,7 @@
             // 
             // grpStock
             // 
-            this.grpStock.Controls.Add(this.btnAdd);
-            this.grpStock.Controls.Add(this.grdStock);
+            this.grpStock.Controls.Add(this.grdCart);
             this.grpStock.Controls.Add(this.lblAmountOfItems);
             this.grpStock.Controls.Add(this.txtQtySold);
             this.grpStock.Controls.Add(this.cboWillStockReturn);
@@ -246,75 +197,15 @@
             this.grpStock.Controls.Add(this.lblHowCustomerPayed);
             this.grpStock.Location = new System.Drawing.Point(26, 140);
             this.grpStock.Name = "grpStock";
-            this.grpStock.Size = new System.Drawing.Size(446, 266);
+            this.grpStock.Size = new System.Drawing.Size(488, 315);
             this.grpStock.TabIndex = 47;
             this.grpStock.TabStop = false;
             this.grpStock.Text = "Stock";
             this.grpStock.Visible = false;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(181, 136);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(71, 24);
-            this.btnAdd.TabIndex = 46;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // grdStock
-            // 
-            this.grdStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.StockID,
-            this.StockName,
-            this.SaleP,
-            this.Qty});
-            this.grdStock.Location = new System.Drawing.Point(1, 32);
-            this.grdStock.Name = "grdStock";
-            this.grdStock.Size = new System.Drawing.Size(444, 87);
-            this.grdStock.TabIndex = 45;
-            // 
-            // StockID
-            // 
-            this.StockID.HeaderText = "StockID";
-            this.StockID.Name = "StockID";
-            // 
-            // StockName
-            // 
-            this.StockName.HeaderText = "Stock Name";
-            this.StockName.Name = "StockName";
-            // 
-            // SaleP
-            // 
-            this.SaleP.HeaderText = "Sale Price";
-            this.SaleP.Name = "SaleP";
-            // 
-            // Qty
-            // 
-            this.Qty.HeaderText = "Qty";
-            this.Qty.Name = "Qty";
-            // 
-            // lblAmountOfItems
-            // 
-            this.lblAmountOfItems.AutoSize = true;
-            this.lblAmountOfItems.Location = new System.Drawing.Point(10, 147);
-            this.lblAmountOfItems.Name = "lblAmountOfItems";
-            this.lblAmountOfItems.Size = new System.Drawing.Size(82, 13);
-            this.lblAmountOfItems.TabIndex = 44;
-            this.lblAmountOfItems.Text = "Amount of items";
-            // 
-            // txtQtySold
-            // 
-            this.txtQtySold.Location = new System.Drawing.Point(98, 140);
-            this.txtQtySold.MaxLength = 3;
-            this.txtQtySold.Name = "txtQtySold";
-            this.txtQtySold.Size = new System.Drawing.Size(63, 20);
-            this.txtQtySold.TabIndex = 43;
-            // 
             // btnSrh
             // 
-            this.btnSrh.Location = new System.Drawing.Point(246, 86);
+            this.btnSrh.Location = new System.Drawing.Point(242, 81);
             this.btnSrh.Name = "btnSrh";
             this.btnSrh.Size = new System.Drawing.Size(58, 29);
             this.btnSrh.TabIndex = 46;
@@ -322,11 +213,108 @@
             this.btnSrh.UseVisualStyleBackColor = true;
             this.btnSrh.Click += new System.EventHandler(this.btnSrh_Click);
             // 
+            // txtQtySold
+            // 
+            this.txtQtySold.Location = new System.Drawing.Point(100, 35);
+            this.txtQtySold.MaxLength = 3;
+            this.txtQtySold.Name = "txtQtySold";
+            this.txtQtySold.Size = new System.Drawing.Size(63, 20);
+            this.txtQtySold.TabIndex = 43;
+            // 
+            // lblAmountOfItems
+            // 
+            this.lblAmountOfItems.AutoSize = true;
+            this.lblAmountOfItems.Location = new System.Drawing.Point(12, 42);
+            this.lblAmountOfItems.Name = "lblAmountOfItems";
+            this.lblAmountOfItems.Size = new System.Drawing.Size(82, 13);
+            this.lblAmountOfItems.TabIndex = 44;
+            this.lblAmountOfItems.Text = "Amount of items";
+            // 
+            // lblHowCustomerPayed
+            // 
+            this.lblHowCustomerPayed.AutoSize = true;
+            this.lblHowCustomerPayed.Location = new System.Drawing.Point(12, 78);
+            this.lblHowCustomerPayed.Name = "lblHowCustomerPayed";
+            this.lblHowCustomerPayed.Size = new System.Drawing.Size(159, 13);
+            this.lblHowCustomerPayed.TabIndex = 34;
+            this.lblHowCustomerPayed.Text = "How will the Customer be Payed";
+            this.lblHowCustomerPayed.Visible = false;
+            this.lblHowCustomerPayed.Click += new System.EventHandler(this.lblHowCustomerPayed_Click);
+            // 
+            // cboHowCustomerPayed
+            // 
+            this.cboHowCustomerPayed.FormattingEnabled = true;
+            this.cboHowCustomerPayed.Items.AddRange(new object[] {
+            "Credit",
+            "Cash",
+            "Replace"});
+            this.cboHowCustomerPayed.Location = new System.Drawing.Point(216, 75);
+            this.cboHowCustomerPayed.Name = "cboHowCustomerPayed";
+            this.cboHowCustomerPayed.Size = new System.Drawing.Size(121, 21);
+            this.cboHowCustomerPayed.TabIndex = 33;
+            this.cboHowCustomerPayed.Visible = false;
+            this.cboHowCustomerPayed.SelectedIndexChanged += new System.EventHandler(this.cboHowCustomerPayed_SelectedIndexChanged);
+            // 
+            // lblItemBack
+            // 
+            this.lblItemBack.AutoSize = true;
+            this.lblItemBack.Location = new System.Drawing.Point(9, 116);
+            this.lblItemBack.Name = "lblItemBack";
+            this.lblItemBack.Size = new System.Drawing.Size(162, 13);
+            this.lblItemBack.TabIndex = 42;
+            this.lblItemBack.Text = "Will item be added back to stock";
+            this.lblItemBack.Visible = false;
+            // 
+            // cboWillStockReturn
+            // 
+            this.cboWillStockReturn.FormattingEnabled = true;
+            this.cboWillStockReturn.Items.AddRange(new object[] {
+            "N - No",
+            "Y - Yes"});
+            this.cboWillStockReturn.Location = new System.Drawing.Point(270, 116);
+            this.cboWillStockReturn.Name = "cboWillStockReturn";
+            this.cboWillStockReturn.Size = new System.Drawing.Size(67, 21);
+            this.cboWillStockReturn.TabIndex = 35;
+            this.cboWillStockReturn.Visible = false;
+            // 
+            // grdCart
+            // 
+            this.grdCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Stock_id,
+            this.Stock_Name,
+            this.dataGridViewTextBoxColumn1,
+            this.Sale_p});
+            this.grdCart.Location = new System.Drawing.Point(10, 143);
+            this.grdCart.Name = "grdCart";
+            this.grdCart.Size = new System.Drawing.Size(444, 149);
+            this.grdCart.TabIndex = 50;
+            // 
+            // Stock_id
+            // 
+            this.Stock_id.HeaderText = "ID";
+            this.Stock_id.Name = "Stock_id";
+            // 
+            // Stock_Name
+            // 
+            this.Stock_Name.HeaderText = "Description";
+            this.Stock_Name.Name = "Stock_Name";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Sale_p
+            // 
+            this.Sale_p.HeaderText = "Sale Price";
+            this.Sale_p.Name = "Sale_p";
+            // 
             // frmReturnItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 606);
+            this.ClientSize = new System.Drawing.Size(752, 705);
             this.Controls.Add(this.grpStock);
             this.Controls.Add(this.btnSrh);
             this.Controls.Add(this.grpCredit);
@@ -345,7 +333,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdCust)).EndInit();
             this.grpStock.ResumeLayout(false);
             this.grpStock.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,22 +343,10 @@
         private System.Windows.Forms.Button btnReturnItem;
         private System.Windows.Forms.TextBox txtSaleID;
         private System.Windows.Forms.Label lblSaleID;
-        private System.Windows.Forms.Label lblHowCustomerPayed;
-        private System.Windows.Forms.ComboBox cboHowCustomerPayed;
-        private System.Windows.Forms.ComboBox cboWillStockReturn;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
-        private System.Windows.Forms.Label lblItemBack;
         private System.Windows.Forms.GroupBox grpCredit;
         private System.Windows.Forms.GroupBox grpStock;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView grdStock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StockID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StockName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SaleP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
-        private System.Windows.Forms.Label lblAmountOfItems;
-        private System.Windows.Forms.TextBox txtQtySold;
         private System.Windows.Forms.Button btnSrh;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Button btnCustomer;
@@ -380,5 +356,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lblCustID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
         private System.Windows.Forms.DataGridViewTextBoxColumn lblforename;
+        private System.Windows.Forms.Label lblAmountOfItems;
+        private System.Windows.Forms.TextBox txtQtySold;
+        private System.Windows.Forms.DataGridView grdCart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sale_p;
+        private System.Windows.Forms.ComboBox cboWillStockReturn;
+        private System.Windows.Forms.Label lblItemBack;
+        private System.Windows.Forms.ComboBox cboHowCustomerPayed;
+        private System.Windows.Forms.Label lblHowCustomerPayed;
     }
 }

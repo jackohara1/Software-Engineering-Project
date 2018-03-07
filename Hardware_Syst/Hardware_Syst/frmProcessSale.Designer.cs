@@ -37,10 +37,7 @@
             this.txtSaleID = new System.Windows.Forms.TextBox();
             this.btnSrh = new System.Windows.Forms.Button();
             this.grpStock = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.grdStock = new System.Windows.Forms.DataGridView();
-            this.lblAmountOfItems = new System.Windows.Forms.Label();
-            this.txtQtySold = new System.Windows.Forms.TextBox();
             this.grpCart = new System.Windows.Forms.GroupBox();
             this.grdCart = new System.Windows.Forms.DataGridView();
             this.Stock_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -146,27 +143,14 @@
             // 
             // grpStock
             // 
-            this.grpStock.Controls.Add(this.btnAdd);
             this.grpStock.Controls.Add(this.grdStock);
-            this.grpStock.Controls.Add(this.lblAmountOfItems);
-            this.grpStock.Controls.Add(this.txtQtySold);
             this.grpStock.Location = new System.Drawing.Point(31, 115);
             this.grpStock.Name = "grpStock";
-            this.grpStock.Size = new System.Drawing.Size(446, 192);
+            this.grpStock.Size = new System.Drawing.Size(446, 159);
             this.grpStock.TabIndex = 43;
             this.grpStock.TabStop = false;
             this.grpStock.Text = "Stock";
             this.grpStock.Visible = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(181, 136);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(71, 24);
-            this.btnAdd.TabIndex = 46;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // grdStock
             // 
@@ -175,24 +159,7 @@
             this.grdStock.Name = "grdStock";
             this.grdStock.Size = new System.Drawing.Size(444, 87);
             this.grdStock.TabIndex = 45;
-            this.grdStock.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStock_CellContentClick);
-            // 
-            // lblAmountOfItems
-            // 
-            this.lblAmountOfItems.AutoSize = true;
-            this.lblAmountOfItems.Location = new System.Drawing.Point(10, 147);
-            this.lblAmountOfItems.Name = "lblAmountOfItems";
-            this.lblAmountOfItems.Size = new System.Drawing.Size(82, 13);
-            this.lblAmountOfItems.TabIndex = 44;
-            this.lblAmountOfItems.Text = "Amount of items";
-            // 
-            // txtQtySold
-            // 
-            this.txtQtySold.Location = new System.Drawing.Point(98, 140);
-            this.txtQtySold.MaxLength = 3;
-            this.txtQtySold.Name = "txtQtySold";
-            this.txtQtySold.Size = new System.Drawing.Size(63, 20);
-            this.txtQtySold.TabIndex = 43;
+            this.grdStock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStock_CellClick);
             // 
             // grpCart
             // 
@@ -381,7 +348,7 @@
             this.grdCust.Size = new System.Drawing.Size(348, 87);
             this.grdCust.TabIndex = 46;
             this.grdCust.Visible = false;
-            this.grdCust.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCust_CellContentClick);
+            this.grdCust.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCust_CellClick);
             // 
             // frmProcessSale
             // 
@@ -406,7 +373,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpStock.ResumeLayout(false);
-            this.grpStock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdStock)).EndInit();
             this.grpCart.ResumeLayout(false);
             this.grpCart.PerformLayout();
@@ -431,10 +397,7 @@
         private System.Windows.Forms.TextBox txtSaleID;
         private System.Windows.Forms.Button btnSrh;
         private System.Windows.Forms.GroupBox grpStock;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView grdStock;
-        private System.Windows.Forms.Label lblAmountOfItems;
-        private System.Windows.Forms.TextBox txtQtySold;
         private System.Windows.Forms.GroupBox grpCart;
         private System.Windows.Forms.Button btnCheckout;
         private System.Windows.Forms.Label label1;
