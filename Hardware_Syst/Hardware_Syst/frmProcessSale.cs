@@ -57,18 +57,18 @@ namespace Hardware_Syst
 
             mySale.addSale();
 
-            Saleitem[] newSale = new Saleitem[grdCart.RowCount]; 
-            for (int x=1; x <= grdCart.RowCount; x++)
-            {
-                
-                newSale[x].setSaleitem_id(Saleitem.getNextSaleitem_id());
-                newSale[x].setQtysold(Convert.ToInt32(grdCart.Rows[x].Cells[2].Value));
-                newSale[x].setPrice(Convert.ToDecimal(grdCart.Rows[x].Cells[6].Value));
-                newSale[x].setSale_id(Convert.ToInt32(txtSaleID.Text));
-                newSale[x].setStock_id(Convert.ToInt32(grdCart.Rows[x].Cells[0].Value));
-                newSale[x].addSaleitems();
+            MessageBox.Show(Convert.ToString(grdCart.RowCount));
 
+            int i = 0;
+            grdCart.Rows[i].Selected = true;
+            while(i< grdCart.RowCount-1)
+            {
+                Saleitem newSaleItem = new Saleitem(Convert.ToInt32(txtSaleID.Text), Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value), Convert.ToDecimal(grdCart.Rows[i].Cells[6].Value));
+                newSaleItem.addSaleitem();
+                i++;
             }
+            
+        
 
 
            
@@ -189,17 +189,13 @@ namespace Hardware_Syst
 
             mySale.addSale();
 
-            Saleitem[] newSale = new Saleitem[100];
-            for (int x = 1; x < grdCart.RowCount; x++)
+            int i = 0;
+            grdCart.Rows[i].Selected = true;
+            while (i < grdCart.RowCount-1)
             {
-                int y = Saleitem.getNextSaleitem_id();
-                newSale[x].setSaleitem_id(y);
-                newSale[x].setQtysold(Convert.ToInt32(grdCart.Rows[x].Cells[2].Value));
-                newSale[x].setPrice(Convert.ToDecimal(grdCart.Rows[x].Cells[6].Value));
-                newSale[x].setSale_id(Convert.ToInt32(txtSaleID.Text));
-                newSale[x].setStock_id(Convert.ToInt32(grdCart.Rows[x].Cells[0].Value));
-                newSale[x].addSaleitems();
-
+                Saleitem newSaleItem = new Saleitem(Convert.ToInt32(txtSaleID.Text), Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value), Convert.ToDecimal(grdCart.Rows[i].Cells[6].Value));
+                newSaleItem.addSaleitem();
+                i++;
             }
 
 

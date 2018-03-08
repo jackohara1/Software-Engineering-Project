@@ -133,5 +133,34 @@ namespace Hardware_Syst
             this.Close();
             parent.Show();
         }
+
+        private void txtQtySold_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Convert.ToInt16(txtQtySold.Text)>Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[1].Value)  )
+            {
+                MessageBox.Show("The quantity you are returning is greater than the quantity you have bought");
+            }
+
+            if (cboHowCustomerPayed.Text.Equals("Credit"))
+            {
+                grpCredit.Visible = true;
+                btnReturnItem.Visible = false;
+            }
+
+            else
+            {
+                Stock.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), (Convert.ToInt16(txtQtySold.Text) * cboWillStockReturn.SelectedIndex));
+                if (cboHowCustomerPayed.Text.Equals("Replace"))
+                {
+                    Stock.replaceStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), (Convert.ToInt16(txtQtySold.Text) * cboWillStockReturn.SelectedIndex));
+
+                }
+            }
+        }
     }
 }

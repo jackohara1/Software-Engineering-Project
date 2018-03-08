@@ -369,98 +369,37 @@ namespace Hardware_Syst
             myConn.Close();
         }
 
-        public static DataSet getSelectedStockType(DataSet ds, DataColumn Data)
+        public static void returnStock(int Stock_id, int amount)
         {
+            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
+            myConn.Open();
 
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            //Define SQL query to INSERT stock record
+            String strSQL = "UPDATE Stock SET qty = qty+"+amount+" WHERE stock_id = " + Stock_id;
 
+            //Execute the command
+            OracleCommand cmd = new OracleCommand(strSQL, myConn);
+            cmd.ExecuteNonQuery();
 
-            String strSQL = "SELECT department_id FROM Stock WHERE stock_id = " + Data + "";
-
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-
-            OracleDataAdapter dc = new OracleDataAdapter(cmd);
-
-
-            dc.Fill(ds, "ss");
-
-
-            conn.Close();
-
-
-            return ds;
+            //close DB connection
+            myConn.Close();
         }
-        public static DataSet getSelectedStockqty(DataSet ds, String Data)
+
+        public static void replaceStock(int Stock_id, int amount)
         {
+            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
+            myConn.Open();
 
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            //Define SQL query to INSERT stock record
+            String strSQL = "UPDATE Stock SET qty = qty" + amount + " WHERE stock_id = " + Stock_id;
 
+            //Execute the command
+            OracleCommand cmd = new OracleCommand(strSQL, myConn);
+            cmd.ExecuteNonQuery();
 
-            String strSQL = "SELECT qty FROM Stock WHERE stock_id = " + Data + "";
-
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-
-            OracleDataAdapter dc = new OracleDataAdapter(cmd);
-
-
-            dc.Fill(ds, "ss");
-
-
-            conn.Close();
-
-
-            return ds;
+            //close DB connection
+            myConn.Close();
         }
-        public static DataSet getSelectedStockcost(DataSet ds, DataColumn Data)
-        {
 
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-
-            String strSQL = "SELECT cost_p FROM Stock WHERE stock_id = " + Data + "";
-
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-
-            OracleDataAdapter dc = new OracleDataAdapter(cmd);
-
-
-            dc.Fill(ds, "ss");
-
-
-            conn.Close();
-
-
-            return ds;
-        }
-        public static DataSet getSelectedStockSale(DataSet ds, DataColumn Data)
-        {
-
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-
-            String strSQL = "SELECT sale_p FROM Stock WHERE stock_id = " + Data + "";
-
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-
-            OracleDataAdapter dc = new OracleDataAdapter(cmd);
-
-
-            dc.Fill(ds, "ss");
-
-
-            conn.Close();
-
-
-            return ds;
-        }
-   
     }
 }
