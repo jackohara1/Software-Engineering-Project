@@ -155,11 +155,14 @@ namespace Hardware_Syst
             else
             {
                 Stock.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), (Convert.ToInt16(txtQtySold.Text) * cboWillStockReturn.SelectedIndex));
+                Saleitem.replaceStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt16(txtQtySold.Text));
+
                 if (cboHowCustomerPayed.Text.Equals("Replace"))
                 {
-                    Stock.replaceStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), (Convert.ToInt16(txtQtySold.Text) * cboWillStockReturn.SelectedIndex));
-
+                    Stock.replaceStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt16(txtQtySold.Text));
+                    Saleitem.replaceStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt16(txtQtySold.Text));
                 }
+                MessageBox.Show("Item has been returned");
             }
         }
     }

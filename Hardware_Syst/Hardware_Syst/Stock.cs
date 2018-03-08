@@ -391,7 +391,7 @@ namespace Hardware_Syst
             myConn.Open();
 
             //Define SQL query to INSERT stock record
-            String strSQL = "UPDATE Stock SET qty = qty" + amount + " WHERE stock_id = " + Stock_id;
+            String strSQL = "UPDATE Stock SET qty = qty -" + amount + " WHERE stock_id = " + Stock_id;
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
