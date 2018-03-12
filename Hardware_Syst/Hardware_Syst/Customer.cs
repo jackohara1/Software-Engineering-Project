@@ -301,5 +301,21 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
+        public static void updateBalance(int customer_id, decimal sale)
+        {
+            //connect to database
+            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
+            myConn.Open();
+
+            //Define SQL query to INSERT stock record
+            String strSQL = "UPDATE Customer SET balance = (balance +" + sale + ") WHERE customer_id = " + customer_id;
+
+            //Execute the command
+            OracleCommand cmd = new OracleCommand(strSQL, myConn);
+            cmd.ExecuteNonQuery();
+
+            //close DB connection
+            myConn.Close();
+        }
     }
 }

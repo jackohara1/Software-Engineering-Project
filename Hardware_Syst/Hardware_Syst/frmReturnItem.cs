@@ -30,22 +30,7 @@ namespace Hardware_Syst
             parent.Show();
         }
 
-        private void cboHowCustomerPayed_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboHowCustomerPayed.Text.Equals("Credit"))
-            {
-                grpCredit.Visible = true;
-                btnReturnItem.Visible = false;
-            }
-            else
-            {
-                grpCredit.Visible = false;
-            }
-            if (cboHowCustomerPayed.Text.Equals("Cash")|| cboHowCustomerPayed.Text.Equals("Replace"))
-            {
-                btnReturnItem.Visible = true;
-            }
-        }
+
 
         private void lblHowCustomerPayed_Click(object sender, EventArgs e)
         {
@@ -65,108 +50,69 @@ namespace Hardware_Syst
                 txtSaleID.Focus();
                 return;
             }
-            
+
             else
             {
                 grpStock.Visible = true;
                 DataSet ds = new DataSet();
-                grdCart.DataSource =  Saleitem.getMatchingSaleItem(ds, Convert.ToInt32(txtSaleID.Text)).Tables["ss"];
+                grdCart.DataSource = Saleitem.getMatchingSaleItem(ds, Convert.ToInt32(txtSaleID.Text)).Tables["ss"];
             }
-            
+
         }
 
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            if (txtCustomer.Text.Equals(""))
-            {
-                MessageBox.Show("Customer was left blank");
-                txtCustomer.Focus();
-                return;
-            }
-            if (!txtCustomer.Text.Equals("O'Hara"))
-            {
-                MessageBox.Show("Surname entered does no exist in the system");
-                txtCustomer.Focus();
-                return;
-            }
-            else
-            {
-                grdCust.Visible = true;
-                grdCust.Rows.Add("055", "OHara", "John");
-                btnAddCustomer.Visible = true;
-            }
-        }
 
-        private void btnAddCustomer_Click(object sender, EventArgs e)
-        {
-            btnReturnItem.Visible = true;
-        }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            int qty = int.Parse(txtQtySold.Text);
-            if (txtQtySold.Text.Equals(""))
-            {
-                MessageBox.Show("Amount of items was left blank");
-                txtQtySold.Focus();
-                return;
-            }
-            else if (qty > 3)
-            {
-                MessageBox.Show("Amount of items entered is greater than the amount of items sold");
-                txtQtySold.Focus();
-                return;
-            }
-            else
-            {
-                lblItemBack.Visible = true;
-                lblHowCustomerPayed.Visible = true;
-                cboHowCustomerPayed.Visible = true;
-                cboWillStockReturn.Visible = true;
-                cboWillStockReturn.SelectedIndex = 0;
-            }
-        }
+
+
+
 
         private void btnReturnItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Your Item Has Been Returned");
-            this.Close();
-            parent.Show();
-        }
 
-        private void txtQtySold_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grdCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (Convert.ToInt16(txtQtySold.Text)>Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[1].Value)  )
+            if (Convert.ToInt16(txtQtySold.Text) > Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[1].Value))
             {
                 MessageBox.Show("The quantity you are returning is greater than the quantity you have bought");
             }
 
-            if (cboHowCustomerPayed.Text.Equals("Credit"))
+            if (rdoTrue.Checked)
             {
-                grpCredit.Visible = true;
-                btnReturnItem.Visible = false;
+                Stock.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt32(txtQtySold));
             }
 
-            else
-            {
-                Stock.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), (Convert.ToInt16(txtQtySold.Text) * cboWillStockReturn.SelectedIndex));
-                Saleitem.replaceStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt16(txtQtySold.Text));
-                Sale.returnSale(Convert.ToInt32(txtSaleID.Text), Convert.ToInt16(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value)*Convert.ToInt16(txtQtySold.Text));
 
-                if (cboHowCustomerPayed.Text.Equals("Replace"))
-                {
-                    Stock.replaceStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt16(txtQtySold.Text));
-                    Saleitem.replaceStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt16(txtQtySold.Text));
-                    Sale.refundSale (Convert.ToInt32(txtSaleID.Text), Convert.ToInt16(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) * Convert.ToInt16(txtQtySold.Text));
-                     
-                }
-                MessageBox.Show("Item has been returned");
-            }
+            Saleitem.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt16(txtQtySold.Text));
+            Sale.returnSale(Convert.ToInt32(txtSaleID.Text), Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) * Convert.ToInt16(txtQtySold.Text));
+
+
+            MessageBox.Show("Item has been returned");
+
+
+
+            this.Close();
+            parent.Show();
         }
+
+
+
+        private void grdCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[1].Value) > 1)
+            {
+                lblAmountOfItems.Visible = true;
+                txtQtySold.Visible = true;
+
+            }
+            txtQtySold.Text = grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            lblItemBack.Visible = true;
+            rdoFalse.Visible = true;
+            rdoTrue.Visible = true;
+
+            btnReturnItem.Visible = true;
+
+
+
+
+        }
+
     }
 }

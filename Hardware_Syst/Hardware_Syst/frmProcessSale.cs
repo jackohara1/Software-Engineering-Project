@@ -197,7 +197,7 @@ namespace Hardware_Syst
             mySale.setSaleValue(Convert.ToDecimal(txtSaleValue.Text));
 
             mySale.addSale();
-
+            Customer.updateBalance(Convert.ToInt16(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value), Convert.ToDecimal(txtSaleValue.Text));
             int i = 0;
             grdCart.Rows[i].Selected = true;
             while (i < grdCart.RowCount-1)
@@ -205,6 +205,7 @@ namespace Hardware_Syst
                 Saleitem newSaleItem = new Saleitem(Convert.ToInt32(txtSaleID.Text), Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value), Convert.ToDecimal(grdCart.Rows[i].Cells[6].Value));
                 newSaleItem.addSaleitem();
                 Stock.replaceStock(Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value));
+               
                 i++;
             }
 

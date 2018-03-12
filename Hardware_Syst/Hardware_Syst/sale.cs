@@ -192,20 +192,6 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
-        public static void refundSale(int Sale_id, decimal value)
-        {
-            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
-            myConn.Open();
-
-            //Define SQL query to INSERT stock record
-            String strSQL = "UPDATE Sale SET sale_value = (sale_value +" + value + ") WHERE sale_id = " + Sale_id;
-
-            //Execute the command
-            OracleCommand cmd = new OracleCommand(strSQL, myConn);
-            cmd.ExecuteNonQuery();
-
-            //close DB connection
-            myConn.Close();
-        }
+      
     }
 }
