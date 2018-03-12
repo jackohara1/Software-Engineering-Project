@@ -36,13 +36,13 @@ namespace Hardware_Syst
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grpStock = new System.Windows.Forms.GroupBox();
+            this.rdoFalse = new System.Windows.Forms.RadioButton();
+            this.rdoTrue = new System.Windows.Forms.RadioButton();
             this.grdCart = new System.Windows.Forms.DataGridView();
             this.lblAmountOfItems = new System.Windows.Forms.Label();
             this.txtQtySold = new System.Windows.Forms.TextBox();
             this.lblItemBack = new System.Windows.Forms.Label();
             this.btnSrh = new System.Windows.Forms.Button();
-            this.rdoTrue = new System.Windows.Forms.RadioButton();
-            this.rdoFalse = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.grpStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCart)).BeginInit();
@@ -108,6 +108,31 @@ namespace Hardware_Syst
             this.grpStock.Text = "Stock";
             this.grpStock.Visible = false;
             // 
+            // rdoFalse
+            // 
+            this.rdoFalse.AutoSize = true;
+            this.rdoFalse.Checked = true;
+            this.rdoFalse.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rdoFalse.Location = new System.Drawing.Point(305, 230);
+            this.rdoFalse.Name = "rdoFalse";
+            this.rdoFalse.Size = new System.Drawing.Size(39, 17);
+            this.rdoFalse.TabIndex = 52;
+            this.rdoFalse.TabStop = true;
+            this.rdoFalse.Text = "No";
+            this.rdoFalse.UseVisualStyleBackColor = true;
+            this.rdoFalse.Visible = false;
+            // 
+            // rdoTrue
+            // 
+            this.rdoTrue.AutoSize = true;
+            this.rdoTrue.Location = new System.Drawing.Point(231, 230);
+            this.rdoTrue.Name = "rdoTrue";
+            this.rdoTrue.Size = new System.Drawing.Size(43, 17);
+            this.rdoTrue.TabIndex = 51;
+            this.rdoTrue.Text = "Yes";
+            this.rdoTrue.UseVisualStyleBackColor = true;
+            this.rdoTrue.Visible = false;
+            // 
             // grdCart
             // 
             this.grdCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -115,7 +140,7 @@ namespace Hardware_Syst
             this.grdCart.Name = "grdCart";
             this.grdCart.Size = new System.Drawing.Size(444, 149);
             this.grdCart.TabIndex = 50;
-        
+            this.grdCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCart_CellClick);
             // 
             // lblAmountOfItems
             // 
@@ -156,31 +181,6 @@ namespace Hardware_Syst
             this.btnSrh.Text = "Search";
             this.btnSrh.UseVisualStyleBackColor = true;
             this.btnSrh.Click += new System.EventHandler(this.btnSrh_Click);
-            // 
-            // rdoTrue
-            // 
-            this.rdoTrue.AutoSize = true;
-            this.rdoTrue.Location = new System.Drawing.Point(231, 230);
-            this.rdoTrue.Name = "rdoTrue";
-            this.rdoTrue.Size = new System.Drawing.Size(43, 17);
-            this.rdoTrue.TabIndex = 51;
-            this.rdoTrue.Text = "Yes";
-            this.rdoTrue.UseVisualStyleBackColor = true;
-            this.rdoTrue.Visible = false;
-            // 
-            // rdoFalse
-            // 
-            this.rdoFalse.AutoSize = true;
-            this.rdoFalse.Checked = true;
-            this.rdoFalse.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rdoFalse.Location = new System.Drawing.Point(305, 230);
-            this.rdoFalse.Name = "rdoFalse";
-            this.rdoFalse.Size = new System.Drawing.Size(39, 17);
-            this.rdoFalse.TabIndex = 52;
-            this.rdoFalse.TabStop = true;
-            this.rdoFalse.Text = "No";
-            this.rdoFalse.UseVisualStyleBackColor = true;
-            this.rdoFalse.Visible = false;
             // 
             // frmReturnItem
             // 

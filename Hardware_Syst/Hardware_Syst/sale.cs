@@ -156,7 +156,7 @@ namespace Hardware_Syst
                    
             {
                 String strSQL = "INSERT INTO Sale (Sale_Id, Staus,Sale_Value, Sale_Date) VALUES(" + this.sale_id +
-                    ",'" + this.status + "'," + this.saleValue + ",'" + this.saleDate + "')";
+                    ",'" + this.status.ToString() + "'," + this.saleValue + ",'" + this.saleDate + "')";
 
                 OracleCommand cmd = new OracleCommand(strSQL, myConn);
                 cmd.ExecuteNonQuery();

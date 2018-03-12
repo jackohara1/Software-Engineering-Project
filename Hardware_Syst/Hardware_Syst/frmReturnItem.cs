@@ -94,7 +94,7 @@ namespace Hardware_Syst
 
 
 
-        private void grdCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void grdCart_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[1].Value) > 1)
             {
@@ -114,5 +114,6 @@ namespace Hardware_Syst
 
         }
 
+        
     }
 }
