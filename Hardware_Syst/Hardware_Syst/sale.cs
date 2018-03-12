@@ -152,14 +152,28 @@ namespace Hardware_Syst
             myConn.Open();
 
             //Define SQL query to INSERT stock record
-            String strSQL = "INSERT INTO Sale VALUES(" + this.sale_id.ToString() +
-                "," + this.customer_id + ",'" + this.status + "'," +
-                this.saleValue + ",'" + this.saleDate + "')";
+            if (this.customer_id.Equals(0))
+                   
+            {
+                String strSQL = "INSERT INTO Sale (Sale_Id, Staus,Sale_Value, Sale_Date) VALUES(" + this.sale_id +
+                    ",'" + this.status + "'," + this.saleValue + ",'" + this.saleDate + "')";
 
-            //Execute the command
-            OracleCommand cmd = new OracleCommand(strSQL, myConn);
-            cmd.ExecuteNonQuery();
+                OracleCommand cmd = new OracleCommand(strSQL, myConn);
+                cmd.ExecuteNonQuery();
 
+            }
+
+            else
+            {
+                String strSQL = "INSERT INTO Sale VALUES(" + this.sale_id+
+                    "," + this.customer_id + ",'" + this.status + "'," +
+                    this.saleValue + ",'" + this.saleDate + "')";
+
+                OracleCommand cmd = new OracleCommand(strSQL, myConn);
+                cmd.ExecuteNonQuery();
+
+            }
+   
             //close DB connection
             myConn.Close();
         }

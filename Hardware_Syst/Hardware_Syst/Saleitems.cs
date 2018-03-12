@@ -96,7 +96,7 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT stock_id, qtysold, price FROM Saleitems WHERE sale_id = " + Sale_id;
+            String strSQL = "SELECT SI.stock_id, stock_name, qtysold, price FROM Saleitems SI JOIN Stock S ON SI.Stock_id= S.Stock_id WHERE sale_id = " + Sale_id;
 
             //Create an OracleCommand object and instantiate it
             OracleCommand cmd = new OracleCommand(strSQL, conn);

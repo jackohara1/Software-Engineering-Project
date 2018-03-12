@@ -45,12 +45,19 @@ namespace Hardware_Syst
         {
          
         }
-        
+
         private void btnRegesterSale_Click(object sender, EventArgs e)
         {
             Sale mySale = new Sale();
             mySale.setSale_id(Convert.ToInt32(txtSaleID.Text));
-            mySale.setCustomer_id(1);
+            if (rdoCredit.Checked)
+            {
+                mySale.setCustomer_id(Convert.ToInt32(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value));
+            }
+            else
+            {
+                mySale.setCustomer_id(0);
+            }
             mySale.setSaleDate(Convert.ToString(DateTime.Now));
             mySale.setStatus(Convert.ToString('A'));
             mySale.setSaleValue(Convert.ToDecimal(txtSaleValue.Text));
@@ -65,6 +72,8 @@ namespace Hardware_Syst
             {
                 Saleitem newSaleItem = new Saleitem(Convert.ToInt32(txtSaleID.Text), Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value), Convert.ToDecimal(grdCart.Rows[i].Cells[6].Value));
                 newSaleItem.addSaleitem();
+             
+                Stock.replaceStock(Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value));
                 i++;
             }
             
@@ -195,6 +204,7 @@ namespace Hardware_Syst
             {
                 Saleitem newSaleItem = new Saleitem(Convert.ToInt32(txtSaleID.Text), Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value), Convert.ToDecimal(grdCart.Rows[i].Cells[6].Value));
                 newSaleItem.addSaleitem();
+                Stock.replaceStock(Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value));
                 i++;
             }
 
