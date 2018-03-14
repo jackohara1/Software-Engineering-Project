@@ -114,8 +114,32 @@ namespace Hardware_Syst
             return DS;
         }
 
+        public static DataSet getMatchingInvoice(DataSet DS, int Customer_id)
+        {
+            //create an OracleConnection object using the connection string defined in static class DBConnect
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-        
+            //Define the SQL Query to retrieve the data
+            String strSQL = "SELECT SA.sale_id, SI.stock_id, stock_name, price, qtysold, (price*qtysold), SA.saledate FROM Sale SA INNER JOIN Saleitems SI ON SA.Sale_id= SI.Sale_id INNER JOIN Stock S ON S.stock_id = SI=stock_id WHERE SA.customer_id = " + Customer_id;
+
+
+            //Create an OracleCommand object and instantiate it
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //Create an oracleAdapter to hold the result of the executed OracleCommand
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            //Fill the DataSet DS with the query result
+            da.Fill(DS, "ss");
+
+            //close the DB Connection
+            conn.Close();
+
+            //Return the Dataset with the required data to the windows form which executed this method
+            return DS;
+        }
+
+
         public void addSaleitem()
         {
             //connect to database

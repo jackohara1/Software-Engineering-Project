@@ -32,9 +32,6 @@
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grpSearch = new System.Windows.Forms.GroupBox();
             this.grdCustomerSearch = new System.Windows.Forms.DataGridView();
-            this.Customer_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Forname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPayInvoice = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblStockName = new System.Windows.Forms.Label();
@@ -47,12 +44,6 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.grdIssue = new System.Windows.Forms.DataGridView();
-            this.Sale_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sale_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Final_Sale_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.grpSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCustomerSearch)).BeginInit();
@@ -92,29 +83,11 @@
             // grdCustomerSearch
             // 
             this.grdCustomerSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCustomerSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Customer_ID,
-            this.Surname,
-            this.Forname});
             this.grdCustomerSearch.Location = new System.Drawing.Point(28, 27);
             this.grdCustomerSearch.Name = "grdCustomerSearch";
             this.grdCustomerSearch.Size = new System.Drawing.Size(352, 87);
             this.grdCustomerSearch.TabIndex = 47;
-            // 
-            // Customer_ID
-            // 
-            this.Customer_ID.HeaderText = "Customer ID";
-            this.Customer_ID.Name = "Customer_ID";
-            // 
-            // Surname
-            // 
-            this.Surname.HeaderText = "Surname";
-            this.Surname.Name = "Surname";
-            // 
-            // Forname
-            // 
-            this.Forname.HeaderText = "Forname";
-            this.Forname.Name = "Forname";
+            this.grdCustomerSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomerSearch_CellContentClick);
             // 
             // btnPayInvoice
             // 
@@ -221,47 +194,10 @@
             // grdIssue
             // 
             this.grdIssue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdIssue.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Sale_ID,
-            this.Stock_ID,
-            this.Stock_Name,
-            this.Sale_Price,
-            this.Qty,
-            this.Final_Sale_Price});
             this.grdIssue.Location = new System.Drawing.Point(14, 35);
             this.grdIssue.Name = "grdIssue";
             this.grdIssue.Size = new System.Drawing.Size(661, 87);
             this.grdIssue.TabIndex = 72;
-            // 
-            // Sale_ID
-            // 
-            this.Sale_ID.HeaderText = "Sale ID";
-            this.Sale_ID.Name = "Sale_ID";
-            // 
-            // Stock_ID
-            // 
-            this.Stock_ID.HeaderText = "Stock ID";
-            this.Stock_ID.Name = "Stock_ID";
-            // 
-            // Stock_Name
-            // 
-            this.Stock_Name.HeaderText = "Stock Name";
-            this.Stock_Name.Name = "Stock_Name";
-            // 
-            // Sale_Price
-            // 
-            this.Sale_Price.HeaderText = "Price";
-            this.Sale_Price.Name = "Sale_Price";
-            // 
-            // Qty
-            // 
-            this.Qty.HeaderText = "Quantity";
-            this.Qty.Name = "Qty";
-            // 
-            // Final_Sale_Price
-            // 
-            this.Final_Sale_Price.HeaderText = "Final Price";
-            this.Final_Sale_Price.Name = "Final_Sale_Price";
             // 
             // frmInvoiceIssue
             // 
@@ -294,9 +230,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.GroupBox grpSearch;
         private System.Windows.Forms.DataGridView grdCustomerSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Forname;
         private System.Windows.Forms.Button btnPayInvoice;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblStockName;
@@ -305,12 +238,6 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.DataGridView grdIssue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sale_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sale_Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Final_Sale_Price;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.TextBox txtAddln1;
         private System.Windows.Forms.TextBox txtAddln3;

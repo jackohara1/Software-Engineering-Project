@@ -69,11 +69,11 @@ namespace Hardware_Syst
             {
                 Customer newCustomer = new Customer();
                 newCustomer.setCustomer_id(Convert.ToInt32(txtCustomerID.Text));
-                newCustomer.setSurname(txtCustomerSurname.Text);
-                newCustomer.setForename(txtCustomerName.Text);
-                newCustomer.setAddln1(txtAddLn1.Text);
-                newCustomer.setAddln2(txtAddLn2.Text);
-                newCustomer.setAddln3(txtAddLn3.Text);
+                newCustomer.setSurname(txtCustomerSurname.Text.ToUpper());
+                newCustomer.setForename(txtCustomerName.Text.ToUpper());
+                newCustomer.setAddln1(txtAddLn1.Text.ToUpper());
+                newCustomer.setAddln2(txtAddLn2.Text.ToUpper());
+                newCustomer.setAddln3(txtAddLn3.Text.ToUpper());
 
 
                 newCustomer.addCustomer();
