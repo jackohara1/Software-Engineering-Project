@@ -192,6 +192,48 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
-      
+        public static void invoicePayed(int Sale_id)
+        {
+            //connect to DB
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            conn.Open();
+            //Define SQL Query
+            String strSQL = "UPDATE Sale SET status='U' WHERE sale_id = " + Sale_id;
+            //execute query using Data Reader
+
+            //Execute the command
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+            cmd.ExecuteNonQuery();
+
+            //close DB connection
+            conn.Close();
+
+
+        }
+       public static DataSet getMatchingInvoice(DataSet DS, int Customer_id)
+        {
+            //create an OracleConnection object using the connection string defined in static class DBConnect
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            //Define the SQL Query to retrieve the data
+            String strSQL = "SELECT stock_id, sale_name, cost_p, sale_p, SI.qtysold, (SI.price*SI.qtysold) FROM ((Saleitems SI INNER JOIN Sale SA ON SI.Sale_id= SA.Sale_id) INNER JOIN Stock S ON SI.stock_id = S.stock_id) WHERE SA.customer_id = " + Customer_id + " AND SA.status = 'A'";
+
+
+            //Create an OracleCommand object and instantiate it
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //Create an oracleAdapter to hold the result of the executed OracleCommand
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            //Fill the DataSet DS with the query result
+            da.Fill(DS, "ss");
+
+            //close the DB Connection
+            conn.Close();
+
+            //Return the Dataset with the required data to the windows form which executed this method
+            return DS;
+        }
+
     }
 }

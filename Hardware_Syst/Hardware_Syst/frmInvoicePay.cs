@@ -34,33 +34,53 @@ namespace Hardware_Syst
                 txtCustomer.Focus();
                 return;
             }
-            if (!txtCustomer.Text.Equals("O'Hara"))
-            {
-                MessageBox.Show("Surname entered does no exist in the system");
-                txtCustomer.Focus();
-                return;
-            }
 
             else
             {
+
+                DataSet ds = new DataSet();
                 grpSearch.Visible = true;
-                grdCustomerSearch.Rows.Add("055", "O'Hara", "John");
+                grdCustomerSearch.DataSource = Customer.getMatchingSurname(ds, txtCustomer.Text.ToUpper()).Tables["ss"];
             }
         }
 
-        private void btnPayInvoice_Click(object sender, EventArgs e)
+    
+     
+        
+           
+private void btnPayInvoice_Click(object sender, EventArgs e)
         {
-            btnIssueInvoice.Visible = false;
-            grpPayInvoice.Visible = true;
-            grdIssue.Rows.Add("011","088","Hammer","10.00","3","30.00");
-            grdIssue.Rows.Add("011", "064", "Screw driver", "5.00", "2", "10.00");
-        }
+            int i = 0;
+            while (i < grdIssue.RowCount - 1)
+            {
+                Sale.invoicePayed(Convert.ToInt32(grdIssue.Rows[i].Cells[0].Value));
 
-        private void btnPayInvoice_Click_1(object sender, EventArgs e)
-        {
+                i++;
+            }
+
             MessageBox.Show("You have payed your invoice");
             this.Close();
             parent.Show();
         }
+
+        private void grdCustomerSearch_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            grpPayInvoice.Visible = true;
+            DataSet ds = new DataSet();
+            grdIssue.DataSource = Saleitem.getMatchingInvoice(ds, Convert.ToInt32(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[0].Value)).Tables["ss"];
+
+            Customer Invoice = new Customer();
+            Invoice.getCustomer(Convert.ToInt32(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[0].Value));
+
+            int i = 0;
+            while (i < grdIssue.RowCount - 1)
+            {
+                txtTotal.Text = Convert.ToString(Convert.ToDecimal(txtTotal.Text) + Convert.ToDecimal(grdIssue.Rows[i].Cells[5].Value));
+
+                i++;
+            }
+
+        }
     }
+  
 }

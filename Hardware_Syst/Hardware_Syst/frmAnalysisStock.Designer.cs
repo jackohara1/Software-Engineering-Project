@@ -34,13 +34,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grdStockAnalysis = new System.Windows.Forms.DataGridView();
-            this.Stock_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sale_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty_sold = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_Profit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdStockAnalysis)).BeginInit();
             this.SuspendLayout();
@@ -101,54 +94,11 @@
             // grdStockAnalysis
             // 
             this.grdStockAnalysis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdStockAnalysis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Stock_ID,
-            this.Stock_Name,
-            this.Qty,
-            this.Cost_Price,
-            this.Sale_Price,
-            this.Qty_sold,
-            this.Total_Profit});
             this.grdStockAnalysis.Location = new System.Drawing.Point(12, 187);
             this.grdStockAnalysis.Name = "grdStockAnalysis";
             this.grdStockAnalysis.Size = new System.Drawing.Size(743, 240);
             this.grdStockAnalysis.TabIndex = 47;
             this.grdStockAnalysis.Visible = false;
-            // 
-            // Stock_ID
-            // 
-            this.Stock_ID.HeaderText = "Stock ID";
-            this.Stock_ID.Name = "Stock_ID";
-            // 
-            // Stock_Name
-            // 
-            this.Stock_Name.HeaderText = "Name";
-            this.Stock_Name.Name = "Stock_Name";
-            // 
-            // Qty
-            // 
-            this.Qty.HeaderText = "Qty";
-            this.Qty.Name = "Qty";
-            // 
-            // Cost_Price
-            // 
-            this.Cost_Price.HeaderText = "Cost Price";
-            this.Cost_Price.Name = "Cost_Price";
-            // 
-            // Sale_Price
-            // 
-            this.Sale_Price.HeaderText = "Sale Price";
-            this.Sale_Price.Name = "Sale_Price";
-            // 
-            // Qty_sold
-            // 
-            this.Qty_sold.HeaderText = "Quantity Sold";
-            this.Qty_sold.Name = "Qty_sold";
-            // 
-            // Total_Profit
-            // 
-            this.Total_Profit.HeaderText = "Total Profit";
-            this.Total_Profit.Name = "Total_Profit";
             // 
             // frmAnalysisStock
             // 
@@ -179,12 +129,5 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
         private System.Windows.Forms.DataGridView grdStockAnalysis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cost_Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sale_Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qty_sold;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total_Profit;
     }
 }

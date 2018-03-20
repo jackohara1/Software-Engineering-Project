@@ -399,6 +399,31 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
+        public static DataSet getStockAnalysis(DataSet DS, int Department)
+        {
+            //create an OracleConnection object using the connection string defined in static class DBConnect
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            //Define the SQL Query to retrieve the data
+            String strSQL = "SELECT ST.stock_id, ST.stock_name, ST.cost_p, ST.sale_p, SUM(SI.qtysold),( ST.sale_p*SUM(SI.qtysold)) FROM Stock ST INNER JOIN SaleItems SI ON ST.Stock_id= SI.Stock_id WHERE department_id = " + Department;
+
+
+            //Create an OracleCommand object and instantiate it
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //Create an oracleAdapter to hold the result of the executed OracleCommand
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            //Fill the DataSet DS with the query result
+            da.Fill(DS, "ss");
+
+            //close the DB Connection
+            conn.Close();
+
+            //Return the Dataset with the required data to the windows form which executed this method
+            return DS;
+        }
+        
 
 
 

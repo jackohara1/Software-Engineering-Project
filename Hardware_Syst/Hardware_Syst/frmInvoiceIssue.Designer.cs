@@ -32,7 +32,6 @@
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grpSearch = new System.Windows.Forms.GroupBox();
             this.grdCustomerSearch = new System.Windows.Forms.DataGridView();
-            this.btnPayInvoice = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblStockName = new System.Windows.Forms.Label();
             this.txtCustomer = new System.Windows.Forms.TextBox();
@@ -57,7 +56,7 @@
             this.mnuBack});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(755, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(916, 24);
             this.menuStrip1.TabIndex = 42;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,10 +70,9 @@
             // grpSearch
             // 
             this.grpSearch.Controls.Add(this.grdCustomerSearch);
-            this.grpSearch.Controls.Add(this.btnPayInvoice);
-            this.grpSearch.Location = new System.Drawing.Point(34, 165);
+            this.grpSearch.Location = new System.Drawing.Point(510, 56);
             this.grpSearch.Name = "grpSearch";
-            this.grpSearch.Size = new System.Drawing.Size(578, 139);
+            this.grpSearch.Size = new System.Drawing.Size(394, 139);
             this.grpSearch.TabIndex = 75;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search Customer";
@@ -83,21 +81,11 @@
             // grdCustomerSearch
             // 
             this.grdCustomerSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCustomerSearch.Location = new System.Drawing.Point(28, 27);
+            this.grdCustomerSearch.Location = new System.Drawing.Point(19, 31);
             this.grdCustomerSearch.Name = "grdCustomerSearch";
             this.grdCustomerSearch.Size = new System.Drawing.Size(352, 87);
             this.grdCustomerSearch.TabIndex = 47;
             this.grdCustomerSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomerSearch_CellContentClick);
-            // 
-            // btnPayInvoice
-            // 
-            this.btnPayInvoice.Location = new System.Drawing.Point(410, 91);
-            this.btnPayInvoice.Name = "btnPayInvoice";
-            this.btnPayInvoice.Size = new System.Drawing.Size(123, 23);
-            this.btnPayInvoice.TabIndex = 44;
-            this.btnPayInvoice.Text = "Select";
-            this.btnPayInvoice.UseVisualStyleBackColor = true;
-            this.btnPayInvoice.Click += new System.EventHandler(this.btnPayInvoice_Click);
             // 
             // btnSearch
             // 
@@ -134,9 +122,9 @@
             this.grpIssueInvoice.Controls.Add(this.txtTotal);
             this.grpIssueInvoice.Controls.Add(this.lblTotal);
             this.grpIssueInvoice.Controls.Add(this.grdIssue);
-            this.grpIssueInvoice.Location = new System.Drawing.Point(12, 328);
+            this.grpIssueInvoice.Location = new System.Drawing.Point(12, 201);
             this.grpIssueInvoice.Name = "grpIssueInvoice";
-            this.grpIssueInvoice.Size = new System.Drawing.Size(681, 232);
+            this.grpIssueInvoice.Size = new System.Drawing.Size(842, 359);
             this.grpIssueInvoice.TabIndex = 76;
             this.grpIssueInvoice.TabStop = false;
             this.grpIssueInvoice.Text = "Issue Invoice";
@@ -145,22 +133,24 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(59, 135);
+            this.lblAddress.Location = new System.Drawing.Point(50, 238);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(45, 13);
             this.lblAddress.TabIndex = 79;
             this.lblAddress.Text = "Address";
+            this.lblAddress.Click += new System.EventHandler(this.lblAddress_Click);
             // 
             // txtAddln1
             // 
-            this.txtAddln1.Location = new System.Drawing.Point(32, 155);
+            this.txtAddln1.Location = new System.Drawing.Point(23, 258);
             this.txtAddln1.Name = "txtAddln1";
             this.txtAddln1.Size = new System.Drawing.Size(100, 20);
             this.txtAddln1.TabIndex = 78;
+            this.txtAddln1.TextChanged += new System.EventHandler(this.txtAddln1_TextChanged);
             // 
             // txtAddln3
             // 
-            this.txtAddln3.Location = new System.Drawing.Point(32, 207);
+            this.txtAddln3.Location = new System.Drawing.Point(23, 310);
             this.txtAddln3.Name = "txtAddln3";
             this.txtAddln3.Size = new System.Drawing.Size(100, 20);
             this.txtAddln3.TabIndex = 77;
@@ -168,24 +158,25 @@
             // 
             // txtAddln2
             // 
-            this.txtAddln2.Location = new System.Drawing.Point(32, 181);
+            this.txtAddln2.Location = new System.Drawing.Point(23, 284);
             this.txtAddln2.Name = "txtAddln2";
             this.txtAddln2.Size = new System.Drawing.Size(100, 20);
             this.txtAddln2.TabIndex = 76;
+            this.txtAddln2.TextChanged += new System.EventHandler(this.txtAddln2_TextChanged);
             // 
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(560, 181);
+            this.txtTotal.Location = new System.Drawing.Point(715, 326);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(93, 20);
             this.txtTotal.TabIndex = 74;
-            this.txtTotal.Text = "70.00";
+            this.txtTotal.Text = "0.00";
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(480, 188);
+            this.lblTotal.Location = new System.Drawing.Point(635, 333);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(31, 13);
             this.lblTotal.TabIndex = 73;
@@ -196,14 +187,14 @@
             this.grdIssue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdIssue.Location = new System.Drawing.Point(14, 35);
             this.grdIssue.Name = "grdIssue";
-            this.grdIssue.Size = new System.Drawing.Size(661, 87);
+            this.grdIssue.Size = new System.Drawing.Size(797, 200);
             this.grdIssue.TabIndex = 72;
             // 
             // frmInvoiceIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 582);
+            this.ClientSize = new System.Drawing.Size(916, 582);
             this.Controls.Add(this.grpIssueInvoice);
             this.Controls.Add(this.grpSearch);
             this.Controls.Add(this.btnSearch);
@@ -230,7 +221,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.GroupBox grpSearch;
         private System.Windows.Forms.DataGridView grdCustomerSearch;
-        private System.Windows.Forms.Button btnPayInvoice;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblStockName;
         private System.Windows.Forms.TextBox txtCustomer;

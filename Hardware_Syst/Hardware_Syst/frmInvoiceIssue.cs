@@ -42,15 +42,7 @@ namespace Hardware_Syst
             }
         }
 
-        private void btnPayInvoice_Click(object sender, EventArgs e)
-        {
-           
-            grdIssue.Rows.Add("111", "088", "Hammer", "20.00", "3","60.00");
-            grdIssue.Rows.Add("111", "076", "Screwdriver", "5.00", "2","10.00");
-            txtAddln1.Text = "Dirtane";
-            txtAddln2.Text = "Ballyheigue";
-            txtAddln3.Text = "Co.Kerry";
-        }
+      
 
         
 
@@ -71,6 +63,28 @@ namespace Hardware_Syst
             txtAddln1.Text = Convert.ToString(Invoice.getAddln1());
             txtAddln2.Text = Convert.ToString(Invoice.getAddln2());
             txtAddln3.Text = Convert.ToString(Invoice.getAddln3());
+            int i = 0;
+            while (i < grdIssue.RowCount - 1)
+            {
+                txtTotal.Text = Convert.ToString(Convert.ToDecimal(txtTotal.Text)+Convert.ToDecimal(grdIssue.Rows[i].Cells[5].Value));
+                
+                i++;
+            }
+        }
+
+        private void lblAddress_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddln1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddln2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

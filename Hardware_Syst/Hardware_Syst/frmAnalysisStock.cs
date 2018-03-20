@@ -40,13 +40,11 @@ namespace Hardware_Syst
             }
             else
             {
+                
+                DataSet ds = new DataSet();
+                grdStockAnalysis.DataSource = Stock.getStockAnalysis(ds, Convert.ToInt32(cboStockType.SelectedIndex)).Tables["ss"];
                 grdStockAnalysis.Visible = true;
-                grdStockAnalysis.Rows.Add("0088", "Hammer", "30", "5.00", "10.00", "20", "200.00");
-                grdStockAnalysis.Rows.Add("0089", "screwdriver", "20", "4.00", "12.00", "2", "24.00");
-                grdStockAnalysis.Rows.Add("0090", "half inch 310", "100", "2.00", "4.00", "15", "60.00");
-                grdStockAnalysis.Rows.Add("0091", "half inch 311", "100", "3.00", "6.00", "25", "150.00");
-                grdStockAnalysis.Rows.Add("0092", "three quater inch 312", "100", "5.00", "15.00", "6", "90.00");
-                btnStockAnalsis.Visible = false;
+
             }
         }
     }
