@@ -156,7 +156,7 @@ namespace Hardware_Syst
                    
             {
                 String strSQL = "INSERT INTO Sale (Sale_Id, Staus,Sale_Value, Sale_Date) VALUES(" + this.sale_id +
-                    ",'" + this.status.ToString() + "'," + this.saleValue + ",'" + this.saleDate + "')";
+                    ",'" + this.status.ToString() + "'," + this.saleValue + ",'" + Convert.ToDateTime(this.saleDate) + "')";
 
                 OracleCommand cmd = new OracleCommand(strSQL, myConn);
                 cmd.ExecuteNonQuery();
@@ -216,7 +216,32 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT stock_id, sale_name, cost_p, sale_p, SI.qtysold, (SI.price*SI.qtysold) FROM ((Saleitems SI INNER JOIN Sale SA ON SI.Sale_id= SA.Sale_id) INNER JOIN Stock S ON SI.stock_id = S.stock_id) WHERE SA.customer_id = " + Customer_id + " AND SA.status = 'A'";
+            String strSQL = "SELECT stock_id, stock_name, cost_p, sale_p, SI.qtysold, (SI.price*SI.qtysold) FROM ((Saleitems SI INNER JOIN Sale SA ON SI.Sale_id= SA.Sale_id) INNER JOIN Stock S ON SI.stock_id = S.stock_id) WHERE SA.customer_id = " + Customer_id + " AND SA.status = 'A'";
+
+
+            //Create an OracleCommand object and instantiate it
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //Create an oracleAdapter to hold the result of the executed OracleCommand
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            //Fill the DataSet DS with the query result
+            da.Fill(DS, "ss");
+
+            //close the DB Connection
+            conn.Close();
+
+            //Return the Dataset with the required data to the windows form which executed this method
+            return DS;
+        }
+        public static DataSet getSaleAnalysis(DataSet DS, DateTime Date)
+        {
+            //create an OracleConnection object using the connection string defined in static class DBConnect
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            //Define the SQL Query to retrieve the data
+            String strSQL = "SELECT sale_id, sale_value, C.customer_id, surname, sale_date FROM Sale S INNER JOIN Customer C ON S.Customer_id= C.Customer_id WHERE sale_date = " + Date;
+
 
 
             //Create an OracleCommand object and instantiate it

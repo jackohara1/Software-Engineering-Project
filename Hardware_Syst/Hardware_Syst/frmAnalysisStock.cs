@@ -42,7 +42,8 @@ namespace Hardware_Syst
             {
                 
                 DataSet ds = new DataSet();
-                grdStockAnalysis.DataSource = Stock.getStockAnalysis(ds, Convert.ToInt32(cboStockType.SelectedIndex)).Tables["ss"];
+                grdStockAnalysis.DataSource = Stock.getStockAnalysis(ds, Convert.ToInt32(cboStockType.SelectedIndex+1)).Tables["ss"];
+              
                 grdStockAnalysis.Visible = true;
 
             }

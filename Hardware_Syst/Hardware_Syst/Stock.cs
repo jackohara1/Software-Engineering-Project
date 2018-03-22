@@ -405,11 +405,12 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT ST.stock_id, ST.stock_name, ST.cost_p, ST.sale_p, SUM(SI.qtysold) FROM Stock ST INNER JOIN SaleItems SI  WHERE ST.department_id = " + Department;
+            String strSQL = "SELECT s.stock_id, stock_name, cost_p, sale_p, (SELECT SUM(qtysold)FROM Saleitems si WHERE s.stock_id = si.stock_id GROUP BY stock_id) FROM stock s WHERE department_id =" + Department+ "ORDER BY stock_id";
+            
 
 
-                    //Create an OracleCommand object and instantiate it
-                    OracleCommand cmd = new OracleCommand(strSQL, conn);
+            //Create an OracleCommand object and instantiate it
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
 
             //Create an oracleAdapter to hold the result of the executed OracleCommand
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -423,8 +424,8 @@ namespace Hardware_Syst
             //Return the Dataset with the required data to the windows form which executed this method
             return DS;
         }
-        
 
+       
 
 
 

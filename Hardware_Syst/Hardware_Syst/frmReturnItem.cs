@@ -96,13 +96,13 @@ namespace Hardware_Syst
 
         private void grdCart_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[1].Value) > 1)
-            {
+   
+            
                 lblAmountOfItems.Visible = true;
-                txtQtySold.Visible = true;
+              
 
-            }
-            txtQtySold.Text = grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[1].Value.ToString();
+          
+            txtQtySold.Visible = true; 
             lblItemBack.Visible = true;
             rdoFalse.Visible = true;
             rdoTrue.Visible = true;

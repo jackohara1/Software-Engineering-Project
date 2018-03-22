@@ -47,13 +47,7 @@ namespace Hardware_Syst
             }
             else
             {
-                grdSaleAnalysis.Visible = true;
-                grdSaleAnalysis.Rows.Add("0045", "01/12/17", "10.00");
-                grdSaleAnalysis.Rows.Add("0046", "01/12/17", "96.00");
-                grdSaleAnalysis.Rows.Add("0047", "02/12/17", "70.00");
-                grdSaleAnalysis.Rows.Add("0048", "04/12/17", "120.00");
-                grdSaleAnalysis.Rows.Add("0049", "05/12/17", "1.00");
-                btnSaleAnalsis.Visible = false;
+            =
             }
         }
     }
