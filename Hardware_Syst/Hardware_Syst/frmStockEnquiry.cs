@@ -53,19 +53,16 @@ namespace Hardware_Syst
 
         private void grdStockSearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            grdEnquiry.Rows.Clear();
-            Stock disStock = new Stock();
-         
-            disStock.getStock(Convert.ToInt32(grdStockSearch.Rows[grdStockSearch.CurrentCell.RowIndex].Cells[0].Value));
-            DataSet db = new DataSet();
+            grdEnquiry.Refresh();
+          
+ 
             
       
 
 
             grdEnquiry.Visible = true;
-            grdEnquiry.Rows.Add(Convert.ToInt16(disStock.getStock_id()), Convert.ToString(disStock.getStock_name()), Convert.ToDecimal(disStock.getCost_p()), 
-                Convert.ToDecimal(disStock.getSale_p()), Convert.ToInt16(disStock.getQty()), Convert.ToString(Stock.getSelectedDepartment(db,(Convert.ToInt16(disStock.getDepartment_id())))), Convert.ToString(disStock.getStatus()));
-
+            DataSet ds = new DataSet();
+            grdEnquiry.DataSource = Stock.getEnquiry(ds, Convert.ToInt16(grdStockSearch.Rows[grdStockSearch.CurrentCell.RowIndex].Cells[0].Value)).Tables["ss"];
 
         }
 

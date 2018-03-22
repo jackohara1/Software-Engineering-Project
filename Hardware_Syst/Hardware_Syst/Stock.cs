@@ -425,7 +425,29 @@ namespace Hardware_Syst
             return DS;
         }
 
-       
+        public static DataSet getEnquiry(DataSet DS, int Stock_id)
+        {
+
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+
+            String strSQL = "SELECT stock_id, stock_name, Cost_P, Sale_P, qty, department_name, status FROM Stock S INNER JOIN DEPARTMENT D ON S.department_id = D.department_id WHERE stock_id ="+ Stock_id;
+    
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+
+            OracleDataAdapter dc = new OracleDataAdapter(cmd);
+
+
+            dc.Fill(DS, "ss");
+
+
+            conn.Close();
+
+
+            return DS;
+        }
 
 
 

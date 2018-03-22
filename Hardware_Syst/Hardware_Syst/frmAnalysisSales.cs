@@ -47,7 +47,7 @@ namespace Hardware_Syst
             }
             else
             {
-            =
+                MessageBox.Show("Department was left blank");
             }
         }
     }

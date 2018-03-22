@@ -36,13 +36,6 @@
             this.lblStockName = new System.Windows.Forms.Label();
             this.txtStockName = new System.Windows.Forms.TextBox();
             this.grdEnquiry = new System.Windows.Forms.DataGridView();
-            this.Stock_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock_Cost_p = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock_p = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.grpSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdStockSearch)).BeginInit();
@@ -85,7 +78,6 @@
             this.grdStockSearch.Size = new System.Drawing.Size(325, 106);
             this.grdStockSearch.TabIndex = 47;
             this.grdStockSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStockSearch_CellClick);
-
             // 
             // btnSearch
             // 
@@ -116,54 +108,11 @@
             // grdEnquiry
             // 
             this.grdEnquiry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdEnquiry.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Stock_id,
-            this.Stock_Name,
-            this.Stock_Cost_p,
-            this.Stock_p,
-            this.Qty,
-            this.Department,
-            this.Status});
             this.grdEnquiry.Location = new System.Drawing.Point(82, 337);
             this.grdEnquiry.Name = "grdEnquiry";
             this.grdEnquiry.Size = new System.Drawing.Size(745, 62);
             this.grdEnquiry.TabIndex = 63;
             this.grdEnquiry.Visible = false;
-            // 
-            // Stock_id
-            // 
-            this.Stock_id.HeaderText = "Stock ID";
-            this.Stock_id.Name = "Stock_id";
-            // 
-            // Stock_Name
-            // 
-            this.Stock_Name.HeaderText = "Name";
-            this.Stock_Name.Name = "Stock_Name";
-            // 
-            // Stock_Cost_p
-            // 
-            this.Stock_Cost_p.HeaderText = "Cost Price";
-            this.Stock_Cost_p.Name = "Stock_Cost_p";
-            // 
-            // Stock_p
-            // 
-            this.Stock_p.HeaderText = "Sale Price";
-            this.Stock_p.Name = "Stock_p";
-            // 
-            // Qty
-            // 
-            this.Qty.HeaderText = "Quantity";
-            this.Qty.Name = "Qty";
-            // 
-            // Department
-            // 
-            this.Department.HeaderText = "Department";
-            this.Department.Name = "Department";
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
             // 
             // frmStockEnquiry
             // 
@@ -199,12 +148,5 @@
         private System.Windows.Forms.Label lblStockName;
         private System.Windows.Forms.TextBox txtStockName;
         private System.Windows.Forms.DataGridView grdEnquiry;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock_Cost_p;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock_p;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Department;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }
