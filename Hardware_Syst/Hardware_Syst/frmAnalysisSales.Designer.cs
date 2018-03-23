@@ -34,11 +34,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grdSaleAnalysis = new System.Windows.Forms.DataGridView();
-            this.SaleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FinalSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Customer_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SaleDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdSaleAnalysis)).BeginInit();
             this.SuspendLayout();
@@ -99,43 +94,12 @@
             // grdSaleAnalysis
             // 
             this.grdSaleAnalysis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdSaleAnalysis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SaleID,
-            this.FinalSalePrice,
-            this.Customer_ID,
-            this.Surname,
-            this.SaleDate});
             this.grdSaleAnalysis.Location = new System.Drawing.Point(34, 229);
             this.grdSaleAnalysis.Name = "grdSaleAnalysis";
             this.grdSaleAnalysis.Size = new System.Drawing.Size(552, 140);
             this.grdSaleAnalysis.TabIndex = 46;
             this.grdSaleAnalysis.Visible = false;
             this.grdSaleAnalysis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStock_CellContentClick);
-            // 
-            // SaleID
-            // 
-            this.SaleID.HeaderText = "Sale ID";
-            this.SaleID.Name = "SaleID";
-            // 
-            // FinalSalePrice
-            // 
-            this.FinalSalePrice.HeaderText = "Price";
-            this.FinalSalePrice.Name = "FinalSalePrice";
-            // 
-            // Customer_ID
-            // 
-            this.Customer_ID.HeaderText = "Customer ID";
-            this.Customer_ID.Name = "Customer_ID";
-            // 
-            // Surname
-            // 
-            this.Surname.HeaderText = "Surname";
-            this.Surname.Name = "Surname";
-            // 
-            // SaleDate
-            // 
-            this.SaleDate.HeaderText = "Date";
-            this.SaleDate.Name = "SaleDate";
             // 
             // frmAnalysisSales
             // 
@@ -166,10 +130,5 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.DataGridView grdSaleAnalysis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SaleID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FinalSalePrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SaleDate;
     }
 }

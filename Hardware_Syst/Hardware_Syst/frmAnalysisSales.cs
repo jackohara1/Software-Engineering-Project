@@ -47,8 +47,14 @@ namespace Hardware_Syst
             }
             else
             {
-                MessageBox.Show("Department was left blank");
-            }
+                String period = "01/01/"+cboStockType.Text;
+
+
+               
+                DataSet ds = new DataSet();
+                grdSaleAnalysis.DataSource = Sale.getSaleAnalysis(ds, Convert.ToDateTime(period)).Tables["ss"];
+                grdSaleAnalysis.Visible = true;
+            } 
         }
     }
 }

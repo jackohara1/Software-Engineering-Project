@@ -240,7 +240,7 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT sale_id, sale_value, C.customer_id, surname, sale_date FROM Sale S INNER JOIN Customer C ON S.Customer_id= C.Customer_id WHERE sale_date = " + Date;
+            String strSQL = "SELECT sale_id, sale_value, C.customer_id, surname, sale_date FROM Sale S INNER JOIN Customer C ON S.Customer_id= C.Customer_id WHERE sale_date => " + Date + "=< (sale_date+1)";
 
 
 
