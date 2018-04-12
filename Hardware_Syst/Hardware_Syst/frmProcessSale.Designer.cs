@@ -279,6 +279,7 @@
             // rdoCash
             // 
             this.rdoCash.AutoSize = true;
+            this.rdoCash.Checked = true;
             this.rdoCash.Location = new System.Drawing.Point(45, 19);
             this.rdoCash.Name = "rdoCash";
             this.rdoCash.Size = new System.Drawing.Size(73, 17);
@@ -295,7 +296,6 @@
             this.rdoCredit.Name = "rdoCredit";
             this.rdoCredit.Size = new System.Drawing.Size(76, 17);
             this.rdoCredit.TabIndex = 0;
-            this.rdoCredit.TabStop = true;
             this.rdoCredit.Text = "Credit Sale";
             this.rdoCredit.UseVisualStyleBackColor = true;
             this.rdoCredit.CheckedChanged += new System.EventHandler(this.rdoCredit_CheckedChanged);

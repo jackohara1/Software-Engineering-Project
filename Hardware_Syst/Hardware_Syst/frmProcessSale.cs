@@ -58,8 +58,9 @@ namespace Hardware_Syst
             {
                 mySale.setCustomer_id(0);
             }
-            mySale.setSaleDate(Convert.ToString(DateTime.Now));
-            mySale.setStatus(Convert.ToString('A'));
+
+            mySale.setSaleDate(String.Format("{0:dd-MMM-yy}", DateTime.Now));
+            //mySale.setStatus(Convert.ToString('A'));
             mySale.setSaleValue(Convert.ToDecimal(txtSaleValue.Text));
 
             mySale.addSale();
@@ -189,7 +190,7 @@ namespace Hardware_Syst
 
         private void grdCust_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Sale mySale = new Sale();
+            /* Sale mySale = new Sale();
             mySale.setSale_id(Convert.ToInt32(txtSaleID.Text));
             mySale.setCustomer_id(Convert.ToInt16(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value));
             mySale.setSaleDate(Convert.ToString(DateTime.Now));
@@ -207,13 +208,12 @@ namespace Hardware_Syst
                 Stock.replaceStock(Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value));
                
                 i++;
+                
             }
 
+           */
 
-
-            MessageBox.Show("Sale has been registered");
-            this.Close();
-            parent.Show();
+            btnRegesterSale.Visible = true;
         }
     }
 }

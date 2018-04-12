@@ -155,8 +155,8 @@ namespace Hardware_Syst
             if (this.customer_id.Equals(0))
                    
             {
-                String strSQL = "INSERT INTO Sale (Sale_Id, Staus,Sale_Value, Sale_Date) VALUES(" + this.sale_id +
-                    ",'" + this.status.ToString() + "'," + this.saleValue + ",'" + Convert.ToDateTime(this.saleDate) + "')";
+                String strSQL = "INSERT INTO Sale (Sale_Id,Sale_Value, Sale_Date) VALUES(" + this.sale_id +
+                      "," + this.saleValue + ",'" +  this.saleDate + "')";
 
                 OracleCommand cmd = new OracleCommand(strSQL, myConn);
                 cmd.ExecuteNonQuery();
@@ -165,9 +165,8 @@ namespace Hardware_Syst
 
             else
             {
-                String strSQL = "INSERT INTO Sale VALUES(" + this.sale_id+
-                    "," + this.customer_id + ",'" + this.status + "'," +
-                    this.saleValue + ",'" + this.saleDate + "')";
+                String strSQL = "INSERT INTO Sale VALUES(" + this.sale_id +
+                    "," + this.customer_id + "," + this.saleValue + ",'" + this.saleDate + "')";
 
                 OracleCommand cmd = new OracleCommand(strSQL, myConn);
                 cmd.ExecuteNonQuery();
@@ -234,13 +233,13 @@ namespace Hardware_Syst
             //Return the Dataset with the required data to the windows form which executed this method
             return DS;
         }
-        public static DataSet getSaleAnalysis(DataSet DS, DateTime Date)
+        public static DataSet getSaleAnalysis(DataSet DS, String Date, int CustID)
         {
             //create an OracleConnection object using the connection string defined in static class DBConnect
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT sale_id, sale_value, C.customer_id, surname, sale_date FROM Sale S INNER JOIN Customer C ON S.Customer_id= C.Customer_id WHERE sale_date => " + Date + "=< (sale_date+1)";
+            String strSQL = "SELECT sale_id, sale_value, C.customer_id, surname, sale_date FROM Sale S INNER JOIN Customer C ON S.Customer_id= C.Customer_id WHERE sale_date LIKE '%" +Date+ "' AND S.Customer_id = "+CustID;
 
 
 

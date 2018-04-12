@@ -58,8 +58,7 @@ namespace Hardware_Syst
  
             
       
-
-
+          
             grdEnquiry.Visible = true;
             DataSet ds = new DataSet();
             grdEnquiry.DataSource = Stock.getEnquiry(ds, Convert.ToInt16(grdStockSearch.Rows[grdStockSearch.CurrentCell.RowIndex].Cells[0].Value)).Tables["ss"];

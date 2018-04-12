@@ -37,6 +37,23 @@ namespace Hardware_Syst
 
         }
 
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            if (txtCustomer.Text.Equals(""))
+            {
+                MessageBox.Show("Surname was left blank");
+                txtCustomer.Focus();
+                return;
+            }
+
+            else
+            {
+                DataSet ds = new DataSet();
+                grdCust.Visible = true;
+                grdCust.DataSource = Customer.getMatchingSurname(ds, txtCustomer.Text.ToUpper()).Tables["ss"];
+            }
+        }
+
         private void btnSaleAnalsis_Click(object sender, EventArgs e)
         {
             if (cboStockType.Text.Equals(""))
@@ -47,14 +64,16 @@ namespace Hardware_Syst
             }
             else
             {
-                String period = "01/01/"+cboStockType.Text;
+             
 
-
+                
                
                 DataSet ds = new DataSet();
-                grdSaleAnalysis.DataSource = Sale.getSaleAnalysis(ds, Convert.ToDateTime(period)).Tables["ss"];
+                grdSaleAnalysis.DataSource = Sale.getSaleAnalysis(ds, cboStockType.Text, Convert.ToInt32(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value)).Tables["ss"];
                 grdSaleAnalysis.Visible = true;
             } 
         }
+
+       
     }
 }

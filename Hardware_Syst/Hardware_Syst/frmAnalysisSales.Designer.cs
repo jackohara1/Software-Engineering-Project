@@ -34,14 +34,21 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grdSaleAnalysis = new System.Windows.Forms.DataGridView();
+            this.grpCredit = new System.Windows.Forms.GroupBox();
+            this.btnCustomer = new System.Windows.Forms.Button();
+            this.lblCustomer = new System.Windows.Forms.Label();
+            this.txtCustomer = new System.Windows.Forms.TextBox();
+            this.grdCust = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdSaleAnalysis)).BeginInit();
+            this.grpCredit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCust)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(31, 101);
+            this.lblDate.Location = new System.Drawing.Point(69, 61);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(30, 13);
             this.lblDate.TabIndex = 14;
@@ -52,12 +59,12 @@
             this.cboStockType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStockType.FormattingEnabled = true;
             this.cboStockType.Items.AddRange(new object[] {
-            "2018",
-            "2017",
-            "2016",
-            "2015",
-            "2014"});
-            this.cboStockType.Location = new System.Drawing.Point(101, 98);
+            "18",
+            "17",
+            "16",
+            "15",
+            "14"});
+            this.cboStockType.Location = new System.Drawing.Point(139, 58);
             this.cboStockType.Name = "cboStockType";
             this.cboStockType.Size = new System.Drawing.Size(121, 21);
             this.cboStockType.TabIndex = 13;
@@ -65,7 +72,7 @@
             // 
             // btnSaleAnalsis
             // 
-            this.btnSaleAnalsis.Location = new System.Drawing.Point(101, 174);
+            this.btnSaleAnalsis.Location = new System.Drawing.Point(286, 284);
             this.btnSaleAnalsis.Name = "btnSaleAnalsis";
             this.btnSaleAnalsis.Size = new System.Drawing.Size(123, 23);
             this.btnSaleAnalsis.TabIndex = 15;
@@ -94,18 +101,67 @@
             // grdSaleAnalysis
             // 
             this.grdSaleAnalysis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdSaleAnalysis.Location = new System.Drawing.Point(34, 229);
+            this.grdSaleAnalysis.Location = new System.Drawing.Point(72, 368);
             this.grdSaleAnalysis.Name = "grdSaleAnalysis";
             this.grdSaleAnalysis.Size = new System.Drawing.Size(552, 140);
             this.grdSaleAnalysis.TabIndex = 46;
             this.grdSaleAnalysis.Visible = false;
             this.grdSaleAnalysis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStock_CellContentClick);
             // 
+            // grpCredit
+            // 
+            this.grpCredit.Controls.Add(this.btnCustomer);
+            this.grpCredit.Controls.Add(this.lblCustomer);
+            this.grpCredit.Controls.Add(this.txtCustomer);
+            this.grpCredit.Controls.Add(this.grdCust);
+            this.grpCredit.Location = new System.Drawing.Point(286, 93);
+            this.grpCredit.Name = "grpCredit";
+            this.grpCredit.Size = new System.Drawing.Size(433, 150);
+            this.grpCredit.TabIndex = 47;
+            this.grpCredit.TabStop = false;
+            this.grpCredit.Text = "Customer";
+            // 
+            // btnCustomer
+            // 
+            this.btnCustomer.Location = new System.Drawing.Point(278, 24);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Size = new System.Drawing.Size(58, 29);
+            this.btnCustomer.TabIndex = 49;
+            this.btnCustomer.Text = "Search";
+            this.btnCustomer.UseVisualStyleBackColor = true;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            // 
+            // lblCustomer
+            // 
+            this.lblCustomer.AutoSize = true;
+            this.lblCustomer.Location = new System.Drawing.Point(17, 32);
+            this.lblCustomer.Name = "lblCustomer";
+            this.lblCustomer.Size = new System.Drawing.Size(88, 13);
+            this.lblCustomer.TabIndex = 48;
+            this.lblCustomer.Text = "Search Cusotmer";
+            // 
+            // txtCustomer
+            // 
+            this.txtCustomer.Location = new System.Drawing.Point(111, 29);
+            this.txtCustomer.Name = "txtCustomer";
+            this.txtCustomer.Size = new System.Drawing.Size(142, 20);
+            this.txtCustomer.TabIndex = 47;
+            // 
+            // grdCust
+            // 
+            this.grdCust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCust.Location = new System.Drawing.Point(6, 59);
+            this.grdCust.Name = "grdCust";
+            this.grdCust.Size = new System.Drawing.Size(348, 87);
+            this.grdCust.TabIndex = 46;
+            this.grdCust.Visible = false;
+            // 
             // frmAnalysisSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 396);
+            this.ClientSize = new System.Drawing.Size(748, 533);
+            this.Controls.Add(this.grpCredit);
             this.Controls.Add(this.grdSaleAnalysis);
             this.Controls.Add(this.btnSaleAnalsis);
             this.Controls.Add(this.lblDate);
@@ -117,6 +173,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdSaleAnalysis)).EndInit();
+            this.grpCredit.ResumeLayout(false);
+            this.grpCredit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCust)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,5 +189,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.DataGridView grdSaleAnalysis;
+        private System.Windows.Forms.GroupBox grpCredit;
+        private System.Windows.Forms.Button btnCustomer;
+        private System.Windows.Forms.Label lblCustomer;
+        private System.Windows.Forms.TextBox txtCustomer;
+        private System.Windows.Forms.DataGridView grdCust;
     }
 }
