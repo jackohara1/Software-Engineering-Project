@@ -64,16 +64,36 @@ namespace Hardware_Syst
             }
             else
             {
-             
-
-                
-               
+            
                 DataSet ds = new DataSet();
-                grdSaleAnalysis.DataSource = Sale.getSaleAnalysis(ds, cboStockType.Text, Convert.ToInt32(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value)).Tables["ss"];
+                if (rdoCust.Checked){
+                    grdSaleAnalysis.DataSource = Sale.getSaleAnalysisCust(ds, cboStockType.Text, Convert.ToInt32(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value)).Tables["ss"];
+                }
+                else
+                {
+                    grdSaleAnalysis.DataSource = Sale.getSaleAnalysis(ds, cboStockType.Text).Tables["ss"];
+
+                }
                 grdSaleAnalysis.Visible = true;
+
             } 
         }
 
-       
+        private void rdoCust_CheckedChanged(object sender, EventArgs e)
+        {
+            grpCredit.Visible = true;
+            btnSaleAnalsis.Visible = false;
+        }
+
+        private void rdoAll_CheckedChanged(object sender, EventArgs e)
+        {
+            grpCredit.Visible = false;
+            btnSaleAnalsis.Visible = true;
+        }
+
+        private void grdCust_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnSaleAnalsis.Visible = true;
+        }
     }
 }

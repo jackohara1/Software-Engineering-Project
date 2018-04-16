@@ -85,7 +85,7 @@
             this.grdCustomerSearch.Name = "grdCustomerSearch";
             this.grdCustomerSearch.Size = new System.Drawing.Size(352, 87);
             this.grdCustomerSearch.TabIndex = 47;
-            this.grdCustomerSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomerSearch_CellContentClick);
+            this.grdCustomerSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomerSearch_CellClick);
             // 
             // btnSearch
             // 

@@ -233,13 +233,38 @@ namespace Hardware_Syst
             //Return the Dataset with the required data to the windows form which executed this method
             return DS;
         }
-        public static DataSet getSaleAnalysis(DataSet DS, String Date, int CustID)
+        public static DataSet getSaleAnalysisCust(DataSet DS, String Date, int CustID)
         {
             //create an OracleConnection object using the connection string defined in static class DBConnect
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT sale_id, sale_value, C.customer_id, surname, sale_date FROM Sale S INNER JOIN Customer C ON S.Customer_id= C.Customer_id WHERE sale_date LIKE '%" +Date+ "' AND S.Customer_id = "+CustID;
+            String strSQL = "SELECT sale_id, sale_value, status, sale_date FROM Sale S INNER JOIN Customer C ON S.Customer_id= C.Customer_id WHERE sale_date LIKE '%" +Date+ "' AND S.Customer_id = "+CustID;
+
+
+
+            //Create an OracleCommand object and instantiate it
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //Create an oracleAdapter to hold the result of the executed OracleCommand
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            //Fill the DataSet DS with the query result
+            da.Fill(DS, "ss");
+
+            //close the DB Connection
+            conn.Close();
+
+            //Return the Dataset with the required data to the windows form which executed this method
+            return DS;
+        }
+        public static DataSet getSaleAnalysis(DataSet DS, String Date)
+        {
+            //create an OracleConnection object using the connection string defined in static class DBConnect
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            //Define the SQL Query to retrieve the data
+            String strSQL = "SELECT sale_id, sale_value, sale_date FROM Sale  WHERE sale_date LIKE '%" + Date+"'";
 
 
 

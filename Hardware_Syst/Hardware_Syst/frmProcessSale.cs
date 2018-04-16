@@ -53,6 +53,7 @@ namespace Hardware_Syst
             if (rdoCredit.Checked)
             {
                 mySale.setCustomer_id(Convert.ToInt32(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value));
+                mySale.setStatus("U");
             }
             else
             {

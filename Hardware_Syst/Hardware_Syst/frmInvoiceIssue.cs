@@ -51,7 +51,7 @@ namespace Hardware_Syst
 
         }
 
-        private void grdCustomerSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void grdCustomerSearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             grpIssueInvoice.Visible = true;
             DataSet ds = new DataSet();

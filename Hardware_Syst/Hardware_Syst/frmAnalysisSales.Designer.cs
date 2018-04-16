@@ -39,6 +39,8 @@
             this.lblCustomer = new System.Windows.Forms.Label();
             this.txtCustomer = new System.Windows.Forms.TextBox();
             this.grdCust = new System.Windows.Forms.DataGridView();
+            this.rdoAll = new System.Windows.Forms.RadioButton();
+            this.rdoCust = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdSaleAnalysis)).BeginInit();
             this.grpCredit.SuspendLayout();
@@ -114,12 +116,13 @@
             this.grpCredit.Controls.Add(this.lblCustomer);
             this.grpCredit.Controls.Add(this.txtCustomer);
             this.grpCredit.Controls.Add(this.grdCust);
-            this.grpCredit.Location = new System.Drawing.Point(286, 93);
+            this.grpCredit.Location = new System.Drawing.Point(286, 108);
             this.grpCredit.Name = "grpCredit";
             this.grpCredit.Size = new System.Drawing.Size(433, 150);
             this.grpCredit.TabIndex = 47;
             this.grpCredit.TabStop = false;
             this.grpCredit.Text = "Customer";
+            this.grpCredit.Visible = false;
             // 
             // btnCustomer
             // 
@@ -155,12 +158,39 @@
             this.grdCust.Size = new System.Drawing.Size(348, 87);
             this.grdCust.TabIndex = 46;
             this.grdCust.Visible = false;
+            this.grdCust.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCust_CellClick);
+            // 
+            // rdoAll
+            // 
+            this.rdoAll.AutoSize = true;
+            this.rdoAll.Checked = true;
+            this.rdoAll.Location = new System.Drawing.Point(48, 183);
+            this.rdoAll.Name = "rdoAll";
+            this.rdoAll.Size = new System.Drawing.Size(65, 17);
+            this.rdoAll.TabIndex = 48;
+            this.rdoAll.TabStop = true;
+            this.rdoAll.Text = "All Sales";
+            this.rdoAll.UseVisualStyleBackColor = true;
+            this.rdoAll.CheckedChanged += new System.EventHandler(this.rdoAll_CheckedChanged);
+            // 
+            // rdoCust
+            // 
+            this.rdoCust.AutoSize = true;
+            this.rdoCust.Location = new System.Drawing.Point(139, 183);
+            this.rdoCust.Name = "rdoCust";
+            this.rdoCust.Size = new System.Drawing.Size(119, 17);
+            this.rdoCust.TabIndex = 49;
+            this.rdoCust.Text = "Search by customer";
+            this.rdoCust.UseVisualStyleBackColor = true;
+            this.rdoCust.CheckedChanged += new System.EventHandler(this.rdoCust_CheckedChanged);
             // 
             // frmAnalysisSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 533);
+            this.Controls.Add(this.rdoCust);
+            this.Controls.Add(this.rdoAll);
             this.Controls.Add(this.grpCredit);
             this.Controls.Add(this.grdSaleAnalysis);
             this.Controls.Add(this.btnSaleAnalsis);
@@ -194,5 +224,7 @@
         private System.Windows.Forms.Label lblCustomer;
         private System.Windows.Forms.TextBox txtCustomer;
         private System.Windows.Forms.DataGridView grdCust;
+        private System.Windows.Forms.RadioButton rdoAll;
+        private System.Windows.Forms.RadioButton rdoCust;
     }
 }
