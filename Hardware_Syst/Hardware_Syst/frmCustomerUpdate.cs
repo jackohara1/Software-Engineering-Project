@@ -57,6 +57,7 @@ namespace Hardware_Syst
                 DataSet ds = new DataSet();
                 grpSearch.Visible = true;
                 grdCustomerSearch.DataSource = Customer.getMatchingSurname(ds, txtName.Text.ToUpper()).Tables["ss"];
+                grdCustomerSearch.AllowUserToAddRows = false;
             }
         }
 

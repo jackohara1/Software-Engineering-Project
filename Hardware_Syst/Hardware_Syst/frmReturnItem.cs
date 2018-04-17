@@ -56,6 +56,7 @@ namespace Hardware_Syst
                 grpStock.Visible = true;
                 DataSet ds = new DataSet();
                 grdCart.DataSource = Saleitem.getMatchingSaleItem(ds, Convert.ToInt32(txtSaleID.Text)).Tables["ss"];
+                grdCart.AllowUserToAddRows = false;
             }
 
         }

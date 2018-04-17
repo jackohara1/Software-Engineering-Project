@@ -27,7 +27,7 @@ namespace Hardware_Syst
             sale_id = 0;
             customer_id = 0;
             saleDate = "0/0/00";
-            status = "S";
+            status = "U";
             saleValue = 0;
 
         }
@@ -155,8 +155,8 @@ namespace Hardware_Syst
             if (this.customer_id.Equals(0))
                    
             {
-                String strSQL = "INSERT INTO Sale (Sale_Id,Sale_Value, Sale_Date) VALUES(" + this.sale_id +
-                      "," + this.saleValue + ",'" +  this.saleDate + "')";
+                String strSQL = "INSERT INTO Sale (Sale_Id,Sale_Value, Sale_Date, status) VALUES(" + this.sale_id +
+                      "," + this.saleValue + ",'" +  this.saleDate + "','" + this.status + "')";
 
                 OracleCommand cmd = new OracleCommand(strSQL, myConn);
                 cmd.ExecuteNonQuery();
@@ -166,7 +166,7 @@ namespace Hardware_Syst
             else
             {
                 String strSQL = "INSERT INTO Sale VALUES(" + this.sale_id +
-                    "," + this.customer_id + "," + this.saleValue + ",'" + this.saleDate + "')";
+                    "," + this.customer_id + "," + this.saleValue + ",'" + this.saleDate + "','"+this.status+"')";
 
                 OracleCommand cmd = new OracleCommand(strSQL, myConn);
                 cmd.ExecuteNonQuery();

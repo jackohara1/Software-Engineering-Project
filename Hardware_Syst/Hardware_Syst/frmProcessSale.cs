@@ -18,6 +18,7 @@ namespace Hardware_Syst
         {
             InitializeComponent();
             parent = Parent;
+            grdCart.AllowUserToAddRows = false;
         }
 
         private void label17_Click(object sender, EventArgs e)
@@ -61,12 +62,12 @@ namespace Hardware_Syst
             }
 
             mySale.setSaleDate(String.Format("{0:dd-MMM-yy}", DateTime.Now));
-            //mySale.setStatus(Convert.ToString('A'));
+            mySale.setStatus(Convert.ToString('A'));
             mySale.setSaleValue(Convert.ToDecimal(txtSaleValue.Text));
 
             mySale.addSale();
 
-            MessageBox.Show(Convert.ToString(grdCart.RowCount));
+           
 
             int i = 0;
             grdCart.Rows[i].Selected = true;
@@ -103,7 +104,8 @@ namespace Hardware_Syst
                 DataSet ds = new DataSet();
                 grpStock.Visible = true;
                 grdStock.DataSource = Stock.getMatchingSaleStock(ds, txtSrh.Text).Tables["ss"];
-                
+                grdStock.AllowUserToAddRows = false;
+
             }
 
         }
@@ -148,6 +150,7 @@ namespace Hardware_Syst
                 DataSet ds = new DataSet();
                 grdCust.Visible = true;
                 grdCust.DataSource = Customer.getMatchingSurname(ds, txtCustomer.Text.ToUpper()).Tables["ss"];
+                grdCust.AllowUserToAddRows = false;
             }
         }
 

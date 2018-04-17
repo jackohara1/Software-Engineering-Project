@@ -39,6 +39,7 @@ namespace Hardware_Syst
                 DataSet ds = new DataSet();
                 grpSearch.Visible = true;
                 grdCustomerSearch.DataSource = Customer.getMatchingSurname(ds, txtCustomer.Text.ToUpper()).Tables["ss"];
+                grdCustomerSearch.AllowUserToAddRows = false;
             }
         }
 
@@ -56,6 +57,7 @@ namespace Hardware_Syst
             grpIssueInvoice.Visible = true;
             DataSet ds = new DataSet();
             grdIssue.DataSource = Saleitem.getMatchingInvoice(ds, Convert.ToInt32(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[0].Value)).Tables["ss"];
+            grdIssue.AllowUserToAddRows = false;
 
             Customer Invoice = new Customer();
             Invoice.getCustomer(Convert.ToInt32(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[0].Value));

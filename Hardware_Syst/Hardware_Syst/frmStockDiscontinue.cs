@@ -39,6 +39,7 @@ namespace Hardware_Syst
                 DataSet ds = new DataSet();
                 grpSearch.Visible = true;
                 grdStockSearch.DataSource = Stock.getAvalableStock(ds, txtStockName.Text).Tables["ss"];
+                grdStockSearch.AllowUserToAddRows = false;
             }
         }
 
