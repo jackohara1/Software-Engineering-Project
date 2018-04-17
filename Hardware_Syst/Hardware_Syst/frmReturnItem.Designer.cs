@@ -160,7 +160,7 @@ namespace Hardware_Syst
             this.txtQtySold.Size = new System.Drawing.Size(63, 20);
             this.txtQtySold.TabIndex = 43;
             this.txtQtySold.Visible = false;
-            this.txtQtySold.TextChanged += new System.EventHandler(this.txtQtySold_TextChanged);
+        
             // 
             // lblItemBack
             // 
@@ -207,10 +207,7 @@ namespace Hardware_Syst
 
         }
 
-        private void txtQtySold_TextChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+   
 
         #endregion
         private System.Windows.Forms.Button btnReturnItem;

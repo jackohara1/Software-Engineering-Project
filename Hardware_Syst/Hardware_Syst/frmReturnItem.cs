@@ -69,7 +69,7 @@ namespace Hardware_Syst
         private void btnReturnItem_Click(object sender, EventArgs e)
         {
 
-            if (Convert.ToInt16(txtQtySold.Text) > Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[1].Value))
+            if (Convert.ToInt16(txtQtySold.Text) > Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value))
             {
                 MessageBox.Show("The quantity you are returning is greater than the quantity you have bought");
             }
@@ -79,17 +79,19 @@ namespace Hardware_Syst
                 Stock.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt32(txtQtySold));
             }
 
-
-            Saleitem.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt16(txtQtySold.Text));
-            Sale.returnSale(Convert.ToInt32(txtSaleID.Text), Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) * Convert.ToInt16(txtQtySold.Text));
-
-
-            MessageBox.Show("Item has been returned");
+            else
+            {
+                Saleitem.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt16(txtQtySold.Text));
+                Sale.returnSale(Convert.ToInt32(txtSaleID.Text), Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) * Convert.ToInt16(txtQtySold.Text));
 
 
+                MessageBox.Show("Item has been returned");
 
-            this.Close();
-            parent.Show();
+
+
+                this.Close();
+                parent.Show();
+            }
         }
 
 
@@ -99,9 +101,9 @@ namespace Hardware_Syst
    
             
                 lblAmountOfItems.Visible = true;
-              
 
-          
+
+            txtQtySold.Text = Convert.ToString(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value);
             txtQtySold.Visible = true; 
             lblItemBack.Visible = true;
             rdoFalse.Visible = true;
@@ -114,6 +116,6 @@ namespace Hardware_Syst
 
         }
 
-        
+       
     }
 }
