@@ -51,6 +51,7 @@ namespace Hardware_Syst
                 DataSet ds = new DataSet();
                 grdCust.Visible = true;
                 grdCust.DataSource = Customer.getMatchingSurname(ds, txtCustomer.Text.ToUpper()).Tables["ss"];
+                grdCust.AllowUserToAddRows = false;
             }
         }
 
@@ -74,6 +75,7 @@ namespace Hardware_Syst
                     grdSaleAnalysis.DataSource = Sale.getSaleAnalysis(ds, cboStockType.Text).Tables["ss"];
 
                 }
+                grdSaleAnalysis.AllowUserToAddRows = false;
                 grdSaleAnalysis.Visible = true;
 
             } 
