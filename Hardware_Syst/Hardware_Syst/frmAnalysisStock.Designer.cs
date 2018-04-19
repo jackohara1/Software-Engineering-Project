@@ -28,14 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnStockAnalsis = new System.Windows.Forms.Button();
             this.lblStockType = new System.Windows.Forms.Label();
             this.cboStockType = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grdStockAnalysis = new System.Windows.Forms.DataGridView();
+            this.chtStock = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblYear = new System.Windows.Forms.Label();
+            this.cboYear = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdStockAnalysis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtStock)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStockAnalsis
@@ -52,7 +59,7 @@
             // lblStockType
             // 
             this.lblStockType.AutoSize = true;
-            this.lblStockType.Location = new System.Drawing.Point(243, 83);
+            this.lblStockType.Location = new System.Drawing.Point(241, 30);
             this.lblStockType.Name = "lblStockType";
             this.lblStockType.Size = new System.Drawing.Size(62, 13);
             this.lblStockType.TabIndex = 17;
@@ -68,7 +75,7 @@
             "HW - Hardware ",
             "HO - Household",
             "TL - Tools"});
-            this.cboStockType.Location = new System.Drawing.Point(325, 80);
+            this.cboStockType.Location = new System.Drawing.Point(323, 27);
             this.cboStockType.Name = "cboStockType";
             this.cboStockType.Size = new System.Drawing.Size(121, 21);
             this.cboStockType.TabIndex = 16;
@@ -80,7 +87,7 @@
             this.backToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(789, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1182, 24);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -96,15 +103,59 @@
             this.grdStockAnalysis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdStockAnalysis.Location = new System.Drawing.Point(12, 187);
             this.grdStockAnalysis.Name = "grdStockAnalysis";
-            this.grdStockAnalysis.Size = new System.Drawing.Size(743, 240);
+            this.grdStockAnalysis.Size = new System.Drawing.Size(625, 240);
             this.grdStockAnalysis.TabIndex = 47;
             this.grdStockAnalysis.Visible = false;
+            // 
+            // chtStock
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chtStock.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtStock.Legends.Add(legend1);
+            this.chtStock.Location = new System.Drawing.Point(674, 187);
+            this.chtStock.Name = "chtStock";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtStock.Series.Add(series1);
+            this.chtStock.Size = new System.Drawing.Size(530, 240);
+            this.chtStock.TabIndex = 48;
+            this.chtStock.Text = "StockAnalysis";
+            // 
+            // lblYear
+            // 
+            this.lblYear.AutoSize = true;
+            this.lblYear.Location = new System.Drawing.Point(241, 69);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(29, 13);
+            this.lblYear.TabIndex = 50;
+            this.lblYear.Text = "Year";
+            // 
+            // cboYear
+            // 
+            this.cboYear.DisplayMember = "1";
+            this.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboYear.FormattingEnabled = true;
+            this.cboYear.Items.AddRange(new object[] {
+            "18",
+            "17",
+            "16",
+            "15",
+            "14"});
+            this.cboYear.Location = new System.Drawing.Point(323, 66);
+            this.cboYear.Name = "cboYear";
+            this.cboYear.Size = new System.Drawing.Size(121, 21);
+            this.cboYear.TabIndex = 49;
             // 
             // frmAnalysisStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 496);
+            this.ClientSize = new System.Drawing.Size(1182, 565);
+            this.Controls.Add(this.lblYear);
+            this.Controls.Add(this.cboYear);
+            this.Controls.Add(this.chtStock);
             this.Controls.Add(this.grdStockAnalysis);
             this.Controls.Add(this.btnStockAnalsis);
             this.Controls.Add(this.lblStockType);
@@ -112,10 +163,11 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmAnalysisStock";
-            this.Text = "frmAnalysisStock";
+            this.Text = "Analyse Stock";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdStockAnalysis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +181,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
         private System.Windows.Forms.DataGridView grdStockAnalysis;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtStock;
+        private System.Windows.Forms.Label lblYear;
+        private System.Windows.Forms.ComboBox cboYear;
     }
 }
