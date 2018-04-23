@@ -113,7 +113,7 @@
             this.grdStockAnalysis.DefaultCellStyle = dataGridViewCellStyle1;
             this.grdStockAnalysis.Location = new System.Drawing.Point(12, 187);
             this.grdStockAnalysis.Name = "grdStockAnalysis";
-            this.grdStockAnalysis.Size = new System.Drawing.Size(625, 240);
+            this.grdStockAnalysis.Size = new System.Drawing.Size(564, 240);
             this.grdStockAnalysis.TabIndex = 47;
             this.grdStockAnalysis.Visible = false;
             // 
@@ -123,13 +123,13 @@
             this.chtStock.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chtStock.Legends.Add(legend1);
-            this.chtStock.Location = new System.Drawing.Point(674, 187);
+            this.chtStock.Location = new System.Drawing.Point(582, 187);
             this.chtStock.Name = "chtStock";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chtStock.Series.Add(series1);
-            this.chtStock.Size = new System.Drawing.Size(530, 240);
+            this.chtStock.Size = new System.Drawing.Size(622, 366);
             this.chtStock.TabIndex = 48;
             this.chtStock.Text = "StockAnalysis";
             // 
