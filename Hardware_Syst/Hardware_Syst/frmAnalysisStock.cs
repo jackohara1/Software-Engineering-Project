@@ -52,7 +52,7 @@ namespace Hardware_Syst
 
 
 
-
+              
                 defineChart(grdStockAnalysis.Rows.Count, MaxSold);
 
 
@@ -60,7 +60,7 @@ namespace Hardware_Syst
 
                 fillChart(ds);
                 chtStock.Visible = true;
-
+                chtStock.Show();
             }
 
         }
@@ -72,23 +72,23 @@ namespace Hardware_Syst
 
 
 
-            chtStock.Size = new Size(x, y);
+            chtStock.Size = new Size(500, 500);
             chtStock.ChartAreas[0].Name = "mainArea";
             chtStock.ChartAreas["mainArea"].AxisX.LabelStyle.Font = new Font("Consolas", 8);
             chtStock.ChartAreas["mainArea"].AxisY.LabelStyle.Font = new Font("Consolas", 8);
 
-            chtStock.ChartAreas["mainArea"].AxisY.Minimum = 0;
-            chtStock.ChartAreas["mainArea"].AxisY.Interval = 500;
+            chtStock.ChartAreas["mainArea"].AxisY.Minimum =0;
+            chtStock.ChartAreas["mainArea"].AxisY.Interval = y;
             chtStock.ChartAreas["mainArea"].AxisY.Title = "Amount Sold";
 
             chtStock.ChartAreas["mainArea"].AxisX.Interval = 1;
             chtStock.ChartAreas["mainArea"].AxisX.Title = "Stock";
 
             chtStock.ChartAreas["mainArea"].AxisX.MajorGrid.Enabled = false;
-            //chtData.ChartAreas["mainArea"].AxisY.MajorGrid.Enabled = false;
+            chtStock.ChartAreas["mainArea"].AxisY.MajorGrid.Enabled = false;
 
             //chart title   
-            chtStock.Titles.Add("Amount of Sales in 20"/*+cboStockType.ValueMember*/);
+            chtStock.Titles.Add("Amount of Sales in 20"+Convert.ToString(cboStockType.ValueMember));
         }
 
         private void defineSeries()
@@ -102,45 +102,31 @@ namespace Hardware_Syst
 
         private void fillChart(DataSet ds)
         {
-            //fill chart
-            chtStock.Series["Revenue"].Points.Clear();
 
-            //load values returned from query into 12 element array
-            //decimal[] monthlyRev = { 0, 1200, 800, 1000, 1500, 1700, 2500, 2200, 1500, 1000, 500, 0 };
-
-            //add values in array to chart series
-            //for (int i = 0; i < 12; i++)
-            //chtData.Series["Revenue"].Points.AddXY(monthName(i + 1), monthlyRev[i]);
-
-            //get data from database
+          //  chtStock.Series["Revenue"].Points.Clear();
 
 
-            //add values in array to chart series
-            grdStockAnalysis.Rows[0].Selected = true;
-            for (int i = 0; i < grdStockAnalysis.RowCount - 1; i++)
+
+          
+            int j = 0;
+
+            //For each summary row in ds
+            while (j <= ds.Tables["ss"].Rows.Count-1)
             {
-                int x = 0;
-                if (!grdStockAnalysis.Rows[i].Cells[4].Value.Equals(null)){
-
-                    x = Convert.ToInt16(grdStockAnalysis.Rows[i].Cells[4].Value);
+       
+                if (ds.Tables[0].Rows[j][4] == null)
+                {
+                    chtStock.Series["Revenue"].Points.AddXY(ds.Tables[0].Rows[j][1], 0);
                 }
-              
-            
-                
-
-               
-                    MessageBox.Show(Convert.ToString(grdStockAnalysis.Rows[i].Cells[1].Value));
-                   MessageBox.Show(Convert.ToString(grdStockAnalysis.RowCount));
-                    MessageBox.Show(Convert.ToString(x));
-                    chtStock.Series["Revenue"].Points.AddXY(Convert.ToString(grdStockAnalysis.Rows[i].Cells[1].Value), x);
-               
-
-
+                else 
+                {
+                    chtStock.Series["Revenue"].Points.AddXY(ds.Tables[0].Rows[j][1], ds.Tables[0].Rows[j][4]);
+                   
+                }
+             
+                j++;
 
             }
-
-
-
         }
     }
 }

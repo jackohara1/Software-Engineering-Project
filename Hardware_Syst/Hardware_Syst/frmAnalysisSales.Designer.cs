@@ -50,7 +50,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(69, 61);
+            this.lblDate.Location = new System.Drawing.Point(54, 60);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(30, 13);
             this.lblDate.TabIndex = 14;
@@ -66,7 +66,7 @@
             "16",
             "15",
             "14"});
-            this.cboStockType.Location = new System.Drawing.Point(139, 58);
+            this.cboStockType.Location = new System.Drawing.Point(124, 57);
             this.cboStockType.Name = "cboStockType";
             this.cboStockType.Size = new System.Drawing.Size(121, 21);
             this.cboStockType.TabIndex = 13;
