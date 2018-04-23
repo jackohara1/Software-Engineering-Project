@@ -48,17 +48,18 @@ namespace Hardware_Syst
                 grdStockAnalysis.AllowUserToAddRows = false;
                 grdStockAnalysis.Visible = true;
 
-                var MaxSold = grdStockAnalysis.Rows.Cast<DataGridViewRow>()
-                        .Max(r => Convert.ToInt32(r.Cells[4].Value));
+                var MaxSold = Convert.ToInt32(grdStockAnalysis.Rows[0].Cells[4].Value);
+             
+                
+
+              
+                defineChart(grdStockAnalysis.Rows.Count, MaxSold);
 
 
-                //defineChart(grdStockAnalysis.Rows.Count, MaxSold);
+                defineSeries();
 
-
-                //defineSeries();
-
-                //fillChart(ds);
-
+              //  fillChart(ds);
+                chtStock.Visible = true;
 
             }
 
@@ -71,23 +72,23 @@ namespace Hardware_Syst
 
         
 
-        chtStock.Size = new Size(1000, 500);
+        chtStock.Size = new Size(x, y);
         chtStock.ChartAreas[0].Name = "mainArea";
         chtStock.ChartAreas["mainArea"].AxisX.LabelStyle.Font = new Font("Consolas", 8);
         chtStock.ChartAreas["mainArea"].AxisY.LabelStyle.Font = new Font("Consolas", 8);
 
         chtStock.ChartAreas["mainArea"].AxisY.Minimum = 0;
         chtStock.ChartAreas["mainArea"].AxisY.Interval = 500;
-        chtStock.ChartAreas["mainArea"].AxisY.Title = "Euros";
+        chtStock.ChartAreas["mainArea"].AxisY.Title = "Amount Sold";
 
         chtStock.ChartAreas["mainArea"].AxisX.Interval = 1;
-        chtStock.ChartAreas["mainArea"].AxisX.Title = "Month";
+        chtStock.ChartAreas["mainArea"].AxisX.Title = "Stock";
 
         chtStock.ChartAreas["mainArea"].AxisX.MajorGrid.Enabled = false;
         //chtData.ChartAreas["mainArea"].AxisY.MajorGrid.Enabled = false;
 
         //chart title   
-        chtStock.Titles.Add("Monthly Revenue 2017");
+        chtStock.Titles.Add("Amount of Sales in 20"/*+cboStockType.ValueMember*/);
     }
 
     private void defineSeries()
@@ -119,61 +120,19 @@ namespace Hardware_Syst
         for (int i = 1; i <= 12; i++)
         {
             if (i < Convert.ToDecimal(ds.Tables[0].Rows[j][0]))
-                chtStock.Series["Revenue"].Points.AddXY(monthName(i), 0);
+                chtStock.Series["Revenue"].Points.AddXY(Convert.ToString(grdStockAnalysis.Rows[i].Cells[1].Value), 0);
             else
             {
 
-                chtStock.Series["Revenue"].Points.AddXY(monthName(i), Convert.ToDecimal(ds.Tables[0].Rows[j][1]));
+                chtStock.Series["Revenue"].Points.AddXY(Convert.ToString(grdStockAnalysis.Rows[i].Cells[1].Value), Convert.ToDecimal(grdStockAnalysis.Rows[i].Cells[4].Value));
                 j++;
             }
         }
 
 
     }
-    private string monthName(int MonthNo)
-    {
-        String strMonth = "";
+    
 
-        switch (MonthNo)
-        {
-            case 1:
-                strMonth = "JAN";
-                break;
-            case 2:
-                strMonth = "FEB";
-                break;
-            case 3:
-                strMonth = "MAR";
-                break;
-            case 4:
-                strMonth = "APR";
-                break;
-            case 5:
-                strMonth = "MAY";
-                break;
-            case 6:
-                strMonth = "JUN";
-                break;
-            case 7:
-                strMonth = "JUL";
-                break;
-            case 8:
-                strMonth = "AUG";
-                break;
-            case 9:
-                strMonth = "SEP";
-                break;
-            case 10:
-                strMonth = "OCT";
-                break;
-            case 11:
-                strMonth = "NOV";
-                break;
-            case 12:
-                strMonth = "DEC";
-                break;
-        }
-
-        return strMonth;
+        
     } }
-}  
+ 

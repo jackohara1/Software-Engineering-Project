@@ -405,7 +405,7 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT s.stock_id, stock_name, cost_p, sale_p, (SELECT SUM(qtysold)FROM Saleitems si WHERE s.stock_id = si.stock_id GROUP BY stock_id) FROM stock s WHERE department_id =" + Department+ "ORDER BY stock_id";
+            String strSQL = "SELECT s.stock_id, stock_name, cost_p, sale_p, (SELECT SUM(qtysold)FROM Saleitems si WHERE s.stock_id = si.stock_id GROUP BY stock_id) FROM stock s WHERE department_id =" + Department+ "ORDER BY (SELECT SUM(qtysold)FROM Saleitems si WHERE s.stock_id = si.stock_id GROUP BY stock_id)";
             
 
 
