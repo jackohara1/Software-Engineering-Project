@@ -112,7 +112,7 @@ namespace Hardware_Syst
         private void defineChart()
         {
             //define chart
-            chtData.Size = new Size(1000, 500);
+            chtData.Size = new Size(750, 300);
             chtData.ChartAreas[0].Name = "mainArea";
             chtData.ChartAreas["mainArea"].AxisX.LabelStyle.Font = new Font("Consolas", 8);
             chtData.ChartAreas["mainArea"].AxisY.LabelStyle.Font = new Font("Consolas", 8);
@@ -159,13 +159,13 @@ namespace Hardware_Syst
             int j = 0;
             for (int i = 1; i <= 12; i++)
             {
-                if (i < Convert.ToDecimal(ds.Tables[0].Rows[j][0]))
-                    chtData.Series["Revenue"].Points.AddXY(monthName(i), 0);
+
+                if (rdoAll.Checked) {
+                    chtData.Series["Revenue"].Points.AddXY(monthName(i), Sale.getSaleAnalysisChart(ds, Convert.ToString(monthName(i) + "-" + cboStockType.Text)));
+                    j++; }
                 else
                 {
-
-                    chtData.Series["Revenue"].Points.AddXY(monthName(i), Sale.getSaleAnalysisChart(ds,Convert.ToDecimal()));
-                    j++;
+                    chtData.Series["Revenue"].Points.AddXY(monthName(i), Sale.getSaleCustomerChart(ds, Convert.ToString(monthName(i) + "-" + cboStockType.Text),Convert.ToInt32(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value)));
                 }
             }
 

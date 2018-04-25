@@ -264,7 +264,7 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT sale_id, sale_value, sale_date FROM Sale  WHERE sale_date LIKE '%" + Date+"'";
+            String strSQL = "SELECT sale_id, sale_value, sale_date FROM Sale  WHERE sale_date LIKE '%" + Date+"' AND Status = 'A'";
 
 
 
@@ -289,9 +289,9 @@ namespace Hardware_Syst
             decimal totalSales;
             //create an OracleConnection object using the connection string defined in static class DBConnect
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
+            conn.Open();
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT  SUM OF(sale_value), FROM Sale  WHERE sale_date LIKE '%" + Date + "'";
+            String strSQL = "SELECT  SUM(sale_value) FROM Sale WHERE sale_date LIKE '%" + Date + "' AND Status = 'A'";
 
 
 
@@ -312,6 +312,34 @@ namespace Hardware_Syst
 
             return totalSales;
         }
+        public static decimal getSaleCustomerChart(DataSet DS, String Date, int CustId)
+        {
 
+            decimal totalSales;
+            //create an OracleConnection object using the connection string defined in static class DBConnect
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            conn.Open();
+            //Define the SQL Query to retrieve the data
+            String strSQL = "SELECT  SUM(sale_value) FROM Sale WHERE sale_date LIKE '%" + Date + "' AND Customer_ID = " + CustId + " AND Status = 'A'";
+
+
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            dr.Read();
+
+
+            if (dr.IsDBNull(0))
+                totalSales = 0;
+            else
+                totalSales = Convert.ToDecimal(dr.GetValue(0)) + 1;
+
+            conn.Close();
+
+
+            return totalSales;
+        }
     }
 }
