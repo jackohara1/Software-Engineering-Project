@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -44,9 +45,20 @@ namespace Hardware_Syst
 
         private void btnSrh_Click(object sender, EventArgs e)
         {
+            Regex numericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
+
+
             if (txtSaleID.Text.Equals(""))
             {
-                MessageBox.Show("Sale ID was left blank");
+                MessageBox.Show("Stock Name was left blank");
+                txtSaleID.Focus();
+                return;
+            }
+
+            if (!numericCheck.IsMatch(txtSaleID.Text))
+            {
+                MessageBox.Show("Stock Name must use alphanumeric characters");
+                txtSaleID.Clear();
                 txtSaleID.Focus();
                 return;
             }

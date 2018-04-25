@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -91,13 +92,24 @@ namespace Hardware_Syst
 
         private void btnSrh_Click(object sender, EventArgs e)
         {
+            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
+
+
             if (txtSrh.Text.Equals(""))
             {
                 MessageBox.Show("Stock Name was left blank");
                 txtSrh.Focus();
                 return;
             }
-       
+
+            if (!alphanumericCheck.IsMatch(txtSrh.Text))
+            {
+                MessageBox.Show("Stock Name must use alphanumeric characters");
+                txtSrh.Clear();
+                txtSrh.Focus();
+                return;
+            }
+
 
             else
             {
@@ -151,10 +163,19 @@ namespace Hardware_Syst
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
+            Regex alphabetic = new Regex("^[a-zA-Z]+$");
+
             if (txtCustomer.Text.Equals(""))
             {
                 MessageBox.Show("Surname was left blank");
                 txtCustomer.Focus();
+                return;
+            }
+            if (!alphabetic.IsMatch(txtCustomer.Text))
+            {
+                MessageBox.Show("Surname must contain letters only");
+                txtCustomer.Focus();
+                txtCustomer.Clear();
                 return;
             }
 

@@ -31,18 +31,18 @@ namespace Hardware_Syst
             Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
 
 
-            if (txtStock.Text.Equals(""))
+            if (txtStockName.Text.Equals(""))
             {
                 MessageBox.Show("Stock Name was left blank");
                 txtStockName.Focus();
                 return;
             }
 
-            if (!alphanumericCheck.IsMatch(txtStock.Text))
+            if (!alphanumericCheck.IsMatch(txtStockName.Text))
             {
                 MessageBox.Show("Stock Name must use alphanumeric characters");
-                txtStock.Clear();
-                txtStock.Focus();
+                txtStockName.Clear();
+                txtStockName.Focus();
                 return;
             }
             else
@@ -71,18 +71,18 @@ namespace Hardware_Syst
                 return;
             }
 
-            if (txtStockName.Text.Equals(""))
+            if (txtStock.Text.Equals(""))
             {
                 MessageBox.Show("Stock Name was left blank");
-                txtStockName.Focus();
+                txtStock.Focus();
                 return;
             }
 
-            if (!alphanumericCheck.IsMatch(txtStockName.Text))
+            if (!alphanumericCheck.IsMatch(txtStock.Text))
             {
                 MessageBox.Show("Stock Name must use alphanumeric characters");
-                txtStockName.Clear();
-                txtStockName.Focus();
+                txtStock.Clear();
+                txtStock.Focus();
                 return;
             }
 

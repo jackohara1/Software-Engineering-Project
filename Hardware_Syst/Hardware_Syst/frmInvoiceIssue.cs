@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,14 +28,24 @@ namespace Hardware_Syst
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            Regex alphabetic = new Regex("^[a-zA-Z]+$");
+
             if (txtCustomer.Text.Equals(""))
             {
-                MessageBox.Show("Customer was left blank");
+                MessageBox.Show("Surname was left blank");
                 txtCustomer.Focus();
                 return;
             }
-            
-            else{
+            if (!alphabetic.IsMatch(txtCustomer.Text))
+            {
+                MessageBox.Show("Surname must contain letters only");
+                txtCustomer.Focus();
+                txtCustomer.Clear();
+                return;
+            }
+
+            else
+            {
 
                 DataSet ds = new DataSet();
                 grpSearch.Visible = true;
