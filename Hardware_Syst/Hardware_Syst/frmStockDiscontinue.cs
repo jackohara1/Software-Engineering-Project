@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,13 +28,24 @@ namespace Hardware_Syst
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
+
+
             if (txtStockName.Text.Equals(""))
             {
                 MessageBox.Show("Stock Name was left blank");
                 txtStockName.Focus();
                 return;
             }
-          
+
+            if (!alphanumericCheck.IsMatch(txtStockName.Text))
+            {
+                MessageBox.Show("Stock Name must use alphanumeric characters");
+                txtStockName.Clear();
+                txtStockName.Focus();
+                return;
+            }
+
             else
             {
                 DataSet ds = new DataSet();

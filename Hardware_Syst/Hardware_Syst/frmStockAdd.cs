@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +14,11 @@ namespace Hardware_Syst
     public partial class frmStockAdd : Form
     {
         frmMainMenu parent;
+
+       
+        
+
+
         public frmStockAdd(frmMainMenu Parent)
         {
             InitializeComponent();
@@ -36,6 +42,9 @@ namespace Hardware_Syst
 
         private void btnNewStock_Click(object sender, EventArgs e)
         {
+            Regex numeric = new Regex("^[0-9]*$");
+            Regex decimalCheck = new Regex("^[0-9]([.,][0-9]{1,3})?$");
+            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
 
             if (cboStockType.Text.Equals(""))
             {
@@ -43,6 +52,7 @@ namespace Hardware_Syst
                 cboStockType.Focus();
                 return;
             }
+            
             if (txtStockName.Text.Equals(""))
             {
                 MessageBox.Show("Stock Name was left blank");
@@ -50,10 +60,24 @@ namespace Hardware_Syst
                 return;
             }
 
+            if (!alphanumericCheck.IsMatch(txtStockName.Text))
+            {
+                MessageBox.Show("Stock Name must use alphanumeric characters");
+                txtStockName.Clear();
+                txtStockName.Focus();
+                return;
+            }
 
             if (txtQty.Text.Equals(""))
             {
                 MessageBox.Show("Quantity was left blank");
+                txtQty.Focus();
+                return;
+            }
+            if (!numeric.IsMatch(txtQty.Text))
+            {
+                MessageBox.Show("Quantity must be a numeric value");
+                txtQty.Clear();
                 txtQty.Focus();
                 return;
             }
@@ -63,10 +87,24 @@ namespace Hardware_Syst
                 txtCostPrice.Focus();
                 return;
             }
+            if (!decimalCheck.IsMatch(txtCostPrice.Text))
+            {
+                MessageBox.Show("Cost Price must be numeric");
+                txtCostPrice.Clear();
+                txtCostPrice.Focus();
+                return;
+            }
 
             if (txtSalePrice.Text.Equals(""))
             {
                 MessageBox.Show("Sale Price was left blank");
+                txtSalePrice.Focus();
+                return;
+            }
+            if (!decimalCheck.IsMatch(txtSalePrice.Text))
+            {
+                MessageBox.Show("Sale Price must be numeric");
+                txtSalePrice.Clear();
                 txtSalePrice.Focus();
                 return;
             }

@@ -68,6 +68,7 @@ private void btnPayInvoice_Click(object sender, EventArgs e)
         {
             grpPayInvoice.Visible = true;
             DataSet ds = new DataSet();
+            txtTotal.Text = "0.00";
             grdIssue.DataSource = Saleitem.getMatchingInvoice(ds, Convert.ToInt32(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[0].Value)).Tables["ss"];
             grdIssue.AllowUserToAddRows = false;
 
@@ -75,7 +76,7 @@ private void btnPayInvoice_Click(object sender, EventArgs e)
             Invoice.getCustomer(Convert.ToInt32(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[0].Value));
 
             int i = 0;
-            while (i < grdIssue.RowCount - 1)
+            while (i < grdIssue.RowCount)
             {
                 txtTotal.Text = Convert.ToString(Convert.ToDecimal(txtTotal.Text) + Convert.ToDecimal(grdIssue.Rows[i].Cells[5].Value));
 
