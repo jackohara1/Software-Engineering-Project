@@ -283,6 +283,35 @@ namespace Hardware_Syst
             //Return the Dataset with the required data to the windows form which executed this method
             return DS;
         }
+        public static decimal getSaleAnalysisChart(DataSet DS, String Date)
+        {
+
+            decimal totalSales;
+            //create an OracleConnection object using the connection string defined in static class DBConnect
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+
+            //Define the SQL Query to retrieve the data
+            String strSQL = "SELECT  SUM OF(sale_value), FROM Sale  WHERE sale_date LIKE '%" + Date + "'";
+
+
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            dr.Read();
+
+
+            if (dr.IsDBNull(0))
+                totalSales = 0;
+            else
+                totalSales = Convert.ToDecimal(dr.GetValue(0)) + 1;
+
+            conn.Close();
+
+
+            return totalSales;
+        }
 
     }
 }

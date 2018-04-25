@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblDate = new System.Windows.Forms.Label();
             this.cboStockType = new System.Windows.Forms.ComboBox();
             this.btnSaleAnalsis = new System.Windows.Forms.Button();
@@ -41,10 +44,12 @@
             this.grdCust = new System.Windows.Forms.DataGridView();
             this.rdoAll = new System.Windows.Forms.RadioButton();
             this.rdoCust = new System.Windows.Forms.RadioButton();
+            this.chtData = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdSaleAnalysis)).BeginInit();
             this.grpCredit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCust)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtData)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDate
@@ -89,7 +94,7 @@
             this.mnuBack});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(748, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1268, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -103,9 +108,9 @@
             // grdSaleAnalysis
             // 
             this.grdSaleAnalysis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdSaleAnalysis.Location = new System.Drawing.Point(72, 368);
+            this.grdSaleAnalysis.Location = new System.Drawing.Point(12, 368);
             this.grdSaleAnalysis.Name = "grdSaleAnalysis";
-            this.grdSaleAnalysis.Size = new System.Drawing.Size(552, 140);
+            this.grdSaleAnalysis.Size = new System.Drawing.Size(552, 282);
             this.grdSaleAnalysis.TabIndex = 46;
             this.grdSaleAnalysis.Visible = false;
             this.grdSaleAnalysis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStock_CellContentClick);
@@ -116,7 +121,7 @@
             this.grpCredit.Controls.Add(this.lblCustomer);
             this.grpCredit.Controls.Add(this.txtCustomer);
             this.grpCredit.Controls.Add(this.grdCust);
-            this.grpCredit.Location = new System.Drawing.Point(286, 108);
+            this.grpCredit.Location = new System.Drawing.Point(646, 91);
             this.grpCredit.Name = "grpCredit";
             this.grpCredit.Size = new System.Drawing.Size(433, 150);
             this.grpCredit.TabIndex = 47;
@@ -184,11 +189,28 @@
             this.rdoCust.UseVisualStyleBackColor = true;
             this.rdoCust.CheckedChanged += new System.EventHandler(this.rdoCust_CheckedChanged);
             // 
+            // chtData
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chtData.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtData.Legends.Add(legend1);
+            this.chtData.Location = new System.Drawing.Point(603, 284);
+            this.chtData.Name = "chtData";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtData.Series.Add(series1);
+            this.chtData.Size = new System.Drawing.Size(622, 366);
+            this.chtData.TabIndex = 50;
+            this.chtData.Text = "StockAnalysis";
+            // 
             // frmAnalysisSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 533);
+            this.ClientSize = new System.Drawing.Size(1268, 678);
+            this.Controls.Add(this.chtData);
             this.Controls.Add(this.rdoCust);
             this.Controls.Add(this.rdoAll);
             this.Controls.Add(this.grpCredit);
@@ -206,6 +228,7 @@
             this.grpCredit.ResumeLayout(false);
             this.grpCredit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCust)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +249,6 @@
         private System.Windows.Forms.DataGridView grdCust;
         private System.Windows.Forms.RadioButton rdoAll;
         private System.Windows.Forms.RadioButton rdoCust;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtData;
     }
 }

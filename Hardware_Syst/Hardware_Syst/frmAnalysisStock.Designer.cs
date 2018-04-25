@@ -113,7 +113,7 @@
             this.grdStockAnalysis.DefaultCellStyle = dataGridViewCellStyle1;
             this.grdStockAnalysis.Location = new System.Drawing.Point(12, 187);
             this.grdStockAnalysis.Name = "grdStockAnalysis";
-            this.grdStockAnalysis.Size = new System.Drawing.Size(564, 240);
+            this.grdStockAnalysis.Size = new System.Drawing.Size(564, 410);
             this.grdStockAnalysis.TabIndex = 47;
             this.grdStockAnalysis.Visible = false;
             // 
