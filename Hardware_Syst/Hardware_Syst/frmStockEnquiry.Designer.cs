@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpSearch = new System.Windows.Forms.GroupBox();
@@ -36,10 +39,12 @@
             this.lblStockName = new System.Windows.Forms.Label();
             this.txtStockName = new System.Windows.Forms.TextBox();
             this.grdEnquiry = new System.Windows.Forms.DataGridView();
+            this.chtData = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1.SuspendLayout();
             this.grpSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdStockSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdEnquiry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtData)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -48,7 +53,7 @@
             this.backToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(911, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1030, 24);
             this.menuStrip1.TabIndex = 32;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,7 +67,7 @@
             // grpSearch
             // 
             this.grpSearch.Controls.Add(this.grdStockSearch);
-            this.grpSearch.Location = new System.Drawing.Point(82, 128);
+            this.grpSearch.Location = new System.Drawing.Point(28, 146);
             this.grpSearch.Name = "grpSearch";
             this.grpSearch.Size = new System.Drawing.Size(440, 158);
             this.grpSearch.TabIndex = 62;
@@ -73,11 +78,12 @@
             // grdStockSearch
             // 
             this.grdStockSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdStockSearch.Location = new System.Drawing.Point(39, 27);
+            this.grdStockSearch.Location = new System.Drawing.Point(39, 34);
             this.grdStockSearch.Name = "grdStockSearch";
-            this.grdStockSearch.Size = new System.Drawing.Size(325, 106);
+            this.grdStockSearch.Size = new System.Drawing.Size(358, 106);
             this.grdStockSearch.TabIndex = 47;
             this.grdStockSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStockSearch_CellClick);
+            this.grdStockSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStockSearch_CellContentClick);
             // 
             // btnSearch
             // 
@@ -108,17 +114,34 @@
             // grdEnquiry
             // 
             this.grdEnquiry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdEnquiry.Location = new System.Drawing.Point(82, 337);
+            this.grdEnquiry.Location = new System.Drawing.Point(82, 425);
             this.grdEnquiry.Name = "grdEnquiry";
             this.grdEnquiry.Size = new System.Drawing.Size(745, 62);
             this.grdEnquiry.TabIndex = 63;
             this.grdEnquiry.Visible = false;
             // 
+            // chtData
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chtData.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtData.Legends.Add(legend1);
+            this.chtData.Location = new System.Drawing.Point(487, 91);
+            this.chtData.Name = "chtData";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtData.Series.Add(series1);
+            this.chtData.Size = new System.Drawing.Size(531, 318);
+            this.chtData.TabIndex = 64;
+            this.chtData.Text = "StockAnalysis";
+            // 
             // frmStockEnquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 519);
+            this.ClientSize = new System.Drawing.Size(1030, 519);
+            this.Controls.Add(this.chtData);
             this.Controls.Add(this.grdEnquiry);
             this.Controls.Add(this.grpSearch);
             this.Controls.Add(this.btnSearch);
@@ -134,6 +157,7 @@
             this.grpSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdStockSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdEnquiry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +172,6 @@
         private System.Windows.Forms.Label lblStockName;
         private System.Windows.Forms.TextBox txtStockName;
         private System.Windows.Forms.DataGridView grdEnquiry;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtData;
     }
 }

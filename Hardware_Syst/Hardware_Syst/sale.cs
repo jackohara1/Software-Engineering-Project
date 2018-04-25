@@ -156,7 +156,7 @@ namespace Hardware_Syst
                    
             {
                 String strSQL = "INSERT INTO Sale (Sale_Id,Sale_Value, Sale_Date, status) VALUES(" + this.sale_id +
-                      "," + this.saleValue + ",'" +  this.saleDate + "','" + this.status + "')";
+                      "," + this.saleValue + ",'" +  this.saleDate + "','" + 'U' + "')";
 
                 OracleCommand cmd = new OracleCommand(strSQL, myConn);
                 cmd.ExecuteNonQuery();
@@ -215,7 +215,7 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT stock_id, stock_name, cost_p, sale_p, SI.qtysold, (SI.price*SI.qtysold) FROM ((Saleitems SI INNER JOIN Sale SA ON SI.Sale_id= SA.Sale_id) INNER JOIN Stock S ON SI.stock_id = S.stock_id) WHERE SA.customer_id = " + Customer_id + " AND SA.status = 'A'";
+            String strSQL = "SELECT stock_id, stock_name, cost_p, sale_p, SI.qtysold, (SI.price*SI.qtysold) FROM ((Saleitems SI INNER JOIN Sale SA ON SI.Sale_id= SA.Sale_id) INNER JOIN Stock S ON SI.stock_id = S.stock_id) WHERE SA.customer_id = " + Customer_id + " AND SA.status = 'U'";
 
 
             //Create an OracleCommand object and instantiate it
@@ -264,7 +264,7 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT sale_id, sale_value, sale_date FROM Sale  WHERE sale_date LIKE '%" + Date+"' AND Status = 'A'";
+            String strSQL = "SELECT sale_id, sale_value, sale_date FROM Sale  WHERE sale_date LIKE '%" + Date+"' AND Status = 'U'";
 
 
 
@@ -291,7 +291,7 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
             conn.Open();
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT  SUM(sale_value) FROM Sale WHERE sale_date LIKE '%" + Date + "' AND Status = 'A'";
+            String strSQL = "SELECT  SUM(sale_value) FROM Sale WHERE sale_date LIKE '%" + Date + "' AND Status = 'U'";
 
 
 
@@ -320,7 +320,36 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
             conn.Open();
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT  SUM(sale_value) FROM Sale WHERE sale_date LIKE '%" + Date + "' AND Customer_ID = " + CustId + " AND Status = 'A'";
+            String strSQL = "SELECT  SUM(sale_value) FROM Sale WHERE sale_date LIKE '%" + Date + "' AND Customer_ID = " + CustId + " AND Status = 'U'";
+
+
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            dr.Read();
+
+
+            if (dr.IsDBNull(0))
+                totalSales = 0;
+            else
+                totalSales = Convert.ToDecimal(dr.GetValue(0)) + 1;
+
+            conn.Close();
+
+
+            return totalSales;
+        }
+        public static decimal getStockSales(DataSet DS, String Date, int StockId)
+        {
+
+            decimal totalSales;
+            //create an OracleConnection object using the connection string defined in static class DBConnect
+            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            conn.Open();
+            //Define the SQL Query to retrieve the data
+            String strSQL = "SELECT SUM(qtySold) FROM SaleItems SI INNER JOIN Sale S ON SI.Sale_id = S.Sale_id WHERE stock_id = " + StockId+ " AND sale_date LIKE '%" + Date + "'";
 
 
 
