@@ -116,7 +116,7 @@ namespace Hardware_Syst
                 txtCostPrice.Focus();
                 return;
             }
-           else if (!decimalCheck.IsMatch(txtCostPrice.Text))
+           else if (!decimalCheck.IsMatch(txtCostPrice.Text) && !numeric.IsMatch(txtCostPrice.Text))
             {
                 MessageBox.Show("Cost Price must be numeric");
                 txtCostPrice.Clear();
@@ -130,7 +130,7 @@ namespace Hardware_Syst
                 txtSalePrice.Focus();
                 return;
             }
-           else if (!decimalCheck.IsMatch(txtSalePrice.Text))
+           else if (!decimalCheck.IsMatch(txtSalePrice.Text) && !numeric.IsMatch(txtSalePrice.Text))
             {
                 MessageBox.Show("Sale Price must be numeric");
                 txtSalePrice.Clear();

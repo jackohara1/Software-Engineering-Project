@@ -76,6 +76,7 @@
             this.btnRegesterSale.TabIndex = 21;
             this.btnRegesterSale.Text = "Register Sale";
             this.btnRegesterSale.UseVisualStyleBackColor = true;
+            this.btnRegesterSale.Visible = false;
             this.btnRegesterSale.Click += new System.EventHandler(this.btnRegesterSale_Click);
             // 
             // lblSaleDate

@@ -145,7 +145,15 @@ namespace Hardware_Syst
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            grpPay.Visible = true;
+            if (grdCart.RowCount >= 0)
+            {
+                MessageBox.Show("Please add an item to the shopping cart if you wish to continue");
+            }
+            else
+            {
+                grpPay.Visible = true;
+                btnCheckout.Visible = true;
+            }
         }
 
         private void rdoCredit_CheckedChanged(object sender, EventArgs e)
