@@ -36,7 +36,7 @@ namespace Hardware_Syst
                 txtCustomer.Focus();
                 return;
             }
-            if (!alphabetic.IsMatch(txtCustomer.Text))
+           else if (!alphabetic.IsMatch(txtCustomer.Text))
             {
                 MessageBox.Show("Surname must contain letters only");
                 txtCustomer.Focus();
@@ -48,9 +48,21 @@ namespace Hardware_Syst
             {
 
                 DataSet ds = new DataSet();
-                grpSearch.Visible = true;
+                
                 grdCustomerSearch.DataSource = Customer.getMatchingSurname(ds, txtCustomer.Text.ToUpper()).Tables["ss"];
                 grdCustomerSearch.AllowUserToAddRows = false;
+
+
+                if (grdCustomerSearch.RowCount == 0)
+                {
+                    grpIssueInvoice.Visible = false;
+                    MessageBox.Show(Convert.ToString(txtCustomer.Text) + " does not exist in the system please try another surname");
+                    txtCustomer.Text = "";
+                }
+                else
+                {
+                    grpIssueInvoice.Visible = true;
+                }
             }
         }
 

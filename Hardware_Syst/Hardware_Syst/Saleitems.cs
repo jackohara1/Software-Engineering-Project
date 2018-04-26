@@ -158,13 +158,13 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
-        public static void returnStock(int Stock_id, int amount)
+        public static void returnStock(int Stock_id, int amount, int Sale_id)
         {
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
             myConn.Open();
 
             //Define SQL query to INSERT stock record
-            String strSQL = "UPDATE Saleitems SET qtysold = qtysold -" + amount + " WHERE stock_id = " + Stock_id;
+            String strSQL = "UPDATE Saleitems SET qtysold = qtysold -" + amount + " WHERE stock_id = " + Stock_id+"And sale_id = "+Sale_id;
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);

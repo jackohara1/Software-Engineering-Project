@@ -38,7 +38,7 @@ namespace Hardware_Syst
                 return;
             }
 
-            if (!alphanumericCheck.IsMatch(txtStockName.Text))
+           else if (!alphanumericCheck.IsMatch(txtStockName.Text))
             {
                 MessageBox.Show("Stock Name must use alphanumeric characters");
                 txtStockName.Clear();
@@ -49,9 +49,21 @@ namespace Hardware_Syst
             else
             {
                 DataSet ds = new DataSet();
-                grpSearch.Visible = true;
+                
                 grdStockSearch.DataSource = Stock.getAvalableStock(ds, txtStockName.Text).Tables["ss"];
                 grdStockSearch.AllowUserToAddRows = false;
+
+
+                if (grdStockSearch.RowCount == 0)
+                {
+                    grpSearch.Visible = false;
+                    MessageBox.Show(Convert.ToString(txtStockName.Text) + " does not exist in the system or may already by discontinued please try another item of stock");
+                    txtStockName.Text = "";
+                }
+                else
+                {
+                    grpSearch.Visible = true;
+                }
             }
         }
 

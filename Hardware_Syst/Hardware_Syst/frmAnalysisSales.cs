@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -20,6 +21,7 @@ namespace Hardware_Syst
         {
             InitializeComponent();
             parent = Parent;
+            cboYear.SelectedIndex = (0);
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -40,28 +42,50 @@ namespace Hardware_Syst
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
+            Regex alphabetic = new Regex("^[a-zA-Z]+$");
+
             if (txtCustomer.Text.Equals(""))
             {
                 MessageBox.Show("Surname was left blank");
                 txtCustomer.Focus();
                 return;
             }
+       
+           else if (!alphabetic.IsMatch(txtCustomer.Text))
+            {
+                MessageBox.Show("Surname must contain letters only");
+                txtCustomer.Focus();
+                txtCustomer.Clear();
+                return;
+            }
 
             else
             {
                 DataSet ds = new DataSet();
-                grdCust.Visible = true;
+             
                 grdCust.DataSource = Customer.getMatchingSurname(ds, txtCustomer.Text.ToUpper()).Tables["ss"];
                 grdCust.AllowUserToAddRows = false;
+
+
+                if (grdCust.RowCount == 0)
+                {
+                    grpCredit.Visible = false;
+                    MessageBox.Show(Convert.ToString(txtCustomer.Text) + " does not exist in the system please try another surname");
+                    txtCustomer.Text = "";
+                }
+                else
+                {
+                    grpCredit.Visible = true;
+                }
             }
         }
 
         private void btnSaleAnalsis_Click(object sender, EventArgs e)
         {
-            if (cboStockType.Text.Equals(""))
+            if (cboYear.Text.Equals(""))
             {
                 MessageBox.Show("Department was left blank");
-                cboStockType.Focus();
+                cboYear.Focus();
                 return;
             }
             else
@@ -69,11 +93,11 @@ namespace Hardware_Syst
             
                 DataSet ds = new DataSet();
                 if (rdoCust.Checked){
-                    grdSaleAnalysis.DataSource = Sale.getSaleAnalysisCust(ds, cboStockType.Text, Convert.ToInt32(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value)).Tables["ss"];
+                    grdSaleAnalysis.DataSource = Sale.getSaleAnalysisCust(ds, cboYear.Text, Convert.ToInt32(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value)).Tables["ss"];
                 }
                 else
                 {
-                    grdSaleAnalysis.DataSource = Sale.getSaleAnalysis(ds, cboStockType.Text).Tables["ss"];
+                    grdSaleAnalysis.DataSource = Sale.getSaleAnalysis(ds, cboYear.Text).Tables["ss"];
 
                 }
                 grdSaleAnalysis.AllowUserToAddRows = false;
@@ -161,11 +185,11 @@ namespace Hardware_Syst
             {
 
                 if (rdoAll.Checked) {
-                    chtData.Series["Revenue"].Points.AddXY(monthName(i), Sale.getSaleAnalysisChart(ds, Convert.ToString(monthName(i) + "-" + cboStockType.Text)));
+                    chtData.Series["Revenue"].Points.AddXY(monthName(i), Sale.getSaleAnalysisChart(ds, Convert.ToString(monthName(i) + "-" + cboYear.Text)));
                     j++; }
                 else
                 {
-                    chtData.Series["Revenue"].Points.AddXY(monthName(i), Sale.getSaleCustomerChart(ds, Convert.ToString(monthName(i) + "-" + cboStockType.Text),Convert.ToInt32(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value)));
+                    chtData.Series["Revenue"].Points.AddXY(monthName(i), Sale.getSaleCustomerChart(ds, Convert.ToString(monthName(i) + "-" + cboYear.Text),Convert.ToInt32(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value)));
                 }
             }
 

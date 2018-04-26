@@ -74,7 +74,12 @@ namespace Hardware_Syst
             grdCart.Rows[i].Selected = true;
             while(i< grdCart.RowCount)
             {
-                Saleitem newSaleItem = new Saleitem(Convert.ToInt32(txtSaleID.Text), Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value), Convert.ToDecimal(grdCart.Rows[i].Cells[6].Value));
+                Saleitem newSaleItem = new Saleitem();
+                newSaleItem.setSale_id(Convert.ToInt32(txtSaleID.Text));
+                newSaleItem.setStock_id( Convert.ToInt32(grdCart.Rows[i].Cells[0].Value));
+                newSaleItem.setQtysold(Convert.ToInt32(grdCart.Rows[i].Cells[2].Value));
+                newSaleItem.setPrice(Convert.ToDecimal(grdCart.Rows[i].Cells[6].Value));
+
                 newSaleItem.addSaleitem();
              
                 Stock.replaceStock(Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value));
@@ -102,7 +107,7 @@ namespace Hardware_Syst
                 return;
             }
 
-            if (!alphanumericCheck.IsMatch(txtSrh.Text))
+           else if (!alphanumericCheck.IsMatch(txtSrh.Text))
             {
                 MessageBox.Show("Stock Name must use alphanumeric characters");
                 txtSrh.Clear();
@@ -113,11 +118,20 @@ namespace Hardware_Syst
 
             else
             {
-                DataSet ds = new DataSet();
-                grpStock.Visible = true;
+                DataSet ds = new DataSet();              
                 grdStock.DataSource = Stock.getMatchingSaleStock(ds, txtSrh.Text).Tables["ss"];
                 grdStock.AllowUserToAddRows = false;
 
+                if (grdStock.RowCount == 0)
+                {
+                    grpStock.Visible = false;
+                    MessageBox.Show(Convert.ToString(txtSrh.Text) + " does not exist in the system please try another item of stock");
+                    txtSrh.Text = "";
+                }
+                else
+                {
+                    grpStock.Visible = true;
+                }
             }
 
         }
@@ -171,7 +185,7 @@ namespace Hardware_Syst
                 txtCustomer.Focus();
                 return;
             }
-            if (!alphabetic.IsMatch(txtCustomer.Text))
+            else if (!alphabetic.IsMatch(txtCustomer.Text))
             {
                 MessageBox.Show("Surname must contain letters only");
                 txtCustomer.Focus();
@@ -182,9 +196,18 @@ namespace Hardware_Syst
             else
             {
                 DataSet ds = new DataSet();
-                grdCust.Visible = true;
                 grdCust.DataSource = Customer.getMatchingSurname(ds, txtCustomer.Text.ToUpper()).Tables["ss"];
                 grdCust.AllowUserToAddRows = false;
+                if (grdCust.RowCount == 0)
+                {
+                    grpCredit.Visible = false;
+                    MessageBox.Show(Convert.ToString(txtCustomer.Text) + " does not exist in the system please try another Surname");
+                    txtCustomer.Text = "";
+                }
+                else
+                {
+                    grpCredit.Visible = true;
+                }
             }
         }
 

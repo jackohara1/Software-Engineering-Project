@@ -38,7 +38,7 @@ namespace Hardware_Syst
                 return;
             }
 
-            if (!alphanumericCheck.IsMatch(txtStockName.Text))
+           else if (!alphanumericCheck.IsMatch(txtStockName.Text))
             {
                 MessageBox.Show("Stock Name must use alphanumeric characters");
                 txtStockName.Clear();
@@ -48,9 +48,20 @@ namespace Hardware_Syst
             else
             {
                 DataSet ds = new DataSet();
-                grpSearch.Visible = true;
+            
                 grdStockSearch.DataSource = Stock.getMatchingStock(ds, txtStockName.Text).Tables["ss"];
                 grdStockSearch.AllowUserToAddRows = false;
+
+                if (grdStockSearch.RowCount == 0)
+                {
+                    grpSearch.Visible = false;
+                    MessageBox.Show(Convert.ToString(txtStockName.Text)+" does not exist in the system please try another item of stock");
+                    txtStockName.Text = "";
+                }
+                else
+                {
+                  grpSearch.Visible = true;
+                }
             }
         }
 
@@ -71,14 +82,14 @@ namespace Hardware_Syst
                 return;
             }
 
-            if (txtStock.Text.Equals(""))
+           else if (txtStock.Text.Equals(""))
             {
                 MessageBox.Show("Stock Name was left blank");
                 txtStock.Focus();
                 return;
             }
 
-            if (!alphanumericCheck.IsMatch(txtStock.Text))
+           else if (!alphanumericCheck.IsMatch(txtStock.Text))
             {
                 MessageBox.Show("Stock Name must use alphanumeric characters");
                 txtStock.Clear();
@@ -86,26 +97,26 @@ namespace Hardware_Syst
                 return;
             }
 
-            if (txtQty.Text.Equals(""))
+           else if (txtQty.Text.Equals(""))
             {
                 MessageBox.Show("Quantity was left blank");
                 txtQty.Focus();
                 return;
             }
-            if (!numeric.IsMatch(txtQty.Text))
+           else if (!numeric.IsMatch(txtQty.Text))
             {
                 MessageBox.Show("Quantity must be a numeric value");
                 txtQty.Clear();
                 txtQty.Focus();
                 return;
             }
-            if (txtCostPrice.Text.Equals(""))
+           else if (txtCostPrice.Text.Equals(""))
             {
                 MessageBox.Show("Cost Price was left blank");
                 txtCostPrice.Focus();
                 return;
             }
-            if (!decimalCheck.IsMatch(txtCostPrice.Text))
+           else if (!decimalCheck.IsMatch(txtCostPrice.Text))
             {
                 MessageBox.Show("Cost Price must be numeric");
                 txtCostPrice.Clear();
@@ -113,13 +124,13 @@ namespace Hardware_Syst
                 return;
             }
 
-            if (txtSalePrice.Text.Equals(""))
+           else if (txtSalePrice.Text.Equals(""))
             {
                 MessageBox.Show("Sale Price was left blank");
                 txtSalePrice.Focus();
                 return;
             }
-            if (!decimalCheck.IsMatch(txtSalePrice.Text))
+           else if (!decimalCheck.IsMatch(txtSalePrice.Text))
             {
                 MessageBox.Show("Sale Price must be numeric");
                 txtSalePrice.Clear();

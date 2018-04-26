@@ -53,14 +53,14 @@ namespace Hardware_Syst
                 return;
             }
             
-            if (txtStockName.Text.Equals(""))
+           else if (txtStockName.Text.Equals(""))
             {
                 MessageBox.Show("Stock Name was left blank");
                 txtStockName.Focus();
                 return;
             }
 
-            if (!alphanumericCheck.IsMatch(txtStockName.Text))
+           else if (!alphanumericCheck.IsMatch(txtStockName.Text))
             {
                 MessageBox.Show("Stock Name must use alphanumeric characters");
                 txtStockName.Clear();
@@ -74,20 +74,20 @@ namespace Hardware_Syst
                 txtQty.Focus();
                 return;
             }
-            if (!numeric.IsMatch(txtQty.Text))
+           else if (!numeric.IsMatch(txtQty.Text))
             {
                 MessageBox.Show("Quantity must be a numeric value");
                 txtQty.Clear();
                 txtQty.Focus();
                 return;
             }
-            if (txtCostPrice.Text.Equals(""))
+           else if (txtCostPrice.Text.Equals(""))
             {
                 MessageBox.Show("Cost Price was left blank");
                 txtCostPrice.Focus();
                 return;
             }
-            if (!decimalCheck.IsMatch(txtCostPrice.Text))
+           else if (!decimalCheck.IsMatch(txtCostPrice.Text))
             {
                 MessageBox.Show("Cost Price must be numeric");
                 txtCostPrice.Clear();
@@ -95,13 +95,13 @@ namespace Hardware_Syst
                 return;
             }
 
-            if (txtSalePrice.Text.Equals(""))
+           else if (txtSalePrice.Text.Equals(""))
             {
                 MessageBox.Show("Sale Price was left blank");
                 txtSalePrice.Focus();
                 return;
             }
-            if (!decimalCheck.IsMatch(txtSalePrice.Text))
+           else if (!decimalCheck.IsMatch(txtSalePrice.Text))
             {
                 MessageBox.Show("Sale Price must be numeric");
                 txtSalePrice.Clear();

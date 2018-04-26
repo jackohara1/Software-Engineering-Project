@@ -32,7 +32,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblDate = new System.Windows.Forms.Label();
-            this.cboStockType = new System.Windows.Forms.ComboBox();
+            this.cboYear = new System.Windows.Forms.ComboBox();
             this.btnSaleAnalsis = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,21 +61,21 @@
             this.lblDate.TabIndex = 14;
             this.lblDate.Text = "Date";
             // 
-            // cboStockType
+            // cboYear
             // 
-            this.cboStockType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboStockType.FormattingEnabled = true;
-            this.cboStockType.Items.AddRange(new object[] {
+            this.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboYear.FormattingEnabled = true;
+            this.cboYear.Items.AddRange(new object[] {
             "18",
             "17",
             "16",
             "15",
             "14"});
-            this.cboStockType.Location = new System.Drawing.Point(124, 57);
-            this.cboStockType.Name = "cboStockType";
-            this.cboStockType.Size = new System.Drawing.Size(121, 21);
-            this.cboStockType.TabIndex = 13;
-            this.cboStockType.SelectedIndexChanged += new System.EventHandler(this.cboStockType_SelectedIndexChanged);
+            this.cboYear.Location = new System.Drawing.Point(124, 57);
+            this.cboYear.Name = "cboYear";
+            this.cboYear.Size = new System.Drawing.Size(121, 21);
+            this.cboYear.TabIndex = 13;
+            this.cboYear.SelectedIndexChanged += new System.EventHandler(this.cboStockType_SelectedIndexChanged);
             // 
             // btnSaleAnalsis
             // 
@@ -217,7 +217,7 @@
             this.Controls.Add(this.grdSaleAnalysis);
             this.Controls.Add(this.btnSaleAnalsis);
             this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.cboStockType);
+            this.Controls.Add(this.cboYear);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmAnalysisSales";
@@ -237,7 +237,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.ComboBox cboStockType;
+        private System.Windows.Forms.ComboBox cboYear;
         private System.Windows.Forms.Button btnSaleAnalsis;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;

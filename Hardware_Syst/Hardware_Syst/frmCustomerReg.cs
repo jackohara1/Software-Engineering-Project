@@ -42,7 +42,7 @@ namespace Hardware_Syst
                 txtCustomerName.Focus();
                 return;
             }
-            if (!alphabetic.IsMatch(txtCustomerName.Text))
+           else if (!alphabetic.IsMatch(txtCustomerName.Text))
             {
                 MessageBox.Show("Forname must contain letters only");
                 txtCustomerName.Focus();
@@ -50,13 +50,13 @@ namespace Hardware_Syst
                 return;
             }
 
-            if (txtCustomerSurname.Text.Equals(""))
+           else if (txtCustomerSurname.Text.Equals(""))
             {
                 MessageBox.Show("Surname was left blank");
                 txtCustomerSurname.Focus();
                 return;
             }
-            if (!alphabetic.IsMatch(txtCustomerSurname.Text))
+           else if (!alphabetic.IsMatch(txtCustomerSurname.Text))
             {
                 MessageBox.Show("Surname must contain letters only");
                 txtCustomerSurname.Focus();
@@ -64,39 +64,39 @@ namespace Hardware_Syst
                 return;
             }
 
-            if (txtAddLn1.Text.Equals(""))
+           else if (txtAddLn1.Text.Equals(""))
             {
                 MessageBox.Show("Address Line 1 was left blank");
                 txtAddLn1.Focus();
                 return;
             }
-            if (!alphanumericCheck.IsMatch(txtAddLn1.Text))
+           else if (!alphanumericCheck.IsMatch(txtAddLn1.Text))
             {
                 MessageBox.Show("Address line 1 must contain alphanumeric characters only");
                 txtAddLn1.Focus();
                 txtAddLn1.Clear();
                 return;
             }
-            if (txtAddLn2.Text.Equals(""))
+           else if (txtAddLn2.Text.Equals(""))
             {
                 MessageBox.Show("Address Line 2 was left blank");
                 txtAddLn2.Focus();
                 return;
             }
-            if (!alphanumericCheck.IsMatch(txtAddLn2.Text))
+           else if (!alphanumericCheck.IsMatch(txtAddLn2.Text))
             {
                 MessageBox.Show("Address line 2 must contain alphanumeric characters only");
                 txtAddLn2.Focus();
                 txtAddLn2.Clear();
                 return;
             }
-            if (txtAddLn3.Text.Equals(""))
+           else if (txtAddLn3.Text.Equals(""))
             {
                 MessageBox.Show("Address Line 3 was left blank");
                 txtAddLn3.Focus();
                 return;
             }
-            if (!alphanumericCheck.IsMatch(txtAddLn3.Text))
+           else if (!alphanumericCheck.IsMatch(txtAddLn3.Text))
             {
                 MessageBox.Show("Address line 3 must contain alphanumeric characters only");
                 txtAddLn3.Focus();

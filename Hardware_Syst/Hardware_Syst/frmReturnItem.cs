@@ -45,19 +45,19 @@ namespace Hardware_Syst
 
         private void btnSrh_Click(object sender, EventArgs e)
         {
-            Regex numericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
+            Regex numeric = new Regex("^[0-9]*$");
 
 
             if (txtSaleID.Text.Equals(""))
             {
-                MessageBox.Show("Stock Name was left blank");
+                MessageBox.Show("Sale ID was left blank");
                 txtSaleID.Focus();
                 return;
             }
 
-            if (!numericCheck.IsMatch(txtSaleID.Text))
+           else if (!numeric.IsMatch(txtSaleID.Text))
             {
-                MessageBox.Show("Stock Name must use alphanumeric characters");
+                MessageBox.Show("Sale ID must use numeric characters");
                 txtSaleID.Clear();
                 txtSaleID.Focus();
                 return;
@@ -65,10 +65,39 @@ namespace Hardware_Syst
 
             else
             {
-                grpStock.Visible = true;
+               
                 DataSet ds = new DataSet();
                 grdCart.DataSource = Saleitem.getMatchingSaleItem(ds, Convert.ToInt32(txtSaleID.Text)).Tables["ss"];
                 grdCart.AllowUserToAddRows = false;
+                if (grdCart.RowCount == 0)
+                {
+                    grpStock.Visible = false;
+                    MessageBox.Show(Convert.ToString(txtSaleID.Text) + " : This Sale id did not take place on this system");
+                    txtSaleID.Text = "";
+                }
+                
+                else
+                {
+                    int sum = 0;
+
+                   for(int i=0; i < grdCart.RowCount; i++)
+                    {
+                        sum += Convert.ToInt32(grdCart.Rows[i].Cells[2].Value);
+                    }
+
+                   if (sum <= 0)
+                    {
+                        grpStock.Visible = false;
+                        MessageBox.Show(Convert.ToString(txtSaleID.Text) + " : This Sale id already has all items returned");
+                        txtSaleID.Text = "";
+                    }
+                    else
+                    {
+                        grpStock.Visible = true;
+                    }
+
+                   
+                }
             }
 
         }
@@ -81,22 +110,42 @@ namespace Hardware_Syst
 
         private void btnReturnItem_Click(object sender, EventArgs e)
         {
+            Regex numeric = new Regex("^[0-9]*$");
 
-            if (Convert.ToInt16(txtQtySold.Text) > Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value))
+
+            if (txtQtySold.Text.Equals(""))
+            {
+                MessageBox.Show("Quantity Sold was left blank");
+                txtQtySold.Focus();
+                return;
+            }
+
+           else if (!numeric.IsMatch(txtQtySold.Text))
+            {
+                MessageBox.Show("Quantity Sold must use numeric characters");
+                txtQtySold.Clear();
+                txtQtySold.Focus();
+                return;
+            }
+
+            else if (Convert.ToInt16(txtQtySold.Text) > Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value))
             {
                 MessageBox.Show("The quantity you are returning is greater than the quantity you have bought");
             }
 
-            if (rdoTrue.Checked)
-            {
-                Stock.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt32(txtQtySold));
-            }
+          
 
             else
             {
-                Saleitem.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt16(txtQtySold.Text));
+                grdCart.Rows[0].Selected = true;
+                Saleitem.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt16(txtQtySold.Text),Convert.ToInt16(txtSaleID.Text));
                 Sale.returnSale(Convert.ToInt32(txtSaleID.Text), Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) * Convert.ToInt16(txtQtySold.Text));
 
+                 if (rdoTrue.Checked)
+                 {
+                  
+                    Stock.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt32(txtQtySold.Text));
+                   }
 
                 MessageBox.Show("Item has been returned");
 
