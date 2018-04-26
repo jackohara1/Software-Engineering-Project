@@ -122,7 +122,7 @@ namespace Hardware_Syst
                 grdStock.DataSource = Stock.getMatchingSaleStock(ds, txtSrh.Text).Tables["ss"];
                 grdStock.AllowUserToAddRows = false;
 
-                if (grdStock.RowCount == 0)
+                if (grdStock.RowCount <= 0)
                 {
                     grpStock.Visible = false;
                     MessageBox.Show(Convert.ToString(txtSrh.Text) + " does not exist in the system please try another item of stock");
@@ -145,14 +145,14 @@ namespace Hardware_Syst
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            if (grdCart.RowCount >= 0)
+            if (grdCart.RowCount <= 0)
             {
                 MessageBox.Show("Please add an item to the shopping cart if you wish to continue");
             }
             else
             {
                 grpPay.Visible = true;
-                btnCheckout.Visible = true;
+                btnRegesterSale.Visible = true;
             }
         }
 

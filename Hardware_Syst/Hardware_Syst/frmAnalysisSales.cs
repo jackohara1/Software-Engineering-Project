@@ -69,13 +69,13 @@ namespace Hardware_Syst
 
                 if (grdCust.RowCount == 0)
                 {
-                    grpCredit.Visible = false;
+                    grdCust.Visible = false;
                     MessageBox.Show(Convert.ToString(txtCustomer.Text) + " does not exist in the system please try another surname");
                     txtCustomer.Text = "";
                 }
                 else
                 {
-                    grpCredit.Visible = true;
+                    grdCust.Visible = true;
                 }
             }
         }
@@ -142,7 +142,7 @@ namespace Hardware_Syst
             chtData.ChartAreas["mainArea"].AxisY.LabelStyle.Font = new Font("Consolas", 8);
 
             chtData.ChartAreas["mainArea"].AxisY.Minimum = 0;
-            chtData.ChartAreas["mainArea"].AxisY.Interval = 500;
+            chtData.ChartAreas["mainArea"].AxisY.Interval = 250;
             chtData.ChartAreas["mainArea"].AxisY.Title = "Euros";
 
             chtData.ChartAreas["mainArea"].AxisX.Interval = 1;
