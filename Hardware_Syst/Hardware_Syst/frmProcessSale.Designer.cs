@@ -76,7 +76,6 @@
             this.btnRegesterSale.TabIndex = 21;
             this.btnRegesterSale.Text = "Register Sale";
             this.btnRegesterSale.UseVisualStyleBackColor = true;
-            this.btnRegesterSale.Visible = false;
             this.btnRegesterSale.Click += new System.EventHandler(this.btnRegesterSale_Click);
             // 
             // lblSaleDate
@@ -347,7 +346,6 @@
             this.grdCust.Name = "grdCust";
             this.grdCust.Size = new System.Drawing.Size(348, 87);
             this.grdCust.TabIndex = 46;
-            this.grdCust.Visible = false;
             this.grdCust.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCust_CellClick);
             // 
             // frmProcessSale

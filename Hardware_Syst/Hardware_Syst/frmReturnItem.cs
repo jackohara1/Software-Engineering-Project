@@ -94,6 +94,7 @@ namespace Hardware_Syst
                     else
                     {
                         grpStock.Visible = true;
+                        txtSaleID.ReadOnly = true;
                     }
 
                    

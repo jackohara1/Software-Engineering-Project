@@ -207,6 +207,7 @@ namespace Hardware_Syst
                 else
                 {
                     grpCredit.Visible = true;
+                    grdCart.Visible = true;
                 }
             }
         }
