@@ -156,7 +156,7 @@ namespace Hardware_Syst
                    
             {
                 String strSQL = "INSERT INTO Sale (Sale_Id,Sale_Value, Sale_Date, status) VALUES(" + this.sale_id +
-                      "," + this.saleValue + ",'" +  this.saleDate + "','" + 'U' + "')";
+                      "," + this.saleValue + ",'" +  this.saleDate + "','" + this.status + "')";
 
                 OracleCommand cmd = new OracleCommand(strSQL, myConn);
                 cmd.ExecuteNonQuery();
@@ -197,7 +197,7 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
             conn.Open();
             //Define SQL Query
-            String strSQL = "UPDATE Sale SET status='U' WHERE sale_id = " + Sale_id;
+            String strSQL = "UPDATE Sale SET status='P' WHERE sale_id = " + Sale_id;
             //execute query using Data Reader
 
             //Execute the command
@@ -264,7 +264,7 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT sale_id, sale_value, sale_date FROM Sale  WHERE sale_date LIKE '%" + Date+"' AND Status = 'U'";
+            String strSQL = "SELECT sale_id, sale_value, sale_date FROM Sale  WHERE sale_date LIKE '%" + Date+"' AND Status = 'P'";
 
 
 
@@ -291,7 +291,7 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
             conn.Open();
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT  SUM(sale_value) FROM Sale WHERE sale_date LIKE '%" + Date + "' AND Status = 'U'";
+            String strSQL = "SELECT  SUM(sale_value) FROM Sale WHERE sale_date LIKE '%" + Date + "' AND Status = 'P'";
 
 
 
@@ -320,7 +320,7 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
             conn.Open();
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT  SUM(sale_value) FROM Sale WHERE sale_date LIKE '%" + Date + "' AND Customer_ID = " + CustId + " AND Status = 'U'";
+            String strSQL = "SELECT  SUM(sale_value) FROM Sale WHERE sale_date LIKE '%" + Date + "' AND Customer_ID = " + CustId + " AND Status = 'P'";
 
 
 

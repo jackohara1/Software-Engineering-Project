@@ -107,30 +107,7 @@ namespace Hardware_Syst
             return balance;
         }
 
-        //define a static method to get all data from Stock table
-        public static DataSet getAllCustomer(DataSet DS, String OrderBy)
-        {
-            //create an OracleConnection object using the connection string defined in static class DBConnect
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-            //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT customer_id, forename, surname, addressln1, addressln2, addressln3, balance FROM Customer ORDER BY " + OrderBy;
-
-            //Create an OracleCommand object and instantiate it
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //Create an oracleAdapter to hold the result of the executed OracleCommand
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            //Fill the DataSet DS with the query result
-            da.Fill(DS, "ss");
-
-            //close the DB Connection
-            conn.Close();
-
-            //Return the Dataset with the required data to the windows form which executed this method
-            return DS;
-        }
+        
         public static DataSet getSelectedCustomer(DataSet DS, String EnteredSurname)
         {
 

@@ -82,6 +82,8 @@ namespace Hardware_Syst
 
         private void btnSaleAnalsis_Click(object sender, EventArgs e)
         {
+            
+            chtData.Series.Clear();
             if (cboYear.Text.Equals(""))
             {
                 MessageBox.Show("Department was left blank");

@@ -59,11 +59,12 @@ namespace Hardware_Syst
             }
             else
             {
+                mySale.setStatus(Convert.ToString('P'));
                 mySale.setCustomer_id(0);
             }
 
             mySale.setSaleDate(String.Format("{0:dd-MMM-yy}", DateTime.Now));
-            mySale.setStatus(Convert.ToString('A'));
+            
             mySale.setSaleValue(Convert.ToDecimal(txtSaleValue.Text));
 
             mySale.addSale();
@@ -185,6 +186,7 @@ namespace Hardware_Syst
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
+            btnRegesterSale.Visible = false;
             Regex alphabetic = new Regex("^[a-zA-Z]+$");
 
             if (txtCustomer.Text.Equals(""))
@@ -269,29 +271,7 @@ namespace Hardware_Syst
 
         private void grdCust_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            /* Sale mySale = new Sale();
-            mySale.setSale_id(Convert.ToInt32(txtSaleID.Text));
-            mySale.setCustomer_id(Convert.ToInt16(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value));
-            mySale.setSaleDate(Convert.ToString(DateTime.Now));
-            mySale.setStatus(Convert.ToString('A'));
-            mySale.setSaleValue(Convert.ToDecimal(txtSaleValue.Text));
-
-            mySale.addSale();
-            Customer.updateBalance(Convert.ToInt16(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value), Convert.ToDecimal(txtSaleValue.Text));
-            int i = 0;
-            grdCart.Rows[i].Selected = true;
-            while (i < grdCart.RowCount-1)
-            {
-                Saleitem newSaleItem = new Saleitem(Convert.ToInt32(txtSaleID.Text), Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value), Convert.ToDecimal(grdCart.Rows[i].Cells[6].Value));
-                newSaleItem.addSaleitem();
-                Stock.replaceStock(Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value));
-               
-                i++;
-                
-            }
-
-           */
-
+    
             btnRegesterSale.Visible = true;
         }
     }

@@ -35,6 +35,8 @@ namespace Hardware_Syst
 
         private void btnStockAnalsis_Click(object sender, EventArgs e)
         {
+           
+            chtStock.Series.Clear();
             if (cboStockType.Text.Equals(""))
             {
                 MessageBox.Show("Department was left blank");
