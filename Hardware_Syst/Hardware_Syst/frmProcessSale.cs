@@ -175,6 +175,7 @@ namespace Hardware_Syst
                     grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) + 1).ToString());
                     txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[6].Value) + Convert.ToDecimal(txtSaleValue.Text));
                     isAdded = true;
+
                 }
             }
             if (isAdded == false)
@@ -253,7 +254,12 @@ namespace Hardware_Syst
                 {
                     txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(txtSaleValue.Text) - (Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[6].Value) * Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value)));
                     grdCart.Rows.Remove(grdCart.Rows[grdCart.CurrentCell.RowIndex]);
+                    if (grdCart.Rows.Count == 0)
+                    {
+                        grpCart.Visible = false;
+                    }
                 }
+
                 else
                 {
                     grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) - 1).ToString());
@@ -265,7 +271,10 @@ namespace Hardware_Syst
             {
                  txtSaleValue.Text = Convert.ToString(Convert.ToDecimal( txtSaleValue.Text) - (Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[6].Value) * Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value)));
                  grdCart.Rows.Remove(grdCart.Rows[grdCart.CurrentCell.RowIndex]);
-               
+               if (grdCart.Rows.Count == 0)
+                {
+                    grpCart.Visible = false;
+                }
             }
         }
 

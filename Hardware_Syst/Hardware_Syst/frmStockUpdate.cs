@@ -137,6 +137,13 @@ namespace Hardware_Syst
                 txtSalePrice.Focus();
                 return;
             }
+            else if (Convert.ToDecimal(txtSalePrice.Text)< Convert.ToDecimal(txtCostPrice.Text))
+            {
+                MessageBox.Show("Sale Price must be greater than Cost Price");
+                txtSalePrice.Clear();
+                txtSalePrice.Focus();
+                return;
+            }
             else
             {
                 Stock myStock = new Stock();

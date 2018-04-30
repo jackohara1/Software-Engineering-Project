@@ -56,6 +56,7 @@ namespace Hardware_Syst
 
                 if (grdCustomerSearch.RowCount == 0)
                 {
+                    grpSearch.Visible = false;
                     grpPayInvoice.Visible = false;
                     MessageBox.Show(Convert.ToString(txtCustomer.Text) + " does not exist in the system please try another surname");
                     txtCustomer.Text = "";
@@ -88,7 +89,7 @@ private void btnPayInvoice_Click(object sender, EventArgs e)
 
         private void grdCustomerSearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            grpPayInvoice.Visible = true;
+            
             DataSet ds = new DataSet();
             txtTotal.Text = "0.00";
             grdIssue.DataSource = Saleitem.getMatchingInvoice(ds, Convert.ToInt32(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[0].Value)).Tables["ss"];
@@ -104,7 +105,15 @@ private void btnPayInvoice_Click(object sender, EventArgs e)
 
                 i++;
             }
+            if (grdIssue.RowCount == 0) { 
+            grpPayInvoice.Visible = false;
+            MessageBox.Show(Convert.ToString(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[2].Value)+" "+ Convert.ToString(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[1].Value)+" does not owe the company any money");
+            }
 
+            else
+            {
+                grpPayInvoice.Visible = true;
+            }
         }
     }
   

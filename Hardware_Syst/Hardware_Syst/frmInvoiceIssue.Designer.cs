@@ -142,6 +142,7 @@
             // 
             // txtAddln1
             // 
+            this.txtAddln1.Enabled = false;
             this.txtAddln1.Location = new System.Drawing.Point(23, 258);
             this.txtAddln1.Name = "txtAddln1";
             this.txtAddln1.Size = new System.Drawing.Size(100, 20);
@@ -150,6 +151,7 @@
             // 
             // txtAddln3
             // 
+            this.txtAddln3.Enabled = false;
             this.txtAddln3.Location = new System.Drawing.Point(23, 310);
             this.txtAddln3.Name = "txtAddln3";
             this.txtAddln3.Size = new System.Drawing.Size(100, 20);
@@ -158,6 +160,7 @@
             // 
             // txtAddln2
             // 
+            this.txtAddln2.Enabled = false;
             this.txtAddln2.Location = new System.Drawing.Point(23, 284);
             this.txtAddln2.Name = "txtAddln2";
             this.txtAddln2.Size = new System.Drawing.Size(100, 20);
@@ -166,6 +169,7 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(715, 326);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(93, 20);

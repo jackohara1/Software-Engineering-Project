@@ -69,6 +69,7 @@ namespace Hardware_Syst
 
                 if (grdCust.RowCount == 0)
                 {
+                    btnSaleAnalsis.Visible = false;
                     grdCust.Visible = false;
                     MessageBox.Show(Convert.ToString(txtCustomer.Text) + " does not exist in the system please try another surname");
                     txtCustomer.Text = "";
@@ -89,6 +90,16 @@ namespace Hardware_Syst
                 MessageBox.Show("Department was left blank");
                 cboYear.Focus();
                 return;
+            }
+            else if (grdSaleAnalysis.RowCount >= 0 && rdoAll.Checked)
+            {
+                MessageBox.Show("There was no sales made in the year 20"+cboYear.Text);
+            
+            }
+            else if (grdSaleAnalysis.RowCount >= 0 && rdoCust.Checked)
+            {
+                MessageBox.Show(Convert.ToString(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[2].Value) + " " + Convert.ToString(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[1].Value) + "made no purchases in the year 20" + cboYear.Text);
+
             }
             else
             {
@@ -153,7 +164,7 @@ namespace Hardware_Syst
             chtData.ChartAreas["mainArea"].AxisX.MajorGrid.Enabled = false;
             //chtData.ChartAreas["mainArea"].AxisY.MajorGrid.Enabled = false;
 
-            //chart title   
+            chtData.Titles.Clear();
             chtData.Titles.Add("Monthly Revenue 2017");
         }
 
