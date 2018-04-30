@@ -166,7 +166,6 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(715, 326);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(93, 20);
@@ -225,12 +224,12 @@
         private System.Windows.Forms.Label lblStockName;
         private System.Windows.Forms.TextBox txtCustomer;
         private System.Windows.Forms.GroupBox grpIssueInvoice;
-        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.DataGridView grdIssue;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.TextBox txtAddln1;
         private System.Windows.Forms.TextBox txtAddln3;
         private System.Windows.Forms.TextBox txtAddln2;
+        private System.Windows.Forms.TextBox txtTotal;
     }
 }

@@ -120,7 +120,7 @@ namespace Hardware_Syst
             OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
             //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT SI.sale_id, SI.stock_id, S.stock_name, SI.price, SI.qtysold, (SI.price*SI.qtysold), SA.sale_date FROM ((Saleitems SI INNER JOIN Sale SA ON SI.Sale_id= SA.Sale_id) INNER JOIN Stock S ON SI.stock_id = S.stock_id) WHERE SA.customer_id = " + Customer_id + " AND SA.status = 'A'";
+            String strSQL = "SELECT SI.sale_id, SI.stock_id, S.stock_name, SI.price, SI.qtysold, (SI.price*SI.qtysold), SA.sale_date FROM ((Saleitems SI INNER JOIN Sale SA ON SI.Sale_id= SA.Sale_id) INNER JOIN Stock S ON SI.stock_id = S.stock_id) WHERE SA.customer_id = " + Customer_id + " AND SA.status = 'U'";
 
 
             //Create an OracleCommand object and instantiate it

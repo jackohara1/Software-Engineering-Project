@@ -61,7 +61,7 @@ namespace Hardware_Syst
                 }
                 else
                 {
-                    grpIssueInvoice.Visible = true;
+                    grpSearch.Visible = true;
                 }
             }
         }
@@ -84,13 +84,14 @@ namespace Hardware_Syst
 
             Customer Invoice = new Customer();
             Invoice.getCustomer(Convert.ToInt32(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[0].Value));
-            txtTotal.Text = "";
+            txtTotal.Text = "0.00";
             txtAddln1.Text = Convert.ToString(Invoice.getAddln1());
             txtAddln2.Text = Convert.ToString(Invoice.getAddln2());
             txtAddln3.Text = Convert.ToString(Invoice.getAddln3());
             int i = 0;
             while (i < grdIssue.RowCount)
             {
+          
                 txtTotal.Text = Convert.ToString(Convert.ToDecimal(txtTotal.Text)+Convert.ToDecimal(grdIssue.Rows[i].Cells[5].Value));
                 
                 i++;

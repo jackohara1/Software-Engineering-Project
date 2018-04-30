@@ -62,7 +62,7 @@ namespace Hardware_Syst
                 }
                 else
                 {
-                    grpPayInvoice.Visible = true;
+                    grpSearch.Visible = true;
                 }
             }
         }
@@ -74,7 +74,7 @@ namespace Hardware_Syst
 private void btnPayInvoice_Click(object sender, EventArgs e)
         {
             int i = 0;
-            while (i < grdIssue.RowCount - 1)
+            while (i < grdIssue.RowCount )
             {
                 Sale.invoicePayed(Convert.ToInt32(grdIssue.Rows[i].Cells[0].Value));
 
