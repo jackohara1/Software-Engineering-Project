@@ -172,8 +172,8 @@ namespace Hardware_Syst
             {
                 if(Convert.ToInt16(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[0].Value)== Convert.ToInt16(grdCart.Rows[x].Cells[0].Value))
                 {
-                    grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) + 1).ToString());
-                    txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[6].Value) + Convert.ToDecimal(txtSaleValue.Text));
+                    grdCart.Rows[x].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[x].Cells[2].Value) + 1).ToString());
+                    txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(grdCart.Rows[x].Cells[6].Value) + Convert.ToDecimal(txtSaleValue.Text));
                     isAdded = true;
 
                 }
