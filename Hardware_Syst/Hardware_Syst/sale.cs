@@ -55,20 +55,10 @@ namespace Hardware_Syst
             this.saleValue = SaleValue;
         }
 
-
-
-
-
-
-
-
-
+        //Retrieves the next sale id
         public static int getNextSale_id()
         {
-
-
             int intNextSaleid;
-
 
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
             myConn.Open();
@@ -93,6 +83,7 @@ namespace Hardware_Syst
             return intNextSaleid;
 
         }
+        //registers a sale in the database
         public void addSale()
         {
             //connect to database
@@ -124,6 +115,7 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
+        //updates the sale value of a sale due to an item being returned
         public static void returnSale(int Sale_id, decimal value)
         {
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
@@ -139,6 +131,7 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
+        //updates the status of a customers 
         public static void invoicePayed(int Sale_id)
         {
             //connect to DB
@@ -157,30 +150,7 @@ namespace Hardware_Syst
 
 
         }
-       public static DataSet getMatchingInvoice(DataSet DS, int Customer_id)
-        {
-            //create an OracleConnection object using the connection string defined in static class DBConnect
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
 
-            //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT stock_id, stock_name, cost_p, sale_p, SI.qtysold, (SI.price*SI.qtysold) FROM ((Saleitems SI INNER JOIN Sale SA ON SI.Sale_id= SA.Sale_id) INNER JOIN Stock S ON SI.stock_id = S.stock_id) WHERE SA.customer_id = " + Customer_id + " AND SA.status = 'U'";
-
-
-            //Create an OracleCommand object and instantiate it
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //Create an oracleAdapter to hold the result of the executed OracleCommand
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            //Fill the DataSet DS with the query result
-            da.Fill(DS, "ss");
-
-            //close the DB Connection
-            conn.Close();
-
-            //Return the Dataset with the required data to the windows form which executed this method
-            return DS;
-        }
         public static DataSet getSaleAnalysisCust(DataSet DS, String Date, int CustID)
         {
             //create an OracleConnection object using the connection string defined in static class DBConnect

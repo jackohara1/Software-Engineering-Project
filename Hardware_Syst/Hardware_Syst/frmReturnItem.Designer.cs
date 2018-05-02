@@ -138,6 +138,7 @@ namespace Hardware_Syst
             this.grdCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCart.Location = new System.Drawing.Point(16, 31);
             this.grdCart.Name = "grdCart";
+            this.grdCart.ReadOnly = true;
             this.grdCart.Size = new System.Drawing.Size(444, 149);
             this.grdCart.TabIndex = 50;
             this.grdCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCart_CellClick);
@@ -160,7 +161,6 @@ namespace Hardware_Syst
             this.txtQtySold.Size = new System.Drawing.Size(63, 20);
             this.txtQtySold.TabIndex = 43;
             this.txtQtySold.Visible = false;
-        
             // 
             // lblItemBack
             // 

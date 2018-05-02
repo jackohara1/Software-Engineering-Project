@@ -157,6 +157,7 @@
             this.grdStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdStock.Location = new System.Drawing.Point(1, 32);
             this.grdStock.Name = "grdStock";
+            this.grdStock.ReadOnly = true;
             this.grdStock.Size = new System.Drawing.Size(444, 87);
             this.grdStock.TabIndex = 45;
             this.grdStock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStock_CellClick);
@@ -188,6 +189,7 @@
             this.Sale_p});
             this.grdCart.Location = new System.Drawing.Point(6, 34);
             this.grdCart.Name = "grdCart";
+            this.grdCart.ReadOnly = true;
             this.grdCart.Size = new System.Drawing.Size(753, 149);
             this.grdCart.TabIndex = 48;
             this.grdCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCart_CellContentClick);
@@ -196,21 +198,25 @@
             // 
             this.Stock_id.HeaderText = "ID";
             this.Stock_id.Name = "Stock_id";
+            this.Stock_id.ReadOnly = true;
             // 
             // Stock_Name
             // 
             this.Stock_Name.HeaderText = "Description";
             this.Stock_Name.Name = "Stock_Name";
+            this.Stock_Name.ReadOnly = true;
             // 
             // Qty
             // 
             this.Qty.HeaderText = "Quantity";
             this.Qty.Name = "Qty";
+            this.Qty.ReadOnly = true;
             // 
             // Quantityadd
             // 
             this.Quantityadd.HeaderText = "Add";
             this.Quantityadd.Name = "Quantityadd";
+            this.Quantityadd.ReadOnly = true;
             this.Quantityadd.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Quantityadd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -218,6 +224,7 @@
             // 
             this.Quantityminus.HeaderText = "Minus";
             this.Quantityminus.Name = "Quantityminus";
+            this.Quantityminus.ReadOnly = true;
             this.Quantityminus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Quantityminus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -225,6 +232,7 @@
             // 
             this.remove.HeaderText = "Remove";
             this.remove.Name = "remove";
+            this.remove.ReadOnly = true;
             this.remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.remove.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -232,6 +240,7 @@
             // 
             this.Sale_p.HeaderText = "Sale Price";
             this.Sale_p.Name = "Sale_p";
+            this.Sale_p.ReadOnly = true;
             // 
             // btnCheckout
             // 
@@ -274,7 +283,6 @@
             this.grpPay.TabStop = false;
             this.grpPay.Text = "Payment type";
             this.grpPay.Visible = false;
-
             // 
             // rdoCash
             // 
@@ -345,6 +353,7 @@
             this.grdCust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCust.Location = new System.Drawing.Point(7, 57);
             this.grdCust.Name = "grdCust";
+            this.grdCust.ReadOnly = true;
             this.grdCust.Size = new System.Drawing.Size(348, 87);
             this.grdCust.TabIndex = 46;
             this.grdCust.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCust_CellClick);

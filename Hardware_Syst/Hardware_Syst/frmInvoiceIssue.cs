@@ -28,7 +28,7 @@ namespace Hardware_Syst
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Regex alphabetic = new Regex("^[a-zA-Z]+$");
+            Regex alphabetic = new Regex("^[a-zA-Z ]+$");
 
             if (txtCustomer.Text.Equals(""))
             {

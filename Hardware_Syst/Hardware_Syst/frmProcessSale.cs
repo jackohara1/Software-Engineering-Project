@@ -70,14 +70,14 @@ namespace Hardware_Syst
                 i++;
             }
                      
-            MessageBox.Show("Sale has been registered");
+            MessageBox.Show("Sale has been registered. Your Sale ID is "+txtSaleID.Text+". Remember this incase you need to return your items.");
             this.Close();
             parent.Show();
         }
 
         private void btnSrh_Click(object sender, EventArgs e)
         {
-            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
+            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9 ]*$");
 
 
             if (txtSrh.Text.Equals(""))
@@ -158,7 +158,7 @@ namespace Hardware_Syst
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             btnRegesterSale.Visible = false;
-            Regex alphabetic = new Regex("^[a-zA-Z]+$");
+            Regex alphabetic = new Regex("^[a-zA-Z ]+$");
 
             if (txtCustomer.Text.Equals(""))
             {

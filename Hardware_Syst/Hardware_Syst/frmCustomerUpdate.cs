@@ -29,7 +29,7 @@ namespace Hardware_Syst
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Regex alphabetic = new Regex("^[a-zA-Z]+$");
+            Regex alphabetic = new Regex("^[a-zA-Z ]+$");
 
             if (txtName.Text.Equals(""))
             {
@@ -69,8 +69,8 @@ namespace Hardware_Syst
         private void btnUpdateStock_Click(object sender, EventArgs e)
         {
 
-            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
-            Regex alphabetic = new Regex("^[a-zA-Z]+$");
+            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9 ]*$");
+            Regex alphabetic = new Regex("^[a-zA-Z ]+$");
 
             if (txtCustomerName.Text.Equals(""))
             {

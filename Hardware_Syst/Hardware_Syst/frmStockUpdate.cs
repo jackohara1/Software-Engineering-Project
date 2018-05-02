@@ -28,7 +28,7 @@ namespace Hardware_Syst
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
+            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9 ]*$");
 
 
             if (txtStockName.Text.Equals(""))
@@ -70,7 +70,7 @@ namespace Hardware_Syst
         {
             Regex numeric = new Regex("^[0-9]*$");
             Regex decimalCheck = new Regex("^[0-9]([.,][0-9]{1,3})?$");
-            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
+            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9 ]*$");
 
             if (cboStockType.Text.Equals(""))
             {

@@ -80,6 +80,7 @@
             this.grdStockSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdStockSearch.Location = new System.Drawing.Point(39, 34);
             this.grdStockSearch.Name = "grdStockSearch";
+            this.grdStockSearch.ReadOnly = true;
             this.grdStockSearch.Size = new System.Drawing.Size(358, 106);
             this.grdStockSearch.TabIndex = 47;
             this.grdStockSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStockSearch_CellClick);
@@ -115,6 +116,7 @@
             this.grdEnquiry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdEnquiry.Location = new System.Drawing.Point(82, 425);
             this.grdEnquiry.Name = "grdEnquiry";
+            this.grdEnquiry.ReadOnly = true;
             this.grdEnquiry.Size = new System.Drawing.Size(745, 62);
             this.grdEnquiry.TabIndex = 63;
             this.grdEnquiry.Visible = false;
@@ -151,7 +153,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmStockEnquiry";
             this.Text = "Stock_Enquirery";
-
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpSearch.ResumeLayout(false);

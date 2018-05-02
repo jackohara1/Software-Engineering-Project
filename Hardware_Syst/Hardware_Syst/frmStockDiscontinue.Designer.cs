@@ -73,6 +73,7 @@
             this.grdStockSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdStockSearch.Location = new System.Drawing.Point(54, 29);
             this.grdStockSearch.Name = "grdStockSearch";
+            this.grdStockSearch.ReadOnly = true;
             this.grdStockSearch.Size = new System.Drawing.Size(281, 87);
             this.grdStockSearch.TabIndex = 47;
             this.grdStockSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStockSearch_CellClick);
@@ -116,7 +117,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmStockDiscontinue";
             this.Text = "Discontinue_Stock";
-
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpSearch.ResumeLayout(false);

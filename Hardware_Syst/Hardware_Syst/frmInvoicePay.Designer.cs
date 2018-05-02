@@ -80,6 +80,7 @@
             this.grdCustomerSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCustomerSearch.Location = new System.Drawing.Point(28, 27);
             this.grdCustomerSearch.Name = "grdCustomerSearch";
+            this.grdCustomerSearch.ReadOnly = true;
             this.grdCustomerSearch.Size = new System.Drawing.Size(352, 87);
             this.grdCustomerSearch.TabIndex = 47;
             this.grdCustomerSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomerSearch_CellClick);
@@ -115,6 +116,7 @@
             this.grdIssue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdIssue.Location = new System.Drawing.Point(12, 29);
             this.grdIssue.Name = "grdIssue";
+            this.grdIssue.ReadOnly = true;
             this.grdIssue.Size = new System.Drawing.Size(844, 211);
             this.grdIssue.TabIndex = 72;
             // 

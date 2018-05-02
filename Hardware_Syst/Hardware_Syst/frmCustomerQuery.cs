@@ -26,15 +26,11 @@ namespace Hardware_Syst
             parent.Show();
         }
 
-        private void btnQueryCustomer_Click(object sender, EventArgs e)
-        {
-            grdQuery.Rows.Add("044",  "John", "Hara","087952545","Dirtane","Ballyheigue","Co.Kerry");
-            grdQuery.Visible = true;
-        }
+     
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Regex alphabetic = new Regex("^[a-zA-Z]+$");
+            Regex alphabetic = new Regex("^[a-zA-Z ]+$");
 
             if (txtName.Text.Equals(""))
             {
@@ -73,6 +69,8 @@ namespace Hardware_Syst
         private void grdCustomerSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             grdQuery.Rows.Clear();
+            grdQuery.AllowUserToAddRows = false;
+        
             Customer disCust = new Customer();
 
             disCust.getCustomer(Convert.ToInt32(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[0].Value));

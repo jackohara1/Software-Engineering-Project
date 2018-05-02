@@ -51,7 +51,7 @@
             this.btnRegisterCustomer.Location = new System.Drawing.Point(289, 302);
             this.btnRegisterCustomer.Name = "btnRegisterCustomer";
             this.btnRegisterCustomer.Size = new System.Drawing.Size(123, 23);
-            this.btnRegisterCustomer.TabIndex = 23;
+            this.btnRegisterCustomer.TabIndex = 6;
             this.btnRegisterCustomer.Text = "Register Customer";
             this.btnRegisterCustomer.UseVisualStyleBackColor = true;
             this.btnRegisterCustomer.Click += new System.EventHandler(this.btnRegisterCustomer_Click);
@@ -61,7 +61,7 @@
             this.txtAddLn1.Location = new System.Drawing.Point(127, 201);
             this.txtAddLn1.Name = "txtAddLn1";
             this.txtAddLn1.Size = new System.Drawing.Size(100, 20);
-            this.txtAddLn1.TabIndex = 22;
+            this.txtAddLn1.TabIndex = 3;
             // 
             // lblAddLn1
             // 
@@ -104,14 +104,14 @@
             this.txtCustomerName.Location = new System.Drawing.Point(127, 105);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(100, 20);
-            this.txtCustomerName.TabIndex = 15;
+            this.txtCustomerName.TabIndex = 1;
             // 
             // txtCustomerSurname
             // 
             this.txtCustomerSurname.Location = new System.Drawing.Point(127, 153);
             this.txtCustomerSurname.Name = "txtCustomerSurname";
             this.txtCustomerSurname.Size = new System.Drawing.Size(100, 20);
-            this.txtCustomerSurname.TabIndex = 14;
+            this.txtCustomerSurname.TabIndex = 2;
             // 
             // txtCustomerID
             // 
@@ -128,7 +128,7 @@
             this.txtAddLn2.Location = new System.Drawing.Point(127, 227);
             this.txtAddLn2.Name = "txtAddLn2";
             this.txtAddLn2.Size = new System.Drawing.Size(100, 20);
-            this.txtAddLn2.TabIndex = 25;
+            this.txtAddLn2.TabIndex = 4;
             // 
             // lblAddLn2
             // 
@@ -144,7 +144,7 @@
             this.txtAddLn3.Location = new System.Drawing.Point(127, 253);
             this.txtAddLn3.Name = "txtAddLn3";
             this.txtAddLn3.Size = new System.Drawing.Size(100, 20);
-            this.txtAddLn3.TabIndex = 27;
+            this.txtAddLn3.TabIndex = 5;
             // 
             // lblAddLn3
             // 

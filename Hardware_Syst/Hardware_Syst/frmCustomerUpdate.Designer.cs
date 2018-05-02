@@ -208,6 +208,7 @@
             this.grdCustomerSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCustomerSearch.Location = new System.Drawing.Point(28, 27);
             this.grdCustomerSearch.Name = "grdCustomerSearch";
+            this.grdCustomerSearch.ReadOnly = true;
             this.grdCustomerSearch.Size = new System.Drawing.Size(352, 87);
             this.grdCustomerSearch.TabIndex = 47;
             this.grdCustomerSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomerSearch_CellClick);
@@ -252,7 +253,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmCustomerUpdate";
             this.Text = "Update_Customer";
-
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpUpdate.ResumeLayout(false);

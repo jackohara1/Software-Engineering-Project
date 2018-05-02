@@ -11,10 +11,7 @@ namespace Hardware_Syst
 {
     class Saleitem
     {
-        // instance variables
-        
-       
-       
+     
         private int sale_id;
         private int stock_id;
         private int qtysold;
@@ -30,14 +27,7 @@ namespace Hardware_Syst
             qtysold = 0;
             price = 0;
         }
-        public Saleitem(int SaleID, int Stock_ID,int Qty, Decimal Price)
-        {
-            sale_id = SaleID;
-            stock_id = Stock_ID;
-            qtysold = Qty;
-            price = Price;
-        }
-
+   
         //Define setters
     
         public void setQtysold(int Qtysold)
@@ -58,36 +48,8 @@ namespace Hardware_Syst
         {
             this.stock_id = Stock_id;
         }
-        
 
 
-
-
-
-
-        //Define getters
-   
-
-        public int getQtysold()
-        {
-            return qtysold;
-        }
-
-        public decimal getPrice()
-        {
-            return price;
-        }
-
-        public int Sale_ID()
-        {
-            return sale_id;
-        }
-
-        public decimal getStock_ID()
-        {
-            return stock_id;
-        }
-        
 
 
         public static DataSet getMatchingSaleItem(DataSet DS, int Sale_id)

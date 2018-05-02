@@ -106,7 +106,7 @@
             // lblStockType
             // 
             this.lblStockType.AutoSize = true;
-            this.lblStockType.Location = new System.Drawing.Point(97, 35);
+            this.lblStockType.Location = new System.Drawing.Point(95, 82);
             this.lblStockType.Name = "lblStockType";
             this.lblStockType.Size = new System.Drawing.Size(62, 13);
             this.lblStockType.TabIndex = 36;
@@ -116,17 +116,17 @@
             // 
             this.cboStockType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStockType.FormattingEnabled = true;
-            this.cboStockType.Location = new System.Drawing.Point(179, 32);
+            this.cboStockType.Location = new System.Drawing.Point(177, 79);
             this.cboStockType.Name = "cboStockType";
             this.cboStockType.Size = new System.Drawing.Size(121, 21);
-            this.cboStockType.TabIndex = 35;
+            this.cboStockType.TabIndex = 2;
             // 
             // btnNewStock
             // 
             this.btnNewStock.Location = new System.Drawing.Point(177, 225);
             this.btnNewStock.Name = "btnNewStock";
             this.btnNewStock.Size = new System.Drawing.Size(123, 23);
-            this.btnNewStock.TabIndex = 34;
+            this.btnNewStock.TabIndex = 6;
             this.btnNewStock.Text = "Register Stock";
             this.btnNewStock.UseVisualStyleBackColor = true;
             this.btnNewStock.Click += new System.EventHandler(this.btnNewStock_Click);
@@ -136,7 +136,7 @@
             this.txtSalePrice.Location = new System.Drawing.Point(179, 188);
             this.txtSalePrice.Name = "txtSalePrice";
             this.txtSalePrice.Size = new System.Drawing.Size(100, 20);
-            this.txtSalePrice.TabIndex = 33;
+            this.txtSalePrice.TabIndex = 5;
             // 
             // lblSalePrice
             // 
@@ -168,7 +168,7 @@
             // lblStockName
             // 
             this.lblStockName.AutoSize = true;
-            this.lblStockName.Location = new System.Drawing.Point(93, 81);
+            this.lblStockName.Location = new System.Drawing.Point(91, 45);
             this.lblStockName.Name = "lblStockName";
             this.lblStockName.Size = new System.Drawing.Size(66, 13);
             this.lblStockName.TabIndex = 29;
@@ -179,14 +179,14 @@
             this.txtCostPrice.Location = new System.Drawing.Point(179, 152);
             this.txtCostPrice.Name = "txtCostPrice";
             this.txtCostPrice.Size = new System.Drawing.Size(100, 20);
-            this.txtCostPrice.TabIndex = 28;
+            this.txtCostPrice.TabIndex = 4;
             // 
             // txtStockName
             // 
-            this.txtStockName.Location = new System.Drawing.Point(179, 74);
+            this.txtStockName.Location = new System.Drawing.Point(177, 38);
             this.txtStockName.Name = "txtStockName";
             this.txtStockName.Size = new System.Drawing.Size(179, 20);
-            this.txtStockName.TabIndex = 27;
+            this.txtStockName.TabIndex = 1;
             // 
             // txtQty
             // 
@@ -194,7 +194,7 @@
             this.txtQty.MaxLength = 3;
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(34, 20);
-            this.txtQty.TabIndex = 26;
+            this.txtQty.TabIndex = 3;
             // 
             // frmStockAdd
             // 

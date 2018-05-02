@@ -33,8 +33,8 @@ namespace Hardware_Syst
 
         private void btnRegisterCustomer_Click(object sender, EventArgs e)
         {
-            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
-            Regex alphabetic = new Regex("^[a-zA-Z]+$");
+            Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9 ]*$");
+            Regex alphabetic = new Regex("^[a-zA-Z ]+$");
 
             if (txtCustomerName.Text.Equals(""))
             {

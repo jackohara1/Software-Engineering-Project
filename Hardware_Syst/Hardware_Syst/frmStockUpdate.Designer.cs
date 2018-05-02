@@ -89,17 +89,16 @@
             this.txtStockName.Name = "txtStockName";
             this.txtStockName.Size = new System.Drawing.Size(179, 20);
             this.txtStockName.TabIndex = 32;
-           
             // 
             // grdStockSearch
             // 
             this.grdStockSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdStockSearch.Location = new System.Drawing.Point(28, 19);
             this.grdStockSearch.Name = "grdStockSearch";
+            this.grdStockSearch.ReadOnly = true;
             this.grdStockSearch.Size = new System.Drawing.Size(486, 116);
             this.grdStockSearch.TabIndex = 47;
             this.grdStockSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStockSearch_CellClick);
-
             // 
             // btnSearch
             // 
@@ -155,7 +154,6 @@
             this.txtStockID.ReadOnly = true;
             this.txtStockID.Size = new System.Drawing.Size(50, 20);
             this.txtStockID.TabIndex = 60;
-
             // 
             // rdoUnavalable
             // 
@@ -240,7 +238,6 @@
             this.lblCostPrice.Size = new System.Drawing.Size(55, 13);
             this.lblCostPrice.TabIndex = 31;
             this.lblCostPrice.Text = "Cost Price";
-       
             // 
             // lblQty
             // 
@@ -273,7 +270,6 @@
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(179, 20);
             this.txtStock.TabIndex = 27;
-
             // 
             // txtQty
             // 
