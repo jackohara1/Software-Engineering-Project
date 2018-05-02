@@ -83,7 +83,6 @@
             this.grdStockSearch.Size = new System.Drawing.Size(358, 106);
             this.grdStockSearch.TabIndex = 47;
             this.grdStockSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStockSearch_CellClick);
-            this.grdStockSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStockSearch_CellContentClick);
             // 
             // btnSearch
             // 
@@ -152,7 +151,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmStockEnquiry";
             this.Text = "Stock_Enquirery";
-            this.Load += new System.EventHandler(this.frmStockEnquiry_Load);
+
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpSearch.ResumeLayout(false);

@@ -19,14 +19,7 @@ namespace Hardware_Syst
         {
             InitializeComponent();
             parent = Parent;
-        }
-
-      
-
-        private void frmStockEnquiry_Load(object sender, EventArgs e)
-        {
-
-        }
+        }      
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -79,18 +72,12 @@ namespace Hardware_Syst
                 }
             }
            
-        }
-
-       
+        }      
 
         private void grdStockSearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             grdEnquiry.Refresh();
-          chtData.Series.Clear();
-
-
-
-
+            chtData.Series.Clear();
             grdEnquiry.Visible = true;
             DataSet ds = new DataSet();
             grdEnquiry.DataSource = Stock.getEnquiry(ds, Convert.ToInt16(grdStockSearch.Rows[grdStockSearch.CurrentCell.RowIndex].Cells[0].Value)).Tables["ss"];
@@ -142,32 +129,13 @@ namespace Hardware_Syst
 
         private void fillChart(DataSet ds)
         {
-            //fill chart
+           
             chtData.Series["Revenue"].Points.Clear();
 
-            //load values returned from query into 12 element array
-            //decimal[] monthlyRev = { 0, 1200, 800, 1000, 1500, 1700, 2500, 2200, 1500, 1000, 500, 0 };
-
-            //add values in array to chart series
-            //for (int i = 0; i < 12; i++)
-            //chtData.Series["Revenue"].Points.AddXY(monthName(i + 1), monthlyRev[i]);
-
-            //get data from database
-
-
-            //add values in array to chart series
-        
             for (int i = 1; i <= 12; i++)
-            {
-
-           
-               
-               
+            { 
                     chtData.Series["Revenue"].Points.AddXY(monthName(i), Sale.getStockSales(ds,Convert.ToString(monthName(i)+"-18"), Convert.ToInt16(grdStockSearch.Rows[grdStockSearch.CurrentCell.RowIndex].Cells[0].Value)));
-                
             }
-
-
         }
         private string monthName(int MonthNo)
         {
@@ -214,11 +182,6 @@ namespace Hardware_Syst
             }
 
             return strMonth;
-        }
-
-        private void grdStockSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        }   
     }
 }

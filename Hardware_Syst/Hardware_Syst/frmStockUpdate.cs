@@ -65,9 +65,6 @@ namespace Hardware_Syst
             }
         }
 
-   
-
-       
 
         private void btnUpdateStock_Click_1(object sender, EventArgs e)
         {
@@ -169,29 +166,8 @@ namespace Hardware_Syst
             }
         }
 
-        private void txtStockName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-   
-
-        private void lblCostPrice_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void grdStockSearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-       
-            
-            
-
             Stock updStock = new Stock();
             updStock.getStock(Convert.ToInt32(grdStockSearch.Rows[grdStockSearch.CurrentCell.RowIndex].Cells[0].Value));
 
@@ -211,10 +187,7 @@ namespace Hardware_Syst
             {
                 rdoAvalable.Checked = true;
             }
-            grpUpdate.Visible = true;
-
-           
-           
+            grpUpdate.Visible = true; 
             
         }
 
@@ -229,11 +202,5 @@ namespace Hardware_Syst
             }
         }
 
-        private void txtStockID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

@@ -21,28 +21,11 @@ namespace Hardware_Syst
             parent = Parent;
         }
 
-        private void Customer_ID_lab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void text_Customer_Id_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
             parent.Show();
-        }
-
-        private void frmCustomerUpdate_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
+        }       
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -193,9 +176,6 @@ namespace Hardware_Syst
             grpUpdate.Visible = true;
 
         }
-    }
-
-
-   
+    }   
     }
 

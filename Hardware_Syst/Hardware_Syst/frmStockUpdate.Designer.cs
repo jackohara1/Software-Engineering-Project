@@ -89,7 +89,7 @@
             this.txtStockName.Name = "txtStockName";
             this.txtStockName.Size = new System.Drawing.Size(179, 20);
             this.txtStockName.TabIndex = 32;
-            this.txtStockName.TextChanged += new System.EventHandler(this.txtStockName_TextChanged);
+           
             // 
             // grdStockSearch
             // 
@@ -155,7 +155,7 @@
             this.txtStockID.ReadOnly = true;
             this.txtStockID.Size = new System.Drawing.Size(50, 20);
             this.txtStockID.TabIndex = 60;
-            this.txtStockID.TextChanged += new System.EventHandler(this.txtStockID_TextChanged);
+
             // 
             // rdoUnavalable
             // 
@@ -240,7 +240,7 @@
             this.lblCostPrice.Size = new System.Drawing.Size(55, 13);
             this.lblCostPrice.TabIndex = 31;
             this.lblCostPrice.Text = "Cost Price";
-            this.lblCostPrice.Click += new System.EventHandler(this.lblCostPrice_Click);
+       
             // 
             // lblQty
             // 
@@ -273,7 +273,7 @@
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(179, 20);
             this.txtStock.TabIndex = 27;
-            this.txtStock.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+
             // 
             // txtQty
             // 

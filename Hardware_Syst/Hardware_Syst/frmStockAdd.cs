@@ -15,10 +15,6 @@ namespace Hardware_Syst
     {
         frmMainMenu parent;
 
-       
-        
-
-
         public frmStockAdd(frmMainMenu Parent)
         {
             InitializeComponent();

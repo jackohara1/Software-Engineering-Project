@@ -116,7 +116,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmStockDiscontinue";
             this.Text = "Discontinue_Stock";
-            this.Load += new System.EventHandler(this.frmStockDiscontinue_Load);
+
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpSearch.ResumeLayout(false);

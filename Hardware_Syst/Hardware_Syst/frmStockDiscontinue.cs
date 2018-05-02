@@ -65,15 +65,7 @@ namespace Hardware_Syst
                     grpSearch.Visible = true;
                 }
             }
-        }
-
-        
-
-        private void frmStockDiscontinue_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        }       
         private void grdStockSearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //get stock ID from col 0 of grid            
@@ -82,12 +74,6 @@ namespace Hardware_Syst
             this.Close();
             parent.Show();
         }
-        
-
-
-            private void grdStockSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+           
     }
 }
