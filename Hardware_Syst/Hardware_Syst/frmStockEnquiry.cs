@@ -112,7 +112,6 @@ namespace Hardware_Syst
             chtData.ChartAreas["mainArea"].AxisX.Title = "Month";
 
             chtData.ChartAreas["mainArea"].AxisX.MajorGrid.Enabled = false;
-            //chtData.ChartAreas["mainArea"].AxisY.MajorGrid.Enabled = false;
 
             chtData.Titles.Clear(); 
             chtData.Titles.Add("Monthly Revenue 2017");

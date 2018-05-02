@@ -20,27 +20,10 @@ namespace Hardware_Syst
             parent = Parent;
         }
 
-        private void lblStockID_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void mnuBack_Click(object sender, EventArgs e)
         {
             this.Close();
             parent.Show();
-        }
-
-
-
-        private void lblHowCustomerPayed_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmReturnItem_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSrh_Click(object sender, EventArgs e)
@@ -96,19 +79,10 @@ namespace Hardware_Syst
                         grpStock.Visible = true;
                         txtSaleID.ReadOnly = true;
                     }
-
-                   
                 }
             }
 
         }
-
-
-
-
-
-
-
         private void btnReturnItem_Click(object sender, EventArgs e)
         {
             Regex numeric = new Regex("^[0-9]*$");
@@ -133,9 +107,6 @@ namespace Hardware_Syst
             {
                 MessageBox.Show("The quantity you are returning is greater than the quantity you have bought");
             }
-
-          
-
             else
             {
                 grdCart.Rows[0].Selected = true;
@@ -149,9 +120,6 @@ namespace Hardware_Syst
                    }
 
                 MessageBox.Show("Item has been returned");
-
-
-
                 this.Close();
                 parent.Show();
             }
@@ -160,23 +128,14 @@ namespace Hardware_Syst
 
 
         private void grdCart_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-   
-            
-                lblAmountOfItems.Visible = true;
-
-
+        {            
+            lblAmountOfItems.Visible = true;
             txtQtySold.Text = Convert.ToString(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value);
             txtQtySold.Visible = true; 
             lblItemBack.Visible = true;
             rdoFalse.Visible = true;
             rdoTrue.Visible = true;
-
             btnReturnItem.Visible = true;
-
-
-
-
         }
 
        

@@ -77,15 +77,9 @@ namespace Hardware_Syst
 
             disCust.getCustomer(Convert.ToInt32(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[0].Value));
             DataSet db = new DataSet();
-
-
-
-
             grdQuery.Visible = true;
             grdQuery.Rows.Add(Convert.ToInt16(disCust.getCustomer_id()), Convert.ToString(disCust.getForename()), Convert.ToString(disCust.getSurname()),
-                Convert.ToString(disCust.getAddln1()), Convert.ToString(disCust.getAddln2()), Convert.ToString(disCust.getAddln3()), Convert.ToDecimal(disCust.getBalance()));
-
-
+            Convert.ToString(disCust.getAddln1()), Convert.ToString(disCust.getAddln2()), Convert.ToString(disCust.getAddln3()), Convert.ToDecimal(disCust.getBalance()));
         }
     }
 }

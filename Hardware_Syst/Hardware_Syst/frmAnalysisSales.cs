@@ -35,10 +35,6 @@ namespace Hardware_Syst
             btnSaleAnalsis.Visible = true;
         }
 
-        private void grdStock_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
@@ -91,11 +87,7 @@ namespace Hardware_Syst
                 cboYear.Focus();
                 chtData.Visible = false;
                 return;
-               
-
             }
-
-
             else
             {
             
@@ -194,20 +186,8 @@ namespace Hardware_Syst
 
         private void fillChart(DataSet ds)
         {
-            //fill chart
+
             chtData.Series["Revenue"].Points.Clear();
-
-            //load values returned from query into 12 element array
-            //decimal[] monthlyRev = { 0, 1200, 800, 1000, 1500, 1700, 2500, 2200, 1500, 1000, 500, 0 };
-
-            //add values in array to chart series
-            //for (int i = 0; i < 12; i++)
-            //chtData.Series["Revenue"].Points.AddXY(monthName(i + 1), monthlyRev[i]);
-
-            //get data from database
-           
-
-            //add values in array to chart series
             int j = 0;
             for (int i = 1; i <= 12; i++)
             {
@@ -220,9 +200,8 @@ namespace Hardware_Syst
                     chtData.Series["Revenue"].Points.AddXY(monthName(i), Sale.getSaleCustomerChart(ds, Convert.ToString(monthName(i) + "-" + cboYear.Text),Convert.ToInt32(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value)));
                 }
             }
-
-
         }
+
         private string monthName(int MonthNo)
         {
             String strMonth = "";

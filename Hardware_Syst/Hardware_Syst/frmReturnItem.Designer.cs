@@ -196,7 +196,6 @@ namespace Hardware_Syst
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmReturnItem";
             this.Text = "Return_Item";
-            this.Load += new System.EventHandler(this.frmReturnItem_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpStock.ResumeLayout(false);

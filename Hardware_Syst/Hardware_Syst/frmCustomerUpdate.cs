@@ -163,8 +163,6 @@ namespace Hardware_Syst
 
             Customer updCus = new Customer();
             updCus.getCustomer(Convert.ToInt32(grdCustomerSearch.Rows[grdCustomerSearch.CurrentCell.RowIndex].Cells[0].Value));
-
-
             txtCustomerID.Text = updCus.getCustomer_id().ToString();
             txtCustomerName.Text = updCus.getForename();
             txtCustomerSurname.Text = updCus.getSurname();

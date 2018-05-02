@@ -19,10 +19,6 @@ namespace Hardware_Syst
         private int qty;
         private int department_id;
         private string status;
-    
-
-
-
         // no argument constructor
         public Stock()
         {
@@ -33,8 +29,6 @@ namespace Hardware_Syst
             qty = 0;
             department_id = 1;
             status = "A";
-
-
         }
         //Define setters
         public void setStock_id(int Stock_id)
@@ -69,10 +63,6 @@ namespace Hardware_Syst
         {
             this.status = Status;
         }
-
-
-
-
 
         //Define getters
         public int getStock_id()
@@ -109,32 +99,6 @@ namespace Hardware_Syst
             return status;
         }
 
-
-        //define a static method to get all data from Stock table
-        public static DataSet getAllStock(DataSet DS, String OrderBy)
-        {
-            //create an OracleConnection object using the connection string defined in static class DBConnect
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-            //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT stock_id, stock_name, cost_p, sale_p, qty, department_id FROM Stock ORDER BY " + OrderBy;
-
-            //Create an OracleCommand object and instantiate it
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //Create an oracleAdapter to hold the result of the executed OracleCommand
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            //Fill the DataSet DS with the query result
-            da.Fill(DS, "ss");
-
-            //close the DB Connection
-            conn.Close();
-
-            //Return the Dataset with the required data to the windows form which executed this method
-            return DS;
-        }
-
         public void getStock(int StockID)
         {
             //connect to DB
@@ -157,13 +121,10 @@ namespace Hardware_Syst
                 setCost_p(dr.GetDecimal(3));
                 setSale_p(dr.GetDecimal(4));
                 setDepartment_id(dr.GetInt32(5));
-                setStatus(dr.GetString(6));
-               
+                setStatus(dr.GetString(6));              
             }
             //close db
             conn.Close();
-
-
         }
 
 
@@ -185,53 +146,6 @@ namespace Hardware_Syst
 
 
         }
-        public static DataSet getSelectedStockid(DataSet DS, String EnteredStock)
-        {
-            
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-            
-            String strSQL = "SELECT stock_id FROM Stock WHERE stock_name LIKE UPPER('"+EnteredStock+"%')";
-
-             
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            
-            OracleDataAdapter dc = new OracleDataAdapter(cmd);
-
-           
-            dc.Fill(DS, "ss");
-
-            
-            conn.Close();
-
-            
-            return DS;
-        }
-        public static DataSet getSelectedDepartment(DataSet DS, int DID)
-        {
-
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-
-            String strSQL = "SELECT department_id FROM Department WHERE department_id=" +DID;
-
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-
-            OracleDataAdapter dc = new OracleDataAdapter(cmd);
-
-
-            dc.Fill(DS, "ss");
-
-
-            conn.Close();
-
-
-            return DS;
-        }
-
 
         public static DataSet getMatchingStock(DataSet DS, String Name)
         {
@@ -304,11 +218,8 @@ namespace Hardware_Syst
         }
         public static int getNextStock_id()
         {
-
             
-            int intNextStockid;
-
-           
+            int intNextStockid;          
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
             myConn.Open();
 

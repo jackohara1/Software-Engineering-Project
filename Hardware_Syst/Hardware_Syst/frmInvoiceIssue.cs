@@ -66,16 +66,6 @@ namespace Hardware_Syst
                 }
             }
         }
-
-      
-
-        
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void grdCustomerSearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
           
@@ -108,21 +98,6 @@ namespace Hardware_Syst
             {
                 grpIssueInvoice.Visible = true;
             }
-        }
-
-        private void lblAddress_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAddln1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAddln2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

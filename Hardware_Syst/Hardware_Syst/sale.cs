@@ -61,58 +61,6 @@ namespace Hardware_Syst
 
 
 
-        //Define getters
-        public int getSale_id()
-        {
-            return sale_id;
-        }
-
-        public int getCustomer_id()
-        {
-            return customer_id;
-        }
-
-        public string getSaleDate()
-        {
-            return saleDate;
-        }
-
-        public String getStatus()
-        {
-            return status;
-        }
-
-        public decimal getSaleValue()
-        {
-            return saleValue;
-        }
-
-
-        //define a static method to get all data from Stock table
-        public static DataSet getAllSale(DataSet DS, String OrderBy)
-        {
-            //create an OracleConnection object using the connection string defined in static class DBConnect
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-            //Define the SQL Query to retrieve the data
-            String strSQL = "SELECT sale_id, customer_id, sale_date, status, sale_value FROM Sale ORDER BY " + OrderBy;
-
-            //Create an OracleCommand object and instantiate it
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //Create an oracleAdapter to hold the result of the executed OracleCommand
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            //Fill the DataSet DS with the query result
-            da.Fill(DS, "ss");
-
-            //close the DB Connection
-            conn.Close();
-
-            //Return the Dataset with the required data to the windows form which executed this method
-            return DS;
-        }
-
 
 
         public static int getNextSale_id()

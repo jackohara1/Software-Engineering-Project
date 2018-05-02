@@ -274,7 +274,7 @@
             this.grpPay.TabStop = false;
             this.grpPay.Text = "Payment type";
             this.grpPay.Visible = false;
-            this.grpPay.Enter += new System.EventHandler(this.groupBox1_Enter);
+
             // 
             // rdoCash
             // 

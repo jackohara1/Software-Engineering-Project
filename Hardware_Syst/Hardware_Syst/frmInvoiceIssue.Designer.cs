@@ -138,7 +138,7 @@
             this.lblAddress.Size = new System.Drawing.Size(45, 13);
             this.lblAddress.TabIndex = 79;
             this.lblAddress.Text = "Address";
-            this.lblAddress.Click += new System.EventHandler(this.lblAddress_Click);
+
             // 
             // txtAddln1
             // 
@@ -147,7 +147,7 @@
             this.txtAddln1.Name = "txtAddln1";
             this.txtAddln1.Size = new System.Drawing.Size(100, 20);
             this.txtAddln1.TabIndex = 78;
-            this.txtAddln1.TextChanged += new System.EventHandler(this.txtAddln1_TextChanged);
+
             // 
             // txtAddln3
             // 
@@ -156,7 +156,7 @@
             this.txtAddln3.Name = "txtAddln3";
             this.txtAddln3.Size = new System.Drawing.Size(100, 20);
             this.txtAddln3.TabIndex = 77;
-            this.txtAddln3.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+
             // 
             // txtAddln2
             // 
@@ -165,7 +165,7 @@
             this.txtAddln2.Name = "txtAddln2";
             this.txtAddln2.Size = new System.Drawing.Size(100, 20);
             this.txtAddln2.TabIndex = 76;
-            this.txtAddln2.TextChanged += new System.EventHandler(this.txtAddln2_TextChanged);
+
             // 
             // txtTotal
             // 

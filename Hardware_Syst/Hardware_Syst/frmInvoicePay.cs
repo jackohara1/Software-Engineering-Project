@@ -67,12 +67,8 @@ namespace Hardware_Syst
                 }
             }
         }
-
-    
-     
-        
-           
-private void btnPayInvoice_Click(object sender, EventArgs e)
+      
+        private void btnPayInvoice_Click(object sender, EventArgs e)
         {
             int i = 0;
             while (i < grdIssue.RowCount )

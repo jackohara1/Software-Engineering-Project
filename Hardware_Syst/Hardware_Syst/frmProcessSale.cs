@@ -22,16 +22,6 @@ namespace Hardware_Syst
             grdCart.AllowUserToAddRows = false;
         }
 
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtStockID6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmProcessSale_Load(object sender, EventArgs e)
         {
             txtSaleID.Text = Sale.getNextSale_id().ToString("0000");
@@ -41,11 +31,6 @@ namespace Hardware_Syst
         {
             this.Close();
             parent.Show();
-        }
-
-        private void cboPayment_SelectedIndexChanged(object sender, EventArgs e)
-        {
-         
         }
 
         private void btnRegesterSale_Click(object sender, EventArgs e)
@@ -69,8 +54,6 @@ namespace Hardware_Syst
 
             mySale.addSale();
 
-           
-
             int i = 0;
             grdCart.Rows[i].Selected = true;
             while(i< grdCart.RowCount)
@@ -86,11 +69,7 @@ namespace Hardware_Syst
                 Stock.replaceStock(Convert.ToInt32(grdCart.Rows[i].Cells[0].Value), Convert.ToInt32(grdCart.Rows[i].Cells[2].Value));
                 i++;
             }
-            
-        
-
-
-           
+                     
             MessageBox.Show("Sale has been registered");
             this.Close();
             parent.Show();
@@ -108,18 +87,16 @@ namespace Hardware_Syst
                 return;
             }
 
-           else if (!alphanumericCheck.IsMatch(txtSrh.Text))
+            else if (!alphanumericCheck.IsMatch(txtSrh.Text))
             {
                 MessageBox.Show("Stock Name must use alphanumeric characters");
                 txtSrh.Clear();
                 txtSrh.Focus();
                 return;
             }
-
-
             else
             {
-                DataSet ds = new DataSet();              
+                DataSet ds = new DataSet();
                 grdStock.DataSource = Stock.getMatchingSaleStock(ds, txtSrh.Text).Tables["ss"];
                 grdStock.AllowUserToAddRows = false;
 
@@ -134,13 +111,6 @@ namespace Hardware_Syst
                     grpStock.Visible = true;
                 }
             }
-
-        }
-
-       
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
 
         }
 
@@ -234,9 +204,7 @@ namespace Hardware_Syst
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             btnRegesterSale.Visible = true;
-        }
-
-      
+        } 
 
         private void grdCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -277,7 +245,6 @@ namespace Hardware_Syst
                 }
             }
         }
-
         private void grdCust_CellClick(object sender, DataGridViewCellEventArgs e)
         {
     

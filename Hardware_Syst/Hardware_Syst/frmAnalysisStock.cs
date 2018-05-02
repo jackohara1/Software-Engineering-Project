@@ -52,34 +52,18 @@ namespace Hardware_Syst
                 DataSet ds = new DataSet();
                 grdStockAnalysis.DataSource = Stock.getStockAnalysis(ds, Convert.ToInt32(cboStockType.SelectedIndex + 1)).Tables["ss"];
                 grdStockAnalysis.AllowUserToAddRows = false;
-                grdStockAnalysis.Visible = true;
-
-
-                
-                var MaxSold = Convert.ToInt32(grdStockAnalysis.Rows[0].Cells[4].Value);
-
-
-
-              
+                grdStockAnalysis.Visible = true;  
+                var MaxSold = Convert.ToInt32(grdStockAnalysis.Rows[0].Cells[4].Value);          
                 defineChart(grdStockAnalysis.Rows.Count, MaxSold);
-
-
                 defineSeries();
-
                 fillChart(ds);
                 chtStock.Visible = true;
                 chtStock.Show();
             }
 
         }
-
-
         private void defineChart(int x, int y)
         {
-            //define chart
-
-
-
             chtStock.Size = new Size(500, 500);
             chtStock.ChartAreas[0].Name = "mainArea";
             chtStock.ChartAreas["mainArea"].AxisX.LabelStyle.Font = new Font("Consolas", 8);
@@ -111,7 +95,7 @@ namespace Hardware_Syst
         private void fillChart(DataSet ds)
         {
 
-          //  chtStock.Series["Revenue"].Points.Clear();
+          chtStock.Series["Revenue"].Points.Clear();
 
 
 
@@ -129,7 +113,6 @@ namespace Hardware_Syst
                 else 
                 {
                     chtStock.Series["Revenue"].Points.AddXY(ds.Tables[0].Rows[j][1], ds.Tables[0].Rows[j][4]);
-                   
                 }
              
                 j++;
