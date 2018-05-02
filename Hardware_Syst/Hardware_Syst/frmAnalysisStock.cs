@@ -35,22 +35,27 @@ namespace Hardware_Syst
 
         private void btnStockAnalsis_Click(object sender, EventArgs e)
         {
-           
+
+
             chtStock.Series.Clear();
             if (cboStockType.Text.Equals(""))
             {
                 MessageBox.Show("Department was left blank");
                 cboStockType.Focus();
+                chtStock.Visible = false;
+
                 return;
             }
             else
             {
-
+              
                 DataSet ds = new DataSet();
                 grdStockAnalysis.DataSource = Stock.getStockAnalysis(ds, Convert.ToInt32(cboStockType.SelectedIndex + 1)).Tables["ss"];
                 grdStockAnalysis.AllowUserToAddRows = false;
                 grdStockAnalysis.Visible = true;
 
+
+                
                 var MaxSold = Convert.ToInt32(grdStockAnalysis.Rows[0].Cells[4].Value);
 
 
@@ -90,7 +95,7 @@ namespace Hardware_Syst
             chtStock.ChartAreas["mainArea"].AxisX.MajorGrid.Enabled = false;
             chtStock.ChartAreas["mainArea"].AxisY.MajorGrid.Enabled = false;
 
-            //chart title   
+            chtStock.Titles.Clear();
             chtStock.Titles.Add("Amount of Sales in 20"+Convert.ToString(cboStockType.ValueMember));
         }
 

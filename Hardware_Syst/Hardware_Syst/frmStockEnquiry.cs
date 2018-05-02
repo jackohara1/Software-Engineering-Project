@@ -42,12 +42,16 @@ namespace Hardware_Syst
             {
                 MessageBox.Show("Stock Name was left blank");
                 txtStockName.Focus();
+                chtData.Visible = false;
+                grdEnquiry.Visible = false;
                 return;
             }
 
            else if (!alphanumericCheck.IsMatch(txtStockName.Text))
             {
                 MessageBox.Show("Stock Name must use alphanumeric characters");
+                chtData.Visible = false;
+                grdEnquiry.Visible = false;
                 txtStockName.Clear();
                 txtStockName.Focus();
                 return;
@@ -66,6 +70,8 @@ namespace Hardware_Syst
                     grpSearch.Visible = false;
                     MessageBox.Show(Convert.ToString(txtStockName.Text) + " does not exist in the system please try another item of stock");
                     txtStockName.Text = "";
+                    chtData.Visible = false;
+                    grdEnquiry.Visible = false;
                 }
                 else
                 {
@@ -99,6 +105,8 @@ namespace Hardware_Syst
 
                 //fill Chart
                 fillChart(ds);
+
+            chtData.Visible = true;
 
         }
         private void defineChart()

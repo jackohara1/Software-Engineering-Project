@@ -135,6 +135,7 @@
             this.chtData.Size = new System.Drawing.Size(531, 318);
             this.chtData.TabIndex = 64;
             this.chtData.Text = "StockAnalysis";
+            this.chtData.Visible = false;
             // 
             // frmStockEnquiry
             // 

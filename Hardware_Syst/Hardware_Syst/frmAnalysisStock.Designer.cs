@@ -132,6 +132,7 @@
             this.chtStock.Size = new System.Drawing.Size(622, 366);
             this.chtStock.TabIndex = 48;
             this.chtStock.Text = "StockAnalysis";
+            this.chtStock.Visible = false;
             // 
             // lblYear
             // 

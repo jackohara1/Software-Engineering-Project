@@ -89,18 +89,13 @@ namespace Hardware_Syst
             {
                 MessageBox.Show("Department was left blank");
                 cboYear.Focus();
+                chtData.Visible = false;
                 return;
-            }
-            else if (grdSaleAnalysis.RowCount >= 0 && rdoAll.Checked)
-            {
-                MessageBox.Show("There was no sales made in the year 20"+cboYear.Text);
-            
-            }
-            else if (grdSaleAnalysis.RowCount >= 0 && rdoCust.Checked)
-            {
-                MessageBox.Show(Convert.ToString(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[2].Value) + " " + Convert.ToString(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[1].Value) + "made no purchases in the year 20" + cboYear.Text);
+               
 
             }
+
+
             else
             {
             
@@ -112,8 +107,24 @@ namespace Hardware_Syst
                 {
                     grdSaleAnalysis.DataSource = Sale.getSaleAnalysis(ds, cboYear.Text).Tables["ss"];
 
-                }
-                grdSaleAnalysis.AllowUserToAddRows = false;
+                }            grdSaleAnalysis.AllowUserToAddRows = false;
+                if (grdSaleAnalysis.RowCount <= 0 )
+                    {
+                       if (rdoCust.Checked)
+                         {
+                              MessageBox.Show(Convert.ToString(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[2].Value) + " " + Convert.ToString(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[1].Value) + "made no purchases in the year 20" + cboYear.Text);
+                             }
+                        else
+                             {
+                               MessageBox.Show("There was no sales made in the year 20" + cboYear.Text);
+                              }
+                        grdSaleAnalysis.Visible = false;
+                        chtData.Visible = false;
+            
+                          }
+      
+                else
+                {
                 grdSaleAnalysis.Visible = true;
 
 
@@ -126,6 +137,10 @@ namespace Hardware_Syst
 
                 //fill Chart
                 fillChart(ds);
+
+                    chtData.Visible = true;
+
+                }
             } 
         }
 
