@@ -99,6 +99,7 @@ namespace Hardware_Syst
             return status;
         }
 
+        //retrieves all data about an item of stock in relation to stock id
         public void getStock(int StockID)
         {
             //connect to DB
@@ -127,7 +128,7 @@ namespace Hardware_Syst
             conn.Close();
         }
 
-
+        // sets the status of U (unavalable) to an item of stock that the user wishes to discontinue
         public static void discontinueStock(int StockID)
         {
             //connect to DB
@@ -146,7 +147,7 @@ namespace Hardware_Syst
 
 
         }
-
+        //selects all items of stock with a simular name to the name entered
         public static DataSet getMatchingStock(DataSet DS, String Name)
         {
 
@@ -169,7 +170,7 @@ namespace Hardware_Syst
 
 
             return DS;
-        }
+        } //selects all items of stock with a simular name to the name entered, with a status of A(avalable) and a quantity greater than zero
         public static DataSet getMatchingSaleStock(DataSet DS, String Name)
         {
 
@@ -193,6 +194,7 @@ namespace Hardware_Syst
 
             return DS;
         }
+        //selects all items of stock with a simular name to the name entered, with a status of A(avalable) 
         public static DataSet getAvalableStock(DataSet DS, String Name)
         {
 
@@ -215,7 +217,7 @@ namespace Hardware_Syst
 
 
             return DS;
-        }
+        }//retrieves the next stock id from stock file 
         public static int getNextStock_id()
         {
             
@@ -243,6 +245,7 @@ namespace Hardware_Syst
             return intNextStockid;
 
         }
+        //registers an item of stock in the stock file
         public void addStock()
         {
             //connect to database
@@ -251,8 +254,8 @@ namespace Hardware_Syst
 
             //Define SQL query to INSERT stock record
             String strSQL = "INSERT INTO Stock VALUES(" + this.stock_id.ToString() +
-                ",'" + this.stock_name.ToUpper() + "'," + this.cost_p + "," +
-                this.sale_p + "," + this.qty + "," + this.department_id + ",'"+this.status+"')";
+                ",'" + this.stock_name.ToUpper() + "'," + this.qty + "," + this.cost_p + "," +
+                this.sale_p + "," + this.department_id + ",'"+this.status+"')";
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
@@ -261,6 +264,8 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
+
+        //updates an old item of stock settin new values of name, cost price, sale price, quantity, department and status in relation to the stock id passed through 
         public void updateStock()
         {
             //connect to database
@@ -295,6 +300,8 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
+
+        //updates the quantity of a stock by subtracting the current quanty by the amount purchased 
         public static void replaceStock(int Stock_id, int amount)
         {
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
@@ -310,6 +317,7 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
+        //selects data from all items of stock including how many sales the item made from a selected department
         public static DataSet getStockAnalysis(DataSet DS, int Department)
         {
             //create an OracleConnection object using the connection string defined in static class DBConnect
@@ -335,7 +343,7 @@ namespace Hardware_Syst
             //Return the Dataset with the required data to the windows form which executed this method
             return DS;
         }
-
+        //retrieves all data from the stock file about a single item of stock in relation to the stock id
         public static DataSet getEnquiry(DataSet DS, int Stock_id)
         {
 

@@ -173,7 +173,7 @@
             this.grpCart.Size = new System.Drawing.Size(765, 307);
             this.grpCart.TabIndex = 44;
             this.grpCart.TabStop = false;
-            this.grpCart.Text = "Items Selected";
+            this.grpCart.Text = "Shopping Cart";
             this.grpCart.Visible = false;
             // 
             // grdCart
@@ -339,7 +339,7 @@
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(88, 13);
             this.lblCustomer.TabIndex = 48;
-            this.lblCustomer.Text = "Search Cusotmer";
+            this.lblCustomer.Text = "Search Customer";
             // 
             // txtCustomer
             // 

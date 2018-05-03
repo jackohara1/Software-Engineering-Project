@@ -18,6 +18,13 @@ namespace Hardware_Syst
         {
             InitializeComponent();
             parent = Parent;
+            DataSet ds = new DataSet();
+            ds = Department.getDepartment(ds);
+
+            for (int i = 0; i < ds.Tables["ss"].Rows.Count; i++)
+            {
+                cboStockType.Items.Add(ds.Tables[0].Rows[i][0].ToString().PadLeft(3, '0') + " " + ds.Tables[0].Rows[i][1].ToString());
+            }
             cboYear.SelectedIndex = (0);
             cboStockType.SelectedIndex = (0);
             cboStockType.Focus();
@@ -54,8 +61,8 @@ namespace Hardware_Syst
                 grdStockAnalysis.DataSource = Stock.getStockAnalysis(ds, Convert.ToInt32(cboStockType.SelectedIndex + 1)).Tables["ss"];
                 grdStockAnalysis.AllowUserToAddRows = false;
                 grdStockAnalysis.Visible = true;  
-                var MaxSold = Convert.ToInt32(grdStockAnalysis.Rows[0].Cells[4].Value);          
-                defineChart(grdStockAnalysis.Rows.Count, MaxSold);
+                    
+                defineChart();
                 defineSeries();
                 fillChart(ds);
                 chtStock.Visible = true;
@@ -63,7 +70,7 @@ namespace Hardware_Syst
             }
 
         }
-        private void defineChart(int x, int y)
+        private void defineChart()
         {
             chtStock.Size = new Size(500, 500);
             chtStock.ChartAreas[0].Name = "mainArea";
@@ -71,10 +78,10 @@ namespace Hardware_Syst
             chtStock.ChartAreas["mainArea"].AxisY.LabelStyle.Font = new Font("Consolas", 8);
 
             chtStock.ChartAreas["mainArea"].AxisY.Minimum =0;
-            chtStock.ChartAreas["mainArea"].AxisY.Interval = y;
+            chtStock.ChartAreas["mainArea"].AxisY.Interval = 5;
             chtStock.ChartAreas["mainArea"].AxisY.Title = "Amount Sold";
 
-            chtStock.ChartAreas["mainArea"].AxisX.Interval = 1;
+            chtStock.ChartAreas["mainArea"].AxisX.Interval = 5;
             chtStock.ChartAreas["mainArea"].AxisX.Title = "Stock";
 
             chtStock.ChartAreas["mainArea"].AxisX.MajorGrid.Enabled = false;

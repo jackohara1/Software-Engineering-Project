@@ -108,31 +108,8 @@ namespace Hardware_Syst
         }
 
         
-        public static DataSet getSelectedCustomer(DataSet DS, String EnteredSurname)
-        {
 
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-
-            String strSQL = "SELECT customer_id, surname, forename FROM Customer WHERE surname LIKE UPPER('" + EnteredSurname + "%')";
-
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-
-            OracleDataAdapter dc = new OracleDataAdapter(cmd);
-
-
-            dc.Fill(DS, "ss");
-
-
-            conn.Close();
-
-
-            return DS;
-        }
-
-
+        //retrieves next Customer id from the customer file 
         public static int getNextCustomer_id()
         {
 
@@ -163,13 +140,15 @@ namespace Hardware_Syst
             return intNextCustomerid;
 
         }
+
+        //registers a Customer in the database 
         public void addCustomer()
         {
             //connect to database
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
             myConn.Open();
 
-            //Define SQL query to INSERT stock record
+            //Define SQL query to INSERT Customer record
             String strSQL = "INSERT INTO Customer VALUES(" + this.customer_id.ToString() +
                 ",'" + this.forename.ToUpper() + "','" + this.surname + "','" +
                 this.addln1 + "','" + this.addln2 + "','" + this.addln3 + "'," + 0.0 +")";
@@ -181,31 +160,8 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
-
-        public static DataSet getSelectedSurnameName(DataSet ds, DataSet Data)
-        {
-
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-
-
-            String strSQL = "SELECT surname FROM Stock WHERE customer_id = " + Data + "";
-
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-
-            OracleDataAdapter dc = new OracleDataAdapter(cmd);
-
-
-            dc.Fill(ds, "ss");
-
-
-            conn.Close();
-
-
-            return ds;
-        }
-
+      
+        //Retrievs all Customers id surname and forname from the customer file with a name starting with the customer name entered
         public static DataSet getMatchingSurname(DataSet DS, String Name)
         {
 
@@ -229,7 +185,7 @@ namespace Hardware_Syst
 
             return DS;
         }
-
+        //retrieves evertything from the Customer File where Customer ID is equal to the Customer id entered 
         public void getCustomer(int Customer_ID)
         {
             //connect to DB
@@ -260,6 +216,7 @@ namespace Hardware_Syst
 
 
         }
+        //Updates customer details in relation to the customer id entered 
         public void updateCustomer()
         {
             //connect to database
@@ -278,21 +235,6 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
-        public static void updateBalance(int customer_id, decimal sale)
-        {
-            //connect to database
-            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
-            myConn.Open();
-
-            //Define SQL query to INSERT stock record
-            String strSQL = "UPDATE Customer SET balance = (balance +" + sale + ") WHERE customer_id = " + customer_id;
-
-            //Execute the command
-            OracleCommand cmd = new OracleCommand(strSQL, myConn);
-            cmd.ExecuteNonQuery();
-
-            //close DB connection
-            myConn.Close();
-        }
+       
     }
 }

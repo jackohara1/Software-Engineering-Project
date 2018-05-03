@@ -38,11 +38,13 @@ namespace Hardware_Syst
         {
             Sale mySale = new Sale();
             mySale.setSale_id(Convert.ToInt32(txtSaleID.Text));
+            //checks to see if the user is paying by credit sets the customer id to the selected customer id and the sale status to U(Unpayed)
             if (rdoCredit.Checked)
             {
                 mySale.setCustomer_id(Convert.ToInt32(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[0].Value));
                 mySale.setStatus("U");
             }
+            //if the user is paying by cash sets the sales customer id to null and sets the sale status to P(Payed)
             else
             {
                 mySale.setStatus(Convert.ToString('P'));
@@ -57,6 +59,7 @@ namespace Hardware_Syst
 
             int i = 0;
             grdCart.Rows[i].Selected = true;
+            //goes through each row of the shopping cart adding each item to the databace 
             while(i< grdCart.RowCount)
             {
                 Saleitem newSaleItem = new Saleitem();
@@ -134,8 +137,9 @@ namespace Hardware_Syst
             
             btnRegesterSale.Visible = false;
         }
+        //an array of qty is created so that the system will remember the amount of items that exist in the system and the customer cannot purchase more than the system has in stock
             int[] qty = new int[100];
-            int j = 0;
+ 
         private void grdStock_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -144,18 +148,19 @@ namespace Hardware_Syst
             Boolean isAdded = false;
 
 
-
+            //this for loop checks to see if the item that the user is trying to enter is already in the shopping cart
             for (int x = 0; x < grdCart.RowCount; x++)
             {
+                // if it is it changes the boolean is added to true 
                 if (Convert.ToInt16(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[0].Value) == Convert.ToInt16(grdCart.Rows[x].Cells[0].Value))
                 {
-
+                    //this checks to see if the amount of items that is in the system is less than the amount the user is trying to purchase 
                     if (qty[Convert.ToInt32(grdCart.Rows[x].Cells[0].Value)] <= Convert.ToInt32(grdCart.Rows[x].Cells[2].Value))
                     {
                         MessageBox.Show("We are sorry we are all out of " + Convert.ToString(grdCart.Rows[x].Cells[1].Value));
                         isAdded = true;
                     }
-
+                    //if the amount is less the quantity that the user is trying to purchase gets incromented by one 
                     else
                     {
                         grdCart.Rows[x].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[x].Cells[2].Value) + 1).ToString());
@@ -166,7 +171,7 @@ namespace Hardware_Syst
                     }
                 }
             }
-                
+               //if the item that the user is entering is not already in the shopping cart then a new row gets added to the shopping cart 
                 if (isAdded == false)
                 {
 
@@ -176,7 +181,7 @@ namespace Hardware_Syst
                                 txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[2].Value) + Convert.ToDecimal(txtSaleValue.Text));
                                 grpCart.Visible = true;
                                 qty[Convert.ToInt32(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[0].Value)] = Convert.ToInt32(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[3].Value);
-                                j++;
+                              
                                }
                      }
             
@@ -206,6 +211,7 @@ namespace Hardware_Syst
                 DataSet ds = new DataSet();
                 grdCust.DataSource = Customer.getMatchingSurname(ds, txtCustomer.Text.ToUpper()).Tables["ss"];
                 grdCust.AllowUserToAddRows = false;
+                //if there are no rows in the data grid box it means that there are no customers with that surname in the system
                 if (grdCust.RowCount == 0)
                 {
                     grpCredit.Visible = false;
@@ -219,7 +225,7 @@ namespace Hardware_Syst
                 }
             }
         }
-
+        
         private void rdoCash_CheckedChanged(object sender, EventArgs e)
         {
             btnRegesterSale.Visible = true;
@@ -227,7 +233,7 @@ namespace Hardware_Syst
         }
 
       
-
+        //when a user selects a customer it will set the register sale button the visible 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             btnRegesterSale.Visible = true;
@@ -235,16 +241,16 @@ namespace Hardware_Syst
 
         private void grdCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // this checks if the user clicked the add button in the shopping cart 
             if (e.ColumnIndex == grdCart.Columns["Quantityadd"].Index && e.RowIndex >= 0)
             {
-
+                // the system checks to see if the quantity that the user wishes to puchase is greater than the amount that is on the system 
                 if (qty[Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value)] <= Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value))
                 {
                     MessageBox.Show("We are sorry we are all out of " + Convert.ToString(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[1].Value));
               
                 }
-
+                // if it is not the quantity inside the shopping cart gets incromented by one 
                 else
                 {
                     grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) + 1).ToString());
@@ -252,18 +258,23 @@ namespace Hardware_Syst
                 }
 
             }
+
+            // this checks to see if the minus button is selected in the shopping cart 
             else if (e.ColumnIndex == grdCart.Columns["Quantityminus"].Index && e.RowIndex >= 0)
             {
+                //this checks to see if the number in the shoping cart is one before it is decremented
                if (Convert.ToInt16(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) == 1)
                 {
+                    //if it is then it updates the sale value and removes the row from the datagrid box 
                     txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(txtSaleValue.Text) - (Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[6].Value) * Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value)));
                     grdCart.Rows.Remove(grdCart.Rows[grdCart.CurrentCell.RowIndex]);
+                    // if it is the last row it will set the shopping cart to invisible 
                     if (grdCart.Rows.Count == 0)
                     {
                         grpCart.Visible = false;
                     }
                 }
-
+               // otherwise it will just decrement the quantity in the shopping cart
                 else
                 {
                     grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) - 1).ToString());
@@ -271,11 +282,14 @@ namespace Hardware_Syst
                 }
 
             }
+            // this checks to see if the user selects the remove button 
             else if (e.ColumnIndex == grdCart.Columns["remove"].Index && e.RowIndex >= 0)
             {
+                //this removes the row from the data grid box
                  txtSaleValue.Text = Convert.ToString(Convert.ToDecimal( txtSaleValue.Text) - (Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[6].Value) * Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value)));
                  grdCart.Rows.Remove(grdCart.Rows[grdCart.CurrentCell.RowIndex]);
-               if (grdCart.Rows.Count == 0)
+                //if it is the last row it will set it to invisible
+                if (grdCart.Rows.Count == 0)
                 {
                     grpCart.Visible = false;
                 }

@@ -21,24 +21,7 @@ namespace Hardware_Syst
 
         }
 
-        public void setDepartment_id(int Department_id)
-        {
-            this.Department_id = Department_id;
-        }
-        public void setDepartment_name(String Department_name)
-        {
-            this.Department_name = Department_name;
-        }
-
-        public int getDepartment_id()
-        {
-            return Department_id;
-        }
-
-        public string getDepartment_name()
-        {
-            return Department_name;
-        }
+    //retrieves all data about departments from the department file
         public static DataSet getDepartment(DataSet DS)
         {
             //connect to DB
@@ -46,28 +29,6 @@ namespace Hardware_Syst
             conn.Open();
             //Define SQL Query
             String strSQL = "SELECT department_id, department_name FROM Department ORDER BY department_id";
-
-            //execute query using Data Reader
-
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            da.Fill(DS, "ss");
-
-            //close db
-            conn.Close();
-            return DS;
-
-        }
-        public static DataSet getDepartmentDetails(DataSet DS, int DID)
-        {
-            //connect to DB
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
-            conn.Open();
-            //Define SQL Query
-            String strSQL = "SELECT department_name FROM Department WHERE department_id="+ DID;
 
             //execute query using Data Reader
 

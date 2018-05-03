@@ -51,7 +51,7 @@ namespace Hardware_Syst
 
 
 
-
+        //Selects all items that were purchased from a sale id
         public static DataSet getMatchingSaleItem(DataSet DS, int Sale_id)
         {
             //create an OracleConnection object using the connection string defined in static class DBConnect
@@ -75,7 +75,7 @@ namespace Hardware_Syst
             //Return the Dataset with the required data to the windows form which executed this method
             return DS;
         }
-
+        //selects all items that a customer has bought on the system
         public static DataSet getMatchingInvoice(DataSet DS, int Customer_id)
         {
             //create an OracleConnection object using the connection string defined in static class DBConnect
@@ -101,7 +101,7 @@ namespace Hardware_Syst
             return DS;
         }
 
-
+        //registers all sale items that took place in the sale 
         public void addSaleitem()
         {
             //connect to database
@@ -119,7 +119,7 @@ namespace Hardware_Syst
 
             //close DB connection
             myConn.Close();
-        }
+        }//updates the quantity sold when a user returns the item he/ she bought
         public static void returnStock(int Stock_id, int amount, int Sale_id)
         {
             OracleConnection myConn = new OracleConnection(DBConnect.oradb);
