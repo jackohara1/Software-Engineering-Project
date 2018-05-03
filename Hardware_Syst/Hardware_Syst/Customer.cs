@@ -143,7 +143,7 @@ namespace Hardware_Syst
             //Define SQL query to INSERT Customer record
             String strSQL = "INSERT INTO Customer VALUES(" + this.customer_id.ToString() +
                 ",'" + this.forename.ToUpper() + "','" + this.surname + "','" +
-                this.addln1 + "','" + this.addln2 + "','" + this.addln3 + "'," + 0.0 +")";
+                this.addln1 + "','" + this.addln2 + "','" + this.addln3 + "')";
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);

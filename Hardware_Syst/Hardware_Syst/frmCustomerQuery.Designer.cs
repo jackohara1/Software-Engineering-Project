@@ -42,7 +42,6 @@
             this.Addln1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Addln2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Addln3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.grpSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCustomerSearch)).BeginInit();
@@ -55,7 +54,7 @@
             this.mnuBack});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(917, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(715, 24);
             this.menuStrip1.TabIndex = 47;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -122,12 +121,11 @@
             this.surname1,
             this.Addln1,
             this.Addln2,
-            this.Addln3,
-            this.Balance});
+            this.Addln3});
             this.grdQuery.Location = new System.Drawing.Point(41, 327);
             this.grdQuery.Name = "grdQuery";
             this.grdQuery.ReadOnly = true;
-            this.grdQuery.Size = new System.Drawing.Size(748, 62);
+            this.grdQuery.Size = new System.Drawing.Size(647, 62);
             this.grdQuery.TabIndex = 68;
             this.grdQuery.Visible = false;
             // 
@@ -135,42 +133,43 @@
             // 
             this.CustomerID.HeaderText = "Customer ID";
             this.CustomerID.Name = "CustomerID";
+            this.CustomerID.ReadOnly = true;
             // 
             // Forename
             // 
             this.Forename.HeaderText = "Forename";
             this.Forename.Name = "Forename";
+            this.Forename.ReadOnly = true;
             // 
             // surname1
             // 
             this.surname1.HeaderText = "Surname";
             this.surname1.Name = "surname1";
+            this.surname1.ReadOnly = true;
             // 
             // Addln1
             // 
             this.Addln1.HeaderText = "Address line 1";
             this.Addln1.Name = "Addln1";
+            this.Addln1.ReadOnly = true;
             // 
             // Addln2
             // 
             this.Addln2.HeaderText = "Address Line 2";
             this.Addln2.Name = "Addln2";
+            this.Addln2.ReadOnly = true;
             // 
             // Addln3
             // 
             this.Addln3.HeaderText = "Address Line 3";
             this.Addln3.Name = "Addln3";
-            // 
-            // Balance
-            // 
-            this.Balance.HeaderText = "Balance";
-            this.Balance.Name = "Balance";
+            this.Addln3.ReadOnly = true;
             // 
             // frmCustomerQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 435);
+            this.ClientSize = new System.Drawing.Size(715, 435);
             this.Controls.Add(this.grdQuery);
             this.Controls.Add(this.grpSearch);
             this.Controls.Add(this.btnSearch);
@@ -205,6 +204,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Addln1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Addln2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Addln3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
     }
 }

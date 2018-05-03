@@ -121,8 +121,8 @@ namespace Hardware_Syst
                 setQty(dr.GetInt32(2));
                 setCost_p(dr.GetDecimal(3));
                 setSale_p(dr.GetDecimal(4));
-                setDepartment_id(dr.GetInt32(5));
-                setStatus(dr.GetString(6));              
+                setStatus(dr.GetString(5));
+                setDepartment_id(dr.GetInt32(6));           
             }
             //close db
             conn.Close();
@@ -255,7 +255,7 @@ namespace Hardware_Syst
             //Define SQL query to INSERT stock record
             String strSQL = "INSERT INTO Stock VALUES(" + this.stock_id.ToString() +
                 ",'" + this.stock_name.ToUpper() + "'," + this.qty + "," + this.cost_p + "," +
-                this.sale_p + "," + this.department_id + ",'"+this.status+"')";
+                this.sale_p + ",'"+this.status+"'," + this.department_id + ")";
 
             //Execute the command
             OracleCommand cmd = new OracleCommand(strSQL, myConn);

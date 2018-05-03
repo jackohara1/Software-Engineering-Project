@@ -94,7 +94,7 @@ namespace Hardware_Syst
             if (this.customer_id.Equals(0))
                    
             {
-                String strSQL = "INSERT INTO Sale (Sale_Id,Sale_Value, Sale_Date, status) VALUES(" + this.sale_id +
+                String strSQL = "INSERT INTO Sale (Sale_Id, Sale_Date, status, Sale_Value) VALUES(" + this.sale_id +
                       "," + this.saleValue + ",'" +  this.saleDate + "','" + this.status + "')";
 
                 OracleCommand cmd = new OracleCommand(strSQL, myConn);
@@ -104,8 +104,8 @@ namespace Hardware_Syst
 
             else
             {
-                String strSQL = "INSERT INTO Sale VALUES(" + this.sale_id +
-                    "," + this.customer_id + "," + this.saleValue + ",'" + this.saleDate + "','"+this.status+"')";
+                String strSQL = "INSERT INTO Sale VALUES(" + this.sale_id +",'" + this.saleDate + 
+                   "','"+this.status +"'," + this.customer_id + "," + this.saleValue +")";
 
                 OracleCommand cmd = new OracleCommand(strSQL, myConn);
                 cmd.ExecuteNonQuery();
