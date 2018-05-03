@@ -82,7 +82,7 @@
             this.grdCustomerSearch.Name = "grdCustomerSearch";
             this.grdCustomerSearch.ReadOnly = true;
             this.grdCustomerSearch.Size = new System.Drawing.Size(352, 87);
-            this.grdCustomerSearch.TabIndex = 47;
+            this.grdCustomerSearch.TabIndex = 3;
             this.grdCustomerSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomerSearch_CellClick);
             // 
             // btnSearch
@@ -90,7 +90,7 @@
             this.btnSearch.Location = new System.Drawing.Point(368, 62);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(80, 23);
-            this.btnSearch.TabIndex = 70;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -109,7 +109,7 @@
             this.txtCustomer.Location = new System.Drawing.Point(167, 65);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(179, 20);
-            this.txtCustomer.TabIndex = 68;
+            this.txtCustomer.TabIndex = 1;
             // 
             // grdIssue
             // 
@@ -133,6 +133,7 @@
             // 
             this.txtTotal.Location = new System.Drawing.Point(763, 265);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(93, 20);
             this.txtTotal.TabIndex = 74;
             this.txtTotal.Text = "0.00";
@@ -156,7 +157,7 @@
             this.btnPayInvoice.Location = new System.Drawing.Point(733, 307);
             this.btnPayInvoice.Name = "btnPayInvoice";
             this.btnPayInvoice.Size = new System.Drawing.Size(123, 23);
-            this.btnPayInvoice.TabIndex = 75;
+            this.btnPayInvoice.TabIndex = 4;
             this.btnPayInvoice.Text = "Pay Invoice";
             this.btnPayInvoice.UseVisualStyleBackColor = true;
             this.btnPayInvoice.Click += new System.EventHandler(this.btnPayInvoice_Click);

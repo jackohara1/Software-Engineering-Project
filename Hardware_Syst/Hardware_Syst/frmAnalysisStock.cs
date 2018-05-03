@@ -20,6 +20,7 @@ namespace Hardware_Syst
             parent = Parent;
             cboYear.SelectedIndex = (0);
             cboStockType.SelectedIndex = (0);
+            cboStockType.Focus();
         }
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)

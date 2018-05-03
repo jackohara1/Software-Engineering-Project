@@ -73,7 +73,7 @@
             this.btnRegesterSale.Location = new System.Drawing.Point(606, 528);
             this.btnRegesterSale.Name = "btnRegesterSale";
             this.btnRegesterSale.Size = new System.Drawing.Size(123, 23);
-            this.btnRegesterSale.TabIndex = 21;
+            this.btnRegesterSale.TabIndex = 10;
             this.btnRegesterSale.Text = "Register Sale";
             this.btnRegesterSale.UseVisualStyleBackColor = true;
             this.btnRegesterSale.Visible = false;
@@ -93,7 +93,7 @@
             this.txtSrh.Location = new System.Drawing.Point(94, 66);
             this.txtSrh.Name = "txtSrh";
             this.txtSrh.Size = new System.Drawing.Size(142, 20);
-            this.txtSrh.TabIndex = 14;
+            this.txtSrh.TabIndex = 1;
             // 
             // menuStrip1
             // 
@@ -136,7 +136,7 @@
             this.btnSrh.Location = new System.Drawing.Point(251, 61);
             this.btnSrh.Name = "btnSrh";
             this.btnSrh.Size = new System.Drawing.Size(58, 29);
-            this.btnSrh.TabIndex = 41;
+            this.btnSrh.TabIndex = 2;
             this.btnSrh.Text = "Search";
             this.btnSrh.UseVisualStyleBackColor = true;
             this.btnSrh.Click += new System.EventHandler(this.btnSrh_Click);
@@ -159,7 +159,7 @@
             this.grdStock.Name = "grdStock";
             this.grdStock.ReadOnly = true;
             this.grdStock.Size = new System.Drawing.Size(444, 87);
-            this.grdStock.TabIndex = 45;
+            this.grdStock.TabIndex = 3;
             this.grdStock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStock_CellClick);
             // 
             // grpCart
@@ -247,7 +247,7 @@
             this.btnCheckout.Location = new System.Drawing.Point(593, 268);
             this.btnCheckout.Name = "btnCheckout";
             this.btnCheckout.Size = new System.Drawing.Size(148, 24);
-            this.btnCheckout.TabIndex = 47;
+            this.btnCheckout.TabIndex = 4;
             this.btnCheckout.Text = "Checkout";
             this.btnCheckout.UseVisualStyleBackColor = true;
             this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
@@ -291,7 +291,7 @@
             this.rdoCash.Location = new System.Drawing.Point(45, 19);
             this.rdoCash.Name = "rdoCash";
             this.rdoCash.Size = new System.Drawing.Size(73, 17);
-            this.rdoCash.TabIndex = 1;
+            this.rdoCash.TabIndex = 5;
             this.rdoCash.TabStop = true;
             this.rdoCash.Text = "Cash Sale";
             this.rdoCash.UseVisualStyleBackColor = true;
@@ -303,7 +303,7 @@
             this.rdoCredit.Location = new System.Drawing.Point(253, 19);
             this.rdoCredit.Name = "rdoCredit";
             this.rdoCredit.Size = new System.Drawing.Size(76, 17);
-            this.rdoCredit.TabIndex = 0;
+            this.rdoCredit.TabIndex = 6;
             this.rdoCredit.Text = "Credit Sale";
             this.rdoCredit.UseVisualStyleBackColor = true;
             this.rdoCredit.CheckedChanged += new System.EventHandler(this.rdoCredit_CheckedChanged);
@@ -327,7 +327,7 @@
             this.btnCustomer.Location = new System.Drawing.Point(278, 24);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(58, 29);
-            this.btnCustomer.TabIndex = 49;
+            this.btnCustomer.TabIndex = 8;
             this.btnCustomer.Text = "Search";
             this.btnCustomer.UseVisualStyleBackColor = true;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
@@ -346,7 +346,7 @@
             this.txtCustomer.Location = new System.Drawing.Point(111, 29);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(142, 20);
-            this.txtCustomer.TabIndex = 47;
+            this.txtCustomer.TabIndex = 7;
             // 
             // grdCust
             // 
@@ -355,7 +355,7 @@
             this.grdCust.Name = "grdCust";
             this.grdCust.ReadOnly = true;
             this.grdCust.Size = new System.Drawing.Size(348, 87);
-            this.grdCust.TabIndex = 46;
+            this.grdCust.TabIndex = 9;
             this.grdCust.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCust_CellClick);
             // 
             // frmProcessSale

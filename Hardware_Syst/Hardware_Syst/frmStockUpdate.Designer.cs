@@ -88,7 +88,7 @@
             this.txtStockName.Location = new System.Drawing.Point(144, 73);
             this.txtStockName.Name = "txtStockName";
             this.txtStockName.Size = new System.Drawing.Size(179, 20);
-            this.txtStockName.TabIndex = 32;
+            this.txtStockName.TabIndex = 1;
             // 
             // grdStockSearch
             // 
@@ -97,7 +97,7 @@
             this.grdStockSearch.Name = "grdStockSearch";
             this.grdStockSearch.ReadOnly = true;
             this.grdStockSearch.Size = new System.Drawing.Size(486, 116);
-            this.grdStockSearch.TabIndex = 47;
+            this.grdStockSearch.TabIndex = 3;
             this.grdStockSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStockSearch_CellClick);
             // 
             // btnSearch
@@ -105,7 +105,7 @@
             this.btnSearch.Location = new System.Drawing.Point(345, 70);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(80, 23);
-            this.btnSearch.TabIndex = 56;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -140,7 +140,7 @@
             this.grpUpdate.Controls.Add(this.txtQty);
             this.grpUpdate.Location = new System.Drawing.Point(33, 275);
             this.grpUpdate.Name = "grpUpdate";
-            this.grpUpdate.Size = new System.Drawing.Size(450, 280);
+            this.grpUpdate.Size = new System.Drawing.Size(526, 320);
             this.grpUpdate.TabIndex = 59;
             this.grpUpdate.TabStop = false;
             this.grpUpdate.Text = "Enter Stock Details";
@@ -158,7 +158,7 @@
             // rdoUnavalable
             // 
             this.rdoUnavalable.AutoSize = true;
-            this.rdoUnavalable.Location = new System.Drawing.Point(205, 229);
+            this.rdoUnavalable.Location = new System.Drawing.Point(275, 227);
             this.rdoUnavalable.Name = "rdoUnavalable";
             this.rdoUnavalable.Size = new System.Drawing.Size(79, 17);
             this.rdoUnavalable.TabIndex = 39;
@@ -169,7 +169,7 @@
             // rdoAvalable
             // 
             this.rdoAvalable.AutoSize = true;
-            this.rdoAvalable.Location = new System.Drawing.Point(107, 229);
+            this.rdoAvalable.Location = new System.Drawing.Point(177, 227);
             this.rdoAvalable.Name = "rdoAvalable";
             this.rdoAvalable.Size = new System.Drawing.Size(66, 17);
             this.rdoAvalable.TabIndex = 38;
@@ -180,7 +180,7 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(54, 208);
+            this.lblStatus.Location = new System.Drawing.Point(107, 231);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(37, 13);
             this.lblStatus.TabIndex = 37;
@@ -189,7 +189,7 @@
             // lblStockType
             // 
             this.lblStockType.AutoSize = true;
-            this.lblStockType.Location = new System.Drawing.Point(97, 35);
+            this.lblStockType.Location = new System.Drawing.Point(93, 79);
             this.lblStockType.Name = "lblStockType";
             this.lblStockType.Size = new System.Drawing.Size(62, 13);
             this.lblStockType.TabIndex = 36;
@@ -199,17 +199,17 @@
             // 
             this.cboStockType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStockType.FormattingEnabled = true;
-            this.cboStockType.Location = new System.Drawing.Point(179, 32);
+            this.cboStockType.Location = new System.Drawing.Point(175, 76);
             this.cboStockType.Name = "cboStockType";
             this.cboStockType.Size = new System.Drawing.Size(121, 21);
-            this.cboStockType.TabIndex = 35;
+            this.cboStockType.TabIndex = 5;
             // 
             // btnUpdateStock
             // 
-            this.btnUpdateStock.Location = new System.Drawing.Point(321, 229);
+            this.btnUpdateStock.Location = new System.Drawing.Point(167, 272);
             this.btnUpdateStock.Name = "btnUpdateStock";
             this.btnUpdateStock.Size = new System.Drawing.Size(123, 23);
-            this.btnUpdateStock.TabIndex = 34;
+            this.btnUpdateStock.TabIndex = 9;
             this.btnUpdateStock.Text = "Update Stock";
             this.btnUpdateStock.UseVisualStyleBackColor = true;
             this.btnUpdateStock.Click += new System.EventHandler(this.btnUpdateStock_Click_1);
@@ -219,7 +219,7 @@
             this.txtSalePrice.Location = new System.Drawing.Point(179, 188);
             this.txtSalePrice.Name = "txtSalePrice";
             this.txtSalePrice.Size = new System.Drawing.Size(100, 20);
-            this.txtSalePrice.TabIndex = 33;
+            this.txtSalePrice.TabIndex = 8;
             // 
             // lblSalePrice
             // 
@@ -251,7 +251,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 81);
+            this.label1.Location = new System.Drawing.Point(89, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 29;
@@ -262,14 +262,14 @@
             this.txtCostPrice.Location = new System.Drawing.Point(179, 152);
             this.txtCostPrice.Name = "txtCostPrice";
             this.txtCostPrice.Size = new System.Drawing.Size(100, 20);
-            this.txtCostPrice.TabIndex = 28;
+            this.txtCostPrice.TabIndex = 7;
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(179, 74);
+            this.txtStock.Location = new System.Drawing.Point(175, 35);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(179, 20);
-            this.txtStock.TabIndex = 27;
+            this.txtStock.TabIndex = 4;
             // 
             // txtQty
             // 
@@ -277,13 +277,13 @@
             this.txtQty.MaxLength = 3;
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(34, 20);
-            this.txtQty.TabIndex = 26;
+            this.txtQty.TabIndex = 6;
             // 
             // Update_Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 553);
+            this.ClientSize = new System.Drawing.Size(792, 595);
             this.Controls.Add(this.grpUpdate);
             this.Controls.Add(this.grpSearch);
             this.Controls.Add(this.btnSearch);

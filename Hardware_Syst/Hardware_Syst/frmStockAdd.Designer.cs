@@ -60,11 +60,12 @@
             // txtStockID
             // 
             this.txtStockID.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtStockID.Enabled = false;
             this.txtStockID.Location = new System.Drawing.Point(125, 44);
             this.txtStockID.Name = "txtStockID";
             this.txtStockID.ReadOnly = true;
             this.txtStockID.Size = new System.Drawing.Size(50, 20);
-            this.txtStockID.TabIndex = 13;
+            this.txtStockID.TabIndex = 55;
             // 
             // menuStrip1
             // 

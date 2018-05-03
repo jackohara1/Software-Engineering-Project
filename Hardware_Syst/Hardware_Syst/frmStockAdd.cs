@@ -40,7 +40,7 @@ namespace Hardware_Syst
         private void btnNewStock_Click(object sender, EventArgs e)
         {
             Regex numeric = new Regex("^[0-9]*$");
-            Regex decimalCheck = new Regex("^[0-9]([.,][0-9]{1,3})?$");
+            Regex decimalCheck = new Regex(@"^[0-9]+(\.[0-9]{1,2})?$");//https://www.regextester.com/97725
             Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9 ]*$");
 
             if (cboStockType.Text.Equals(""))
@@ -105,7 +105,7 @@ namespace Hardware_Syst
                 txtSalePrice.Focus();
                 return;
             }
-            else if (Convert.ToDecimal(txtSalePrice.Text) < Convert.ToDecimal(txtCostPrice.Text))
+            else if (Convert.ToDecimal(txtSalePrice.Text) <= Convert.ToDecimal(txtCostPrice.Text))
             {
                 MessageBox.Show("Sale Price must be greater than Cost Price");
                 txtSalePrice.Clear();

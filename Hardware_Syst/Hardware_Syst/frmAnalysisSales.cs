@@ -102,16 +102,18 @@ namespace Hardware_Syst
                 }            grdSaleAnalysis.AllowUserToAddRows = false;
                 if (grdSaleAnalysis.RowCount <= 0 )
                     {
-                       if (rdoCust.Checked)
-                         {
+                    grdSaleAnalysis.Visible = false;
+                    chtData.Visible = false;
+
+                    if (rdoCust.Checked)
+                            {
                               MessageBox.Show(Convert.ToString(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[2].Value) + " " + Convert.ToString(grdCust.Rows[grdCust.CurrentCell.RowIndex].Cells[1].Value) + "made no purchases in the year 20" + cboYear.Text);
                              }
                         else
-                             {
+                             {  
                                MessageBox.Show("There was no sales made in the year 20" + cboYear.Text);
                               }
-                        grdSaleAnalysis.Visible = false;
-                        chtData.Visible = false;
+                      
             
                           }
       

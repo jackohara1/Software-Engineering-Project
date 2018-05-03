@@ -75,7 +75,7 @@
             this.grdStockSearch.Name = "grdStockSearch";
             this.grdStockSearch.ReadOnly = true;
             this.grdStockSearch.Size = new System.Drawing.Size(281, 87);
-            this.grdStockSearch.TabIndex = 47;
+            this.grdStockSearch.TabIndex = 3;
             this.grdStockSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStockSearch_CellClick);
             // 
             // btnSearch
@@ -83,7 +83,7 @@
             this.btnSearch.Location = new System.Drawing.Point(302, 52);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(80, 23);
-            this.btnSearch.TabIndex = 61;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -102,7 +102,7 @@
             this.txtStockName.Location = new System.Drawing.Point(101, 55);
             this.txtStockName.Name = "txtStockName";
             this.txtStockName.Size = new System.Drawing.Size(179, 20);
-            this.txtStockName.TabIndex = 59;
+            this.txtStockName.TabIndex = 1;
             // 
             // frmStockDiscontinue
             // 

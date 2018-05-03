@@ -85,7 +85,7 @@
             this.grdCustomerSearch.Name = "grdCustomerSearch";
             this.grdCustomerSearch.ReadOnly = true;
             this.grdCustomerSearch.Size = new System.Drawing.Size(352, 87);
-            this.grdCustomerSearch.TabIndex = 47;
+            this.grdCustomerSearch.TabIndex = 3;
             this.grdCustomerSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomerSearch_CellClick);
             // 
             // btnSearch
@@ -93,7 +93,7 @@
             this.btnSearch.Location = new System.Drawing.Point(374, 91);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(80, 23);
-            this.btnSearch.TabIndex = 74;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -112,7 +112,7 @@
             this.txtCustomer.Location = new System.Drawing.Point(173, 94);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(179, 20);
-            this.txtCustomer.TabIndex = 72;
+            this.txtCustomer.TabIndex = 1;
             // 
             // grpIssueInvoice
             // 
@@ -145,6 +145,7 @@
             this.txtAddln1.Enabled = false;
             this.txtAddln1.Location = new System.Drawing.Point(23, 258);
             this.txtAddln1.Name = "txtAddln1";
+            this.txtAddln1.ReadOnly = true;
             this.txtAddln1.Size = new System.Drawing.Size(100, 20);
             this.txtAddln1.TabIndex = 78;
             // 
@@ -153,6 +154,7 @@
             this.txtAddln3.Enabled = false;
             this.txtAddln3.Location = new System.Drawing.Point(23, 310);
             this.txtAddln3.Name = "txtAddln3";
+            this.txtAddln3.ReadOnly = true;
             this.txtAddln3.Size = new System.Drawing.Size(100, 20);
             this.txtAddln3.TabIndex = 77;
             // 
@@ -161,6 +163,7 @@
             this.txtAddln2.Enabled = false;
             this.txtAddln2.Location = new System.Drawing.Point(23, 284);
             this.txtAddln2.Name = "txtAddln2";
+            this.txtAddln2.ReadOnly = true;
             this.txtAddln2.Size = new System.Drawing.Size(100, 20);
             this.txtAddln2.TabIndex = 76;
             // 
@@ -169,6 +172,7 @@
             this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(715, 326);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(93, 20);
             this.txtTotal.TabIndex = 74;
             this.txtTotal.Text = "0.00";

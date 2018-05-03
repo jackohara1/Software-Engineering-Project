@@ -69,7 +69,7 @@ namespace Hardware_Syst
         private void btnUpdateStock_Click_1(object sender, EventArgs e)
         {
             Regex numeric = new Regex("^[0-9]*$");
-            Regex decimalCheck = new Regex("^[0-9]([.,][0-9]{1,3})?$");
+            Regex decimalCheck = new Regex(@"^[0-9]+(\.[0-9]{1,2})?$");
             Regex alphanumericCheck = new Regex("^[a-zA-Z][a-zA-Z0-9 ]*$");
 
             if (cboStockType.Text.Equals(""))

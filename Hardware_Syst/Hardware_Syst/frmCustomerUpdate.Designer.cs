@@ -107,14 +107,14 @@
             this.txtAddLn3.Location = new System.Drawing.Point(214, 197);
             this.txtAddLn3.Name = "txtAddLn3";
             this.txtAddLn3.Size = new System.Drawing.Size(100, 20);
-            this.txtAddLn3.TabIndex = 67;
+            this.txtAddLn3.TabIndex = 8;
             // 
             // btnUpdateStock
             // 
             this.btnUpdateStock.Location = new System.Drawing.Point(349, 195);
             this.btnUpdateStock.Name = "btnUpdateStock";
             this.btnUpdateStock.Size = new System.Drawing.Size(123, 23);
-            this.btnUpdateStock.TabIndex = 21;
+            this.btnUpdateStock.TabIndex = 9;
             this.btnUpdateStock.Text = "Update Customer";
             this.btnUpdateStock.UseVisualStyleBackColor = true;
             this.btnUpdateStock.Click += new System.EventHandler(this.btnUpdateStock_Click);
@@ -142,14 +142,14 @@
             this.txtCustomerName.Location = new System.Drawing.Point(214, 18);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(100, 20);
-            this.txtCustomerName.TabIndex = 57;
+            this.txtCustomerName.TabIndex = 4;
             // 
             // txtAddLn2
             // 
             this.txtAddLn2.Location = new System.Drawing.Point(214, 171);
             this.txtAddLn2.Name = "txtAddLn2";
             this.txtAddLn2.Size = new System.Drawing.Size(100, 20);
-            this.txtAddLn2.TabIndex = 65;
+            this.txtAddLn2.TabIndex = 7;
             // 
             // lblCustomerSurname
             // 
@@ -165,7 +165,7 @@
             this.txtCustomerSurname.Location = new System.Drawing.Point(214, 53);
             this.txtCustomerSurname.Name = "txtCustomerSurname";
             this.txtCustomerSurname.Size = new System.Drawing.Size(100, 20);
-            this.txtCustomerSurname.TabIndex = 56;
+            this.txtCustomerSurname.TabIndex = 5;
             // 
             // lblAddLn2
             // 
@@ -190,7 +190,7 @@
             this.txtAddLn1.Location = new System.Drawing.Point(214, 145);
             this.txtAddLn1.Name = "txtAddLn1";
             this.txtAddLn1.Size = new System.Drawing.Size(100, 20);
-            this.txtAddLn1.TabIndex = 63;
+            this.txtAddLn1.TabIndex = 6;
             // 
             // grpSearch
             // 
@@ -210,7 +210,7 @@
             this.grdCustomerSearch.Name = "grdCustomerSearch";
             this.grdCustomerSearch.ReadOnly = true;
             this.grdCustomerSearch.Size = new System.Drawing.Size(352, 87);
-            this.grdCustomerSearch.TabIndex = 47;
+            this.grdCustomerSearch.TabIndex = 3;
             this.grdCustomerSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomerSearch_CellClick);
             // 
             // btnSearch
@@ -218,7 +218,7 @@
             this.btnSearch.Location = new System.Drawing.Point(419, 65);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(80, 23);
-            this.btnSearch.TabIndex = 62;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -237,7 +237,7 @@
             this.txtName.Location = new System.Drawing.Point(218, 68);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(179, 20);
-            this.txtName.TabIndex = 60;
+            this.txtName.TabIndex = 1;
             // 
             // frmCustomerUpdate
             // 

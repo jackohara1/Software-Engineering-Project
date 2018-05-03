@@ -53,7 +53,7 @@ namespace Hardware_Syst
             this.btnReturnItem.Location = new System.Drawing.Point(518, 481);
             this.btnReturnItem.Name = "btnReturnItem";
             this.btnReturnItem.Size = new System.Drawing.Size(123, 23);
-            this.btnReturnItem.TabIndex = 30;
+            this.btnReturnItem.TabIndex = 5;
             this.btnReturnItem.Text = "Return Item";
             this.btnReturnItem.UseVisualStyleBackColor = true;
             this.btnReturnItem.Visible = false;
@@ -64,7 +64,7 @@ namespace Hardware_Syst
             this.txtSaleID.Location = new System.Drawing.Point(124, 86);
             this.txtSaleID.Name = "txtSaleID";
             this.txtSaleID.Size = new System.Drawing.Size(100, 20);
-            this.txtSaleID.TabIndex = 29;
+            this.txtSaleID.TabIndex = 1;
             // 
             // lblSaleID
             // 
@@ -140,7 +140,7 @@ namespace Hardware_Syst
             this.grdCart.Name = "grdCart";
             this.grdCart.ReadOnly = true;
             this.grdCart.Size = new System.Drawing.Size(444, 149);
-            this.grdCart.TabIndex = 50;
+            this.grdCart.TabIndex = 3;
             this.grdCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCart_CellClick);
             // 
             // lblAmountOfItems
@@ -159,7 +159,7 @@ namespace Hardware_Syst
             this.txtQtySold.MaxLength = 3;
             this.txtQtySold.Name = "txtQtySold";
             this.txtQtySold.Size = new System.Drawing.Size(63, 20);
-            this.txtQtySold.TabIndex = 43;
+            this.txtQtySold.TabIndex = 4;
             this.txtQtySold.Visible = false;
             // 
             // lblItemBack
@@ -177,7 +177,7 @@ namespace Hardware_Syst
             this.btnSrh.Location = new System.Drawing.Point(242, 81);
             this.btnSrh.Name = "btnSrh";
             this.btnSrh.Size = new System.Drawing.Size(58, 29);
-            this.btnSrh.TabIndex = 46;
+            this.btnSrh.TabIndex = 2;
             this.btnSrh.Text = "Search";
             this.btnSrh.UseVisualStyleBackColor = true;
             this.btnSrh.Click += new System.EventHandler(this.btnSrh_Click);
