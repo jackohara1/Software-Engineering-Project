@@ -146,7 +146,7 @@
             this.txtAddln1.Location = new System.Drawing.Point(23, 258);
             this.txtAddln1.Name = "txtAddln1";
             this.txtAddln1.ReadOnly = true;
-            this.txtAddln1.Size = new System.Drawing.Size(100, 20);
+            this.txtAddln1.Size = new System.Drawing.Size(121, 20);
             this.txtAddln1.TabIndex = 78;
             // 
             // txtAddln3
@@ -155,7 +155,7 @@
             this.txtAddln3.Location = new System.Drawing.Point(23, 310);
             this.txtAddln3.Name = "txtAddln3";
             this.txtAddln3.ReadOnly = true;
-            this.txtAddln3.Size = new System.Drawing.Size(100, 20);
+            this.txtAddln3.Size = new System.Drawing.Size(121, 20);
             this.txtAddln3.TabIndex = 77;
             // 
             // txtAddln2
@@ -164,7 +164,7 @@
             this.txtAddln2.Location = new System.Drawing.Point(23, 284);
             this.txtAddln2.Name = "txtAddln2";
             this.txtAddln2.ReadOnly = true;
-            this.txtAddln2.Size = new System.Drawing.Size(100, 20);
+            this.txtAddln2.Size = new System.Drawing.Size(121, 20);
             this.txtAddln2.TabIndex = 76;
             // 
             // txtTotal

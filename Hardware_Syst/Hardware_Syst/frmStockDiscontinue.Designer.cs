@@ -74,7 +74,7 @@
             this.grdStockSearch.Location = new System.Drawing.Point(54, 29);
             this.grdStockSearch.Name = "grdStockSearch";
             this.grdStockSearch.ReadOnly = true;
-            this.grdStockSearch.Size = new System.Drawing.Size(281, 87);
+            this.grdStockSearch.Size = new System.Drawing.Size(303, 87);
             this.grdStockSearch.TabIndex = 3;
             this.grdStockSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStockSearch_CellClick);
             // 

@@ -61,9 +61,9 @@ namespace Hardware_Syst
             // 
             // txtSaleID
             // 
-            this.txtSaleID.Location = new System.Drawing.Point(124, 86);
+            this.txtSaleID.Location = new System.Drawing.Point(117, 86);
             this.txtSaleID.Name = "txtSaleID";
-            this.txtSaleID.Size = new System.Drawing.Size(100, 20);
+            this.txtSaleID.Size = new System.Drawing.Size(107, 20);
             this.txtSaleID.TabIndex = 1;
             // 
             // lblSaleID

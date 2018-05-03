@@ -85,7 +85,7 @@
             this.grpUpdate.Controls.Add(this.lblAddLn2);
             this.grpUpdate.Controls.Add(this.lblAddLn1);
             this.grpUpdate.Controls.Add(this.txtAddLn1);
-            this.grpUpdate.Location = new System.Drawing.Point(83, 306);
+            this.grpUpdate.Location = new System.Drawing.Point(83, 349);
             this.grpUpdate.Name = "grpUpdate";
             this.grpUpdate.Size = new System.Drawing.Size(490, 250);
             this.grpUpdate.TabIndex = 64;
@@ -106,7 +106,7 @@
             // 
             this.txtAddLn3.Location = new System.Drawing.Point(214, 197);
             this.txtAddLn3.Name = "txtAddLn3";
-            this.txtAddLn3.Size = new System.Drawing.Size(100, 20);
+            this.txtAddLn3.Size = new System.Drawing.Size(107, 20);
             this.txtAddLn3.TabIndex = 8;
             // 
             // btnUpdateStock
@@ -141,14 +141,14 @@
             // 
             this.txtCustomerName.Location = new System.Drawing.Point(214, 18);
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(100, 20);
+            this.txtCustomerName.Size = new System.Drawing.Size(107, 20);
             this.txtCustomerName.TabIndex = 4;
             // 
             // txtAddLn2
             // 
             this.txtAddLn2.Location = new System.Drawing.Point(214, 171);
             this.txtAddLn2.Name = "txtAddLn2";
-            this.txtAddLn2.Size = new System.Drawing.Size(100, 20);
+            this.txtAddLn2.Size = new System.Drawing.Size(107, 20);
             this.txtAddLn2.TabIndex = 7;
             // 
             // lblCustomerSurname
@@ -164,7 +164,7 @@
             // 
             this.txtCustomerSurname.Location = new System.Drawing.Point(214, 53);
             this.txtCustomerSurname.Name = "txtCustomerSurname";
-            this.txtCustomerSurname.Size = new System.Drawing.Size(100, 20);
+            this.txtCustomerSurname.Size = new System.Drawing.Size(107, 20);
             this.txtCustomerSurname.TabIndex = 5;
             // 
             // lblAddLn2
@@ -189,7 +189,7 @@
             // 
             this.txtAddLn1.Location = new System.Drawing.Point(214, 145);
             this.txtAddLn1.Name = "txtAddLn1";
-            this.txtAddLn1.Size = new System.Drawing.Size(100, 20);
+            this.txtAddLn1.Size = new System.Drawing.Size(107, 20);
             this.txtAddLn1.TabIndex = 6;
             // 
             // grpSearch
@@ -197,7 +197,7 @@
             this.grpSearch.Controls.Add(this.grdCustomerSearch);
             this.grpSearch.Location = new System.Drawing.Point(72, 161);
             this.grpSearch.Name = "grpSearch";
-            this.grpSearch.Size = new System.Drawing.Size(492, 139);
+            this.grpSearch.Size = new System.Drawing.Size(492, 160);
             this.grpSearch.TabIndex = 63;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search Customer";
@@ -206,10 +206,10 @@
             // grdCustomerSearch
             // 
             this.grdCustomerSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCustomerSearch.Location = new System.Drawing.Point(28, 27);
+            this.grdCustomerSearch.Location = new System.Drawing.Point(47, 30);
             this.grdCustomerSearch.Name = "grdCustomerSearch";
             this.grdCustomerSearch.ReadOnly = true;
-            this.grdCustomerSearch.Size = new System.Drawing.Size(352, 87);
+            this.grdCustomerSearch.Size = new System.Drawing.Size(367, 106);
             this.grdCustomerSearch.TabIndex = 3;
             this.grdCustomerSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomerSearch_CellClick);
             // 
@@ -243,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 568);
+            this.ClientSize = new System.Drawing.Size(707, 634);
             this.Controls.Add(this.grpUpdate);
             this.Controls.Add(this.grpSearch);
             this.Controls.Add(this.btnSearch);

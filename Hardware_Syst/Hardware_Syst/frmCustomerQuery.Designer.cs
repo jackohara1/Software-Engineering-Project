@@ -70,7 +70,7 @@
             this.grpSearch.Controls.Add(this.grdCustomerSearch);
             this.grpSearch.Location = new System.Drawing.Point(41, 139);
             this.grpSearch.Name = "grpSearch";
-            this.grpSearch.Size = new System.Drawing.Size(410, 139);
+            this.grpSearch.Size = new System.Drawing.Size(454, 139);
             this.grpSearch.TabIndex = 67;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search Customer";
@@ -82,7 +82,7 @@
             this.grdCustomerSearch.Location = new System.Drawing.Point(28, 27);
             this.grdCustomerSearch.Name = "grdCustomerSearch";
             this.grdCustomerSearch.ReadOnly = true;
-            this.grdCustomerSearch.Size = new System.Drawing.Size(352, 87);
+            this.grdCustomerSearch.Size = new System.Drawing.Size(377, 87);
             this.grdCustomerSearch.TabIndex = 47;
             this.grdCustomerSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomerSearch_CellContentClick);
             // 
@@ -125,7 +125,7 @@
             this.grdQuery.Location = new System.Drawing.Point(41, 327);
             this.grdQuery.Name = "grdQuery";
             this.grdQuery.ReadOnly = true;
-            this.grdQuery.Size = new System.Drawing.Size(647, 62);
+            this.grdQuery.Size = new System.Drawing.Size(662, 62);
             this.grdQuery.TabIndex = 68;
             this.grdQuery.Visible = false;
             // 
