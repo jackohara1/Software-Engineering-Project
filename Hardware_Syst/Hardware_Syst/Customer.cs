@@ -18,7 +18,7 @@ namespace Hardware_Syst
         private string addln1;
         private string addln2;
         private string addln3;
-        private decimal balance;
+  
 
 
 
@@ -31,7 +31,7 @@ namespace Hardware_Syst
             addln1 = "";
             addln2 = "";
             addln3 = "";
-            balance = 0;
+         
 
 
         }
@@ -64,11 +64,7 @@ namespace Hardware_Syst
         {
             this.addln3 = Addln3;
         }
-        public void setBalance(decimal Balance)
-        {
-            this.balance = Balance;
-        }
-
+    
 
 
 
@@ -102,11 +98,7 @@ namespace Hardware_Syst
         {
             return addln3;
         }
-        public decimal getBalance()
-        {
-            return balance;
-        }
-
+     
         
 
         //retrieves next Customer id from the customer file 
@@ -208,7 +200,7 @@ namespace Hardware_Syst
                 setAddln1(dr.GetString(3));
                 setAddln2(dr.GetString(4));
                 setAddln3(dr.GetString(5));
-                setBalance(dr.GetDecimal(6));
+                
 
             }
             //close db
