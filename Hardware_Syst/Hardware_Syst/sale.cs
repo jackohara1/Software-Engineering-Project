@@ -131,7 +131,7 @@ namespace Hardware_Syst
             //close DB connection
             myConn.Close();
         }
-        //updates the status of a customers 
+        //updates the status of a customers purchases from U(unpayed) to P(Payed)
         public static void invoicePayed(int Sale_id)
         {
             //connect to DB
@@ -150,7 +150,7 @@ namespace Hardware_Syst
 
 
         }
-
+        //Desplays all sales the customer has made in the shop during a selected year
         public static DataSet getSaleAnalysisCust(DataSet DS, String Date, int CustID)
         {
             //create an OracleConnection object using the connection string defined in static class DBConnect
@@ -176,6 +176,8 @@ namespace Hardware_Syst
             //Return the Dataset with the required data to the windows form which executed this method
             return DS;
         }
+
+        //displays all sales that take place on the system during a selected year
         public static DataSet getSaleAnalysis(DataSet DS, String Date)
         {
             //create an OracleConnection object using the connection string defined in static class DBConnect
@@ -201,6 +203,7 @@ namespace Hardware_Syst
             //Return the Dataset with the required data to the windows form which executed this method
             return DS;
         }
+        //desplays a chart of all the sales that have been payed for during a selected year it is organized by month and value
         public static decimal getSaleAnalysisChart(DataSet DS, String Date)
         {
 
@@ -230,6 +233,7 @@ namespace Hardware_Syst
 
             return totalSales;
         }
+        //displays a chart of all sales that a customer has payed for throughout the year
         public static decimal getSaleCustomerChart(DataSet DS, String Date, int CustId)
         {
 
@@ -259,6 +263,7 @@ namespace Hardware_Syst
 
             return totalSales;
         }
+        //displays a chart of the amount of sales an item of stock has made throughout the year ordered by month 
         public static decimal getStockSales(DataSet DS, String Date, int StockId)
         {
 

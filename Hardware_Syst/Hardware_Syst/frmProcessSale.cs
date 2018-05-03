@@ -14,11 +14,12 @@ namespace Hardware_Syst
     public partial class frmProcessSale : Form
     {
         frmMainMenu parent;
-      
+     
         public frmProcessSale(frmMainMenu Parent)
         {
             InitializeComponent();
             parent = Parent;
+            
             grdCart.AllowUserToAddRows = false;
         }
 
@@ -133,27 +134,53 @@ namespace Hardware_Syst
             
             btnRegesterSale.Visible = false;
         }
-
+            int[] qty = new int[100];
+            int j = 0;
         private void grdStock_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
+           
             grpCart.Visible = true;
             Boolean isAdded = false;
-            for(int x= 0; x<grdCart.RowCount; x++)
-            {
-                if(Convert.ToInt16(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[0].Value)== Convert.ToInt16(grdCart.Rows[x].Cells[0].Value))
-                {
-                    grdCart.Rows[x].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[x].Cells[2].Value) + 1).ToString());
-                    txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(grdCart.Rows[x].Cells[6].Value) + Convert.ToDecimal(txtSaleValue.Text));
-                    isAdded = true;
 
+
+
+            for (int x = 0; x < grdCart.RowCount; x++)
+            {
+                if (Convert.ToInt16(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[0].Value) == Convert.ToInt16(grdCart.Rows[x].Cells[0].Value))
+                {
+
+                    if (qty[Convert.ToInt32(grdCart.Rows[x].Cells[0].Value)] <= Convert.ToInt32(grdCart.Rows[x].Cells[2].Value))
+                    {
+                        MessageBox.Show("We are sorry we are all out of " + Convert.ToString(grdCart.Rows[x].Cells[1].Value));
+                        isAdded = true;
+                    }
+
+                    else
+                    {
+                        grdCart.Rows[x].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[x].Cells[2].Value) + 1).ToString());
+                        txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(grdCart.Rows[x].Cells[6].Value) + Convert.ToDecimal(txtSaleValue.Text));
+                        isAdded = true;
+     
+                        grpCart.Visible = true;
+                    }
                 }
             }
-            if (isAdded == false)
-            {
-                grdCart.Rows.Add(Convert.ToString(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[0].Value), Convert.ToString(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[1].Value), Convert.ToString(1), "+", "-", "remove", Convert.ToString(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[2].Value));
-                txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[2].Value) + Convert.ToDecimal(txtSaleValue.Text));
-            }
-        }
+                
+                if (isAdded == false)
+                {
+
+                        
+
+                                grdCart.Rows.Add(Convert.ToString(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[0].Value), Convert.ToString(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[1].Value), Convert.ToString(1), "+", "-", "remove", Convert.ToString(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[2].Value));
+                                txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[2].Value) + Convert.ToDecimal(txtSaleValue.Text));
+                                grpCart.Visible = true;
+                                qty[Convert.ToInt32(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[0].Value)] = Convert.ToInt32(grdStock.Rows[grdStock.CurrentCell.RowIndex].Cells[3].Value);
+                                j++;
+                               }
+                     }
+            
+        
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
@@ -211,9 +238,18 @@ namespace Hardware_Syst
 
             if (e.ColumnIndex == grdCart.Columns["Quantityadd"].Index && e.RowIndex >= 0)
             {
-             
-                grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) + 1).ToString());
-                txtSaleValue.Text =Convert.ToString(Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[6].Value) + Convert.ToDecimal(txtSaleValue.Text));
+
+                if (qty[Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value)] <= Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value))
+                {
+                    MessageBox.Show("We are sorry we are all out of " + Convert.ToString(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[1].Value));
+              
+                }
+
+                else
+                {
+                    grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value = ((Convert.ToInt16(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[2].Value) + 1).ToString());
+                    txtSaleValue.Text = Convert.ToString(Convert.ToDecimal(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[6].Value) + Convert.ToDecimal(txtSaleValue.Text));
+                }
 
             }
             else if (e.ColumnIndex == grdCart.Columns["Quantityminus"].Index && e.RowIndex >= 0)
