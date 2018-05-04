@@ -144,9 +144,9 @@
             // grpStock
             // 
             this.grpStock.Controls.Add(this.grdStock);
-            this.grpStock.Location = new System.Drawing.Point(31, 115);
+            this.grpStock.Location = new System.Drawing.Point(19, 115);
             this.grpStock.Name = "grpStock";
-            this.grpStock.Size = new System.Drawing.Size(461, 159);
+            this.grpStock.Size = new System.Drawing.Size(473, 159);
             this.grpStock.TabIndex = 43;
             this.grpStock.TabStop = false;
             this.grpStock.Text = "Stock";
@@ -155,10 +155,10 @@
             // grdStock
             // 
             this.grdStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdStock.Location = new System.Drawing.Point(1, 32);
+            this.grdStock.Location = new System.Drawing.Point(6, 32);
             this.grdStock.Name = "grdStock";
             this.grdStock.ReadOnly = true;
-            this.grdStock.Size = new System.Drawing.Size(444, 87);
+            this.grdStock.Size = new System.Drawing.Size(461, 110);
             this.grdStock.TabIndex = 3;
             this.grdStock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStock_CellClick);
             // 

@@ -117,9 +117,10 @@ namespace Hardware_Syst
                  {
                   
                     Stock.returnStock(Convert.ToInt32(grdCart.Rows[grdCart.CurrentCell.RowIndex].Cells[0].Value), Convert.ToInt32(txtQtySold.Text));
-                   }
 
-                MessageBox.Show("Item has been returned");
+                }
+                 MessageBox.Show("Item has been returned");
+                
                 this.Close();
                 parent.Show();
             }

@@ -164,7 +164,7 @@ namespace Hardware_Syst
             chtData.ChartAreas["mainArea"].AxisY.LabelStyle.Font = new Font("Consolas", 8);
 
             chtData.ChartAreas["mainArea"].AxisY.Minimum = 0;
-            chtData.ChartAreas["mainArea"].AxisY.Interval = 250;
+            chtData.ChartAreas["mainArea"].AxisY.Interval = 20;
             chtData.ChartAreas["mainArea"].AxisY.Title = "Euros";
 
             chtData.ChartAreas["mainArea"].AxisX.Interval = 1;
