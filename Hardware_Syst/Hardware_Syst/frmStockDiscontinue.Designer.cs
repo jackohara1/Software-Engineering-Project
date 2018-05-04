@@ -71,10 +71,10 @@
             // grdStockSearch
             // 
             this.grdStockSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdStockSearch.Location = new System.Drawing.Point(54, 29);
+            this.grdStockSearch.Location = new System.Drawing.Point(27, 29);
             this.grdStockSearch.Name = "grdStockSearch";
             this.grdStockSearch.ReadOnly = true;
-            this.grdStockSearch.Size = new System.Drawing.Size(303, 87);
+            this.grdStockSearch.Size = new System.Drawing.Size(344, 87);
             this.grdStockSearch.TabIndex = 3;
             this.grdStockSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStockSearch_CellClick);
             // 
@@ -100,6 +100,7 @@
             // txtStockName
             // 
             this.txtStockName.Location = new System.Drawing.Point(101, 55);
+            this.txtStockName.MaxLength = 30;
             this.txtStockName.Name = "txtStockName";
             this.txtStockName.Size = new System.Drawing.Size(179, 20);
             this.txtStockName.TabIndex = 1;

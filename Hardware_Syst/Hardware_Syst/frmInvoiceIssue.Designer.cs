@@ -110,6 +110,7 @@
             // txtCustomer
             // 
             this.txtCustomer.Location = new System.Drawing.Point(173, 94);
+            this.txtCustomer.MaxLength = 30;
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(179, 20);
             this.txtCustomer.TabIndex = 1;

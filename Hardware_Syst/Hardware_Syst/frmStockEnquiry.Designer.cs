@@ -107,6 +107,7 @@
             // txtStockName
             // 
             this.txtStockName.Location = new System.Drawing.Point(165, 53);
+            this.txtStockName.MaxLength = 30;
             this.txtStockName.Name = "txtStockName";
             this.txtStockName.Size = new System.Drawing.Size(179, 20);
             this.txtStockName.TabIndex = 1;

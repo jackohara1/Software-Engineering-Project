@@ -91,6 +91,7 @@
             // txtSrh
             // 
             this.txtSrh.Location = new System.Drawing.Point(94, 66);
+            this.txtSrh.MaxLength = 30;
             this.txtSrh.Name = "txtSrh";
             this.txtSrh.Size = new System.Drawing.Size(142, 20);
             this.txtSrh.TabIndex = 1;
@@ -344,6 +345,7 @@
             // txtCustomer
             // 
             this.txtCustomer.Location = new System.Drawing.Point(111, 29);
+            this.txtCustomer.MaxLength = 30;
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(142, 20);
             this.txtCustomer.TabIndex = 7;

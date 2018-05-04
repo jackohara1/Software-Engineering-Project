@@ -105,6 +105,7 @@
             // txtAddLn3
             // 
             this.txtAddLn3.Location = new System.Drawing.Point(214, 197);
+            this.txtAddLn3.MaxLength = 30;
             this.txtAddLn3.Name = "txtAddLn3";
             this.txtAddLn3.Size = new System.Drawing.Size(107, 20);
             this.txtAddLn3.TabIndex = 8;
@@ -140,6 +141,7 @@
             // txtCustomerName
             // 
             this.txtCustomerName.Location = new System.Drawing.Point(214, 18);
+            this.txtCustomerName.MaxLength = 30;
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(107, 20);
             this.txtCustomerName.TabIndex = 4;
@@ -147,6 +149,7 @@
             // txtAddLn2
             // 
             this.txtAddLn2.Location = new System.Drawing.Point(214, 171);
+            this.txtAddLn2.MaxLength = 30;
             this.txtAddLn2.Name = "txtAddLn2";
             this.txtAddLn2.Size = new System.Drawing.Size(107, 20);
             this.txtAddLn2.TabIndex = 7;
@@ -163,6 +166,7 @@
             // txtCustomerSurname
             // 
             this.txtCustomerSurname.Location = new System.Drawing.Point(214, 53);
+            this.txtCustomerSurname.MaxLength = 30;
             this.txtCustomerSurname.Name = "txtCustomerSurname";
             this.txtCustomerSurname.Size = new System.Drawing.Size(107, 20);
             this.txtCustomerSurname.TabIndex = 5;
@@ -188,6 +192,7 @@
             // txtAddLn1
             // 
             this.txtAddLn1.Location = new System.Drawing.Point(214, 145);
+            this.txtAddLn1.MaxLength = 30;
             this.txtAddLn1.Name = "txtAddLn1";
             this.txtAddLn1.Size = new System.Drawing.Size(107, 20);
             this.txtAddLn1.TabIndex = 6;
@@ -235,6 +240,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(218, 68);
+            this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(179, 20);
             this.txtName.TabIndex = 1;

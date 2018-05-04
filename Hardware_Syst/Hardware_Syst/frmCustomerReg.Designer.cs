@@ -59,6 +59,7 @@
             // txtAddLn1
             // 
             this.txtAddLn1.Location = new System.Drawing.Point(127, 201);
+            this.txtAddLn1.MaxLength = 30;
             this.txtAddLn1.Name = "txtAddLn1";
             this.txtAddLn1.Size = new System.Drawing.Size(114, 20);
             this.txtAddLn1.TabIndex = 3;
@@ -102,6 +103,7 @@
             // txtCustomerName
             // 
             this.txtCustomerName.Location = new System.Drawing.Point(127, 105);
+            this.txtCustomerName.MaxLength = 30;
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(114, 20);
             this.txtCustomerName.TabIndex = 1;
@@ -109,6 +111,7 @@
             // txtCustomerSurname
             // 
             this.txtCustomerSurname.Location = new System.Drawing.Point(127, 153);
+            this.txtCustomerSurname.MaxLength = 30;
             this.txtCustomerSurname.Name = "txtCustomerSurname";
             this.txtCustomerSurname.Size = new System.Drawing.Size(114, 20);
             this.txtCustomerSurname.TabIndex = 2;
@@ -126,6 +129,7 @@
             // txtAddLn2
             // 
             this.txtAddLn2.Location = new System.Drawing.Point(127, 227);
+            this.txtAddLn2.MaxLength = 30;
             this.txtAddLn2.Name = "txtAddLn2";
             this.txtAddLn2.Size = new System.Drawing.Size(114, 20);
             this.txtAddLn2.TabIndex = 4;
@@ -142,6 +146,7 @@
             // txtAddLn3
             // 
             this.txtAddLn3.Location = new System.Drawing.Point(127, 253);
+            this.txtAddLn3.MaxLength = 30;
             this.txtAddLn3.Name = "txtAddLn3";
             this.txtAddLn3.Size = new System.Drawing.Size(114, 20);
             this.txtAddLn3.TabIndex = 5;
