@@ -119,7 +119,6 @@ C:\Users\t00195057\Documents\GitHub\Software-Engineering-Project\Hardware_Syst\H
 C:\Users\t00195057\Documents\GitHub\Software-Engineering-Project\Hardware_Syst\Hardware_Syst\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
 C:\Users\t00195057\Documents\GitHub\Software-Engineering-Project\Hardware_Syst\Hardware_Syst\bin\Debug\EntityFramework.xml
 C:\Users\t00195057\Documents\GitHub\Software-Engineering-Project\Hardware_Syst\Hardware_Syst\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\t00195057\Documents\GitHub\Software-Engineering-Project\Hardware_Syst\Hardware_Syst\obj\Debug\Hardware_Syst.csprojResolveAssemblyReference.cache
 C:\Users\t00195057\Documents\GitHub\Software-Engineering-Project\Hardware_Syst\Hardware_Syst\obj\Debug\Hardware_Syst.frmAnalysisSales.resources
 C:\Users\t00195057\Documents\GitHub\Software-Engineering-Project\Hardware_Syst\Hardware_Syst\obj\Debug\Hardware_Syst.frmAnalysisStock.resources
 C:\Users\t00195057\Documents\GitHub\Software-Engineering-Project\Hardware_Syst\Hardware_Syst\obj\Debug\Hardware_Syst.frmMainMenu.resources
@@ -168,3 +167,5 @@ C:\Users\t00195057\Downloads\github\Software-Engineering-Project\Hardware_Syst\H
 C:\Users\t00195057\Downloads\github\Software-Engineering-Project\Hardware_Syst\Hardware_Syst\obj\Debug\Hardware_Syst.csproj.CoreCompileInputs.cache
 C:\Users\t00195057\Downloads\github\Software-Engineering-Project\Hardware_Syst\Hardware_Syst\obj\Debug\Hardware_Syst.exe
 C:\Users\t00195057\Downloads\github\Software-Engineering-Project\Hardware_Syst\Hardware_Syst\obj\Debug\Hardware_Syst.pdb
+C:\Users\T00195057\Documents\GitHub\Software-Engineering-Project\Hardware_Syst\Hardware_Syst\obj\Debug\Hardware_Syst.csprojAssemblyReference.cache
+C:\Users\T00195057\Documents\GitHub\Software-Engineering-Project\Hardware_Syst\Hardware_Syst\obj\Debug\Hardware_Syst.csproj.CopyComplete
